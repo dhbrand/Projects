@@ -1,0 +1,48 @@
+1. submitted job 574128618431311385-242ac115-0001-007 with standard json parameters
+
+2. submitted job 8057345179294962151-242ac115-0001-007 with developmental queue in json
+
+3. change standalone alphasim folder to match directory "copying files issue"
+
+4. registered for AlphaGenes forum account and asked about the different versions of AlphaSim and which would be best to get on Agave
+
+5. to run locally navigate to directory and ./AlphaSim1.04 in terminal
+
+6. 1.05 does not run with the AlphaSimSpec.txt from the Validate repo - error generates {
+Input File: AlphaSimSpec.txt
+
+ Modelling population history using InternalMaize
+  NOTE: A single chip with one locus will still be created
+ Line was unexpected: nSnpPerChipPerChromosme
+100000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
