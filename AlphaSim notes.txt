@@ -18,6 +18,14 @@ Input File: AlphaSimSpec.txt
 }
 
 
+5/22
+
+1. AlphaGenes confirmed using AlphaSim 1.08 is the best option
+
+2. Working on updating 1.04 to 1.08 on Agave
+
+3. Asked Agave support about what to put down for execution system in AlphaSim.json for app upload
+	- this was previously listed as stampede-08262015-1627-swb5075
 
 
 
