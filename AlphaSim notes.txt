@@ -26,9 +26,36 @@ Input File: AlphaSimSpec.txt
 
 3. Asked Agave support about what to put down for execution system in AlphaSim.json for app upload
 	- this was previously listed as stampede-08262015-1627-swb5075
+	- also emailed Sam Buck for advice
+	
+5/24
+
+1. Downloaded AlphaSim1.08 onto my Stampede home directory
+	- tried to run but did not have correct version of glibc
+	- submitted a help ticket to tacc
+		* glibc is not user upgradeable, it is too intimately entangled with 			the basic working of the system. Essentially, if you need a newer 			version of glibc, you are out of luck for running on Stampede1. 			Generally speaking you will only be able to install software that is 			compatible with the installed version of glibc in any particular system.
+	- will not be able to run AlphaSim1.08 on stampede without agave
+	
+2. have been in contact with Sam Buck about his previous code for AlphaSim1.04 trying to update Agave to 1.08
+
+3. Worked with Sam to create private executionsystem to use for app creation
+	- tacc-systems-create
+	- Yes (must be written with capital 'Y')
+	- enter for system identifier as [stampede]
+	- enter for user account
+	- enter for iPlant-Collabs
+	- enter for work directory
+
+4. used Agave ToGo to build new app for AlphaSim1.08
+	- used previous app to autofill most of the options
 
 
+5. modified alphasim.json for new AlphaSim1.08 app
 
+6. submitted job with 1.08
+	- generated error message "Invalid JSON found. Unrecognized token 'gin4': 					was expecting ('true', 'false' or 'null')
+ 					at [Source: java.io.ByteArrayInputStream@7f2efbb9; line: 2, 					column: 6]"
+					
 
 
 
