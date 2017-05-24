@@ -51,6 +51,15 @@ Input File: AlphaSimSpec.txt
 
 
 5. modified alphasim.json for new AlphaSim1.08 app
+	- {
+  "jobName": "testAlphaSim",
+  "softwareName": "AlphaSim-1.08",
+  "requestedTime": "05:00:00",
+  "archive": true,
+  "inputs":{
+    "specificationFile": 	"agave://data.iplantcollaborative.org/dhbrand/AlphaSim/AlphaSimSpec.txt"
+          }
+    }
 
 6. submitted job with 1.08
 	- generated error message "Invalid JSON found. Unrecognized token 'gin4': 					was expecting ('true', 'false' or 'null')
