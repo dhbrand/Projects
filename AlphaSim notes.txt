@@ -57,7 +57,7 @@ Input File: AlphaSimSpec.txt
   "requestedTime": "05:00:00",
   "archive": true,
   "inputs":{
-    "specificationFile": 	"agave://data.iplantcollaborative.org/dhbrand/AlphaSim/AlphaSimSpec.txt"
+    "specificationFile": "agave://data.iplantcollaborative.org/dhbrand/AlphaSim/AlphaSimSpec.txt"
           }
     }
 
@@ -66,6 +66,32 @@ Input File: AlphaSimSpec.txt
  					at [Source: java.io.ByteArrayInputStream@7f2efbb9; line: 2, 					column: 6]"
 					
 
+
+5/26
+
+
+1. submitted job with 1.08 - 755569271213780505-242ac115-0001-007
+
+2. Agave was down so worked on Data Carpentry
+
+3. Requested access to Atmosphere
+
+
+5/31
+
+1. modifed wrapper.sh for AlphaSim1.08
+
+2. resubmitted job
+	- error "EXPECTED value GOT -"
+	- error appearing on all jobs submitted
+	
+3. still did not receive Atmosphere access
+	- sent another email to the same ticket number
+
+4. working on enthought tutorials until Agave or Atmosphere ready
+
+5. started Shiny Apps Lessons 1 and 2
+	- hope to develop an app for winnow output that user can customize
 
 
 
