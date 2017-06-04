@@ -5,4 +5,8 @@ My Project Repo for the Stapleton Lab
 	a. AlphaSim 
 	
 2. Data Carpentry
+
+3. Visualization
+	a. Shiny Apps
+	b. ROCR 
 	

@@ -92,6 +92,14 @@ Input File: AlphaSimSpec.txt
 
 5. started Shiny Apps Lessons 1 and 2
 	- hope to develop an app for winnow output that user can customize
+	
+6/2
+
+1. submitted job 754963442616766951-242ac115-0001-007
+	- submitted modified alphasim.json with development queue (1 hr runtime)
+	
+2. finish shiny apps lessons....will plan to build an app for winnow in the coming week
+
 
 
 
