@@ -100,8 +100,16 @@ Input File: AlphaSimSpec.txt
 	
 2. finish shiny apps lessons....will plan to build an app for winnow in the coming week
 
+6/5
 
+1. submitted job with modified wrapper for alphasim 1.08
+	- 6314455009946046951-242ac115-0001-007
 
+2. started working on how to plot winnow output
+	- make a specificity and sensitivity plot with ggplot
+
+3. made a shiny app that can display the plots
+	- making plot type selection and multiple variable selection
 
 
 
