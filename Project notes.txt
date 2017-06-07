@@ -111,6 +111,15 @@ Input File: AlphaSimSpec.txt
 3. made a shiny app that can display the plots
 	- making plot type selection and multiple variable selection
 
+6/7
+
+1. submitted job 431002509506506265-242ac115-0001-007
+	- modified the wrapper to reflect the directory being created
+
+2. was able to link var selection to ggplot in winnow-app for shiny apps
+
+3. working on building a summary table from the data
+
 
 
 
