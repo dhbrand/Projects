@@ -120,6 +120,15 @@ Input File: AlphaSimSpec.txt
 
 3. working on building a summary table from the data
 
+6/9
+
+1. AlphaSim 1.08 critical error where user cannot updated GLICBC 
+	- update documentation to educate process to update and app
+
+2. ShinyApp for winnow updated with panels to choose between plot or summary table; table summarizes data from winnow output via means or totals
+
+3. working on way to hover over text in thomas's shiny app to point on useful information for middle schoolers
+
 
 
 
