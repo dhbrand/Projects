@@ -6,6 +6,7 @@ perf <- performance(pred,"tpr","fpr")
 plot(perf)
 
 dat=read.table("winnowTestResults.txt", header=T)
+dat2=read.table("Syn03Winnow2.txt", header=T)
 print(str(dat))
 
 plot(dat$accuracy,dat$error)
