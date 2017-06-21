@@ -129,6 +129,24 @@ Input File: AlphaSimSpec.txt
 
 3. working on way to hover over text in thomas's shiny app to point on useful information for middle schoolers
 
+6/20
+
+1. meeting with Dr. Lotterhos
+
+2. downloaded Minotaur repo and got an idea of shinydashboard
+
+
+6/21
+
+1. finally got tp by fp to show; still not reflecting color by file correctly
+
+2. added shinythemes package with superhero look
+
+3. added image to titlepanel (UNCW)
+
+4. working on second app modified with shinydashboard
+
+
 
 
 

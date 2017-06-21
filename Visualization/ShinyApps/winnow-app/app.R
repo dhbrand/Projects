@@ -1,12 +1,13 @@
 
 library(ggplot2)
-library(plyr)
 library(Cairo)  
 library(DT)
-
+library(plyr)
+library(shinythemes)
 
 ##User must specify full path for the directory that contains Winnow Output Test Files
 dir="~/Stapleton_Lab/Projects/Visualization/Demonstrate/Winnow Results"
+
 
 readFiles <- function(dir) {
     setwd(dir)
@@ -14,8 +15,11 @@ readFiles <- function(dir) {
     listOfFiles <- lapply(files, function(x) read.table(x, header=TRUE))
     return(listOfFiles)
 }
-filenames <- unlist(tools::file_path_sans_ext(Sys.glob("*.txt")))
-myfiles<-readFiles(dir)
+myfiles<<-readFiles(dir)
+filenames <<- unlist(tools::file_path_sans_ext(Sys.glob("*.txt")))
+
+
+
 
 tpmax<-function(list){
     tps<-list()
@@ -71,64 +75,70 @@ fpmed<-function(list){
     fps<-list()
     for (i in 1:length(list)){
         fps[[i]]<-list[[i]]$fp
-    y<-unlist(lapply(fps, median))
-    return(median(y))
+        y<-unlist(lapply(fps, median))
+        return(median(y))
     }
 }
 fc<-fpmed(myfiles)
 
 all.data<-do.call("rbind", myfiles)
 
-TPFP <- ddply(all.data, .(tp, fp, file()), summarize, count=length(file))
-
+TPFP <- ddply(all.data, .(tp, fp, filenames), summarize, count=length(filenames))
 
 shinyApp(
   
   ui = fluidPage(
-    
-    titlePanel("Winnow Ouput"),
-    
+      
+      theme = shinytheme("superhero"),
+
+      titlePanel(
+          fluidRow(
+              column(9, strong("Winnow Output")), 
+              column(3, img(height = 150, width = 150, src = "spirit_black.jpg"))
+          )
+      ),
+      
     sidebarLayout(
       sidebarPanel(
         fluidRow(
           column(width=12,
                  div(class = "option_group",
                      radioButtons("plot_type", "Plot type",
-                     c("geom_point", "geom_line", "auc by mae","tp by fp"), inline = TRUE),
+                     c("Scatter", "Linear Rates", "AUC by MAE","True-Positives by False-Positives"), inline = FALSE),
                      
-                     conditionalPanel("input.plot_type === 'geom_point'",
+                     conditionalPanel("input.plot_type === 'Scatter'",
                                       selectInput("pvar1", "x-Var",
                                                   c("tp" = "tp",
                                                     "fp" = "fp"
                                                     ),
-                                                  selectize = TRUE
+                                                  selected = "tp"
                                       ),
                                       selectInput("pvar2", "y-Var",
                                                   c("tp" = "tp",
                                                     "fp" = "fp"
                                                   ),
-                                                  selectize = TRUE
+                                                  selected = "fp"
                                       )
                      ),
-                     conditionalPanel("input.plot_type === 'geom_line'",
+                     conditionalPanel("input.plot_type === 'Linear Rates'",
                                       selectInput("lvar1", "x-Var",
                                                   c("tpr" = "tpr",
                                                     "fpr" = "fpr"
                                                     ),
-                                                  selectize = FALSE
+                                                  selected = "tpr"
                                                   ),
                                       selectInput("lvar2", "y-Var",
                                                   c("tpr" = "tpr",
                                                     "fpr" = "fpr"
                                                     ),
-                                                  selectize = FALSE
+                                                  selected = "fpr"
                                                   )
                                       ),
-                     conditionalPanel("input.plot_type === 'auc by mae'",
-                                      numericInput("auc.min", "AUC axis minimum:", 0),
-                                      numericInput("auc.max", "AUC axis maximum:", 1),
-                                      numericInput("mae.min", "MAE axis minimum:", 0),
-                                      numericInput("mae.max", "MAE axis maximum:", 2)
+                     conditionalPanel("input.plot_type === 'AUC by MAE'",
+                                      sliderInput("auc.min", "AUC axis minimum", min = 0, max = 2, value = .5,step=0.05),
+                                      sliderInput("auc.max", "AUC axis maximum", min = 0, max = 2, value = 1,step=0.05),
+                                      sliderInput("mae.min", "MAE axis minimum", min = 0, max = 2, value = 0,step=0.05),
+                                      sliderInput("mae.max", "MAE axis maximum", min = 0, max = 2, value = 1,step=0.05)
                      )
                   )#ends div
                  )#ends column
@@ -164,14 +174,16 @@ shinyApp(
   
   server = function(input, output) {
     
+   
+      
     output$plot1 = renderPlot({
-      if (input$plot_type == "geom_point") {
+      if (input$plot_type == "Scatter") {
         ggplot(all.data,aes_string(x=input$pvar1,y=input$pvar2))+geom_point(color="firebrick")
-      } else if (input$plot_type == "geom_line") {
+      } else if (input$plot_type == "Linear Rates") {
         ggplot(all.data,aes_string(x=input$lvar1,y=input$lvar2))+geom_line(size = 1, alpha = 1 )+
           labs(title= "Comparison of Rates")
       }
-        else if (input$plot_type == "auc by mae"){
+        else if (input$plot_type == "AUC by MAE"){
             plot(myfiles[[1]]$mae, myfiles[[1]]$auc, main="Plot of AUC by MAE", xlab="Mean Absolute Error (MAE)", ylab="Area under R-O Curve (AUC)", 
                  pch=21, bg="black", xlim=c(input$mae.min, input$mae.max), ylim=c(input$auc.min,input$auc.max))
             plotcol<-c("black")
@@ -181,27 +193,27 @@ shinyApp(
                 #assuming that the length of the Winnow files is at least 2
                 for (i in 2:length(myfiles)){
                     points(myfiles[[i]]$mae, myfiles[[i]]$auc, main="Plot of AUC by MAE", xlab="Mean Absolute Error (MAE)", ylab="Area under R-O Curve (AUC)",
-                           pch=21, bg=rainbow(i+1)[i], xlim=c(input$mae.min, input$mae.max), ylim=c(input$auc.min,input$auc.max))
+                           pch=21, bg=rainbow(i+1)[i], xlim=c(input$mae.min, input$mae.max), ylim=c(input$auc.min, input$auc.max))
                     plotcol[i]<-rainbow(i+1)[i]
                     
                 }
              }
         }
-        else if (input$plot_type == "tp by fp"){
-        p <- ggplot(TPFP, aes(x=fp, y=tp), environment=environment())
-        
-        p2 <- p + 
-            geom_rect(data=all.data[1,], aes(xmin=fc, xmax=fa, ymin=tc, ymax=ta), 
+        else if (input$plot_type == "True-Positives by False-Positives"){
+        p <- ggplot(TPFP, aes(x=fp, y=tp),environment=environment())
+   
+        p2 <- p +
+            geom_rect(data=all.data[1,], aes(xmin=fc, xmax=fa, ymin=tc, ymax=ta),
                       alpha=0.2, fill="blue", linetype=0) +
-            geom_rect(data=all.data[1,], aes(xmin=fb, xmax=fc, ymin=tc, ymax=ta), 
+            geom_rect(data=all.data[1,], aes(xmin=fb, xmax=fc, ymin=tc, ymax=ta),
                       alpha=0.2,fill="green", linetype=0) +
-            geom_rect(data=all.data[1,], aes(xmin=fb, xmax=fc, ymin=tb, ymax=tc), 
+            geom_rect(data=all.data[1,], aes(xmin=fb, xmax=fc, ymin=tb, ymax=tc),
                       alpha=0.2, fill="blue", linetype=0) +
-            geom_rect(data=all.data[1,], aes(xmin=fc, xmax=fa, ymin=tb, ymax=tc), 
+            geom_rect(data=all.data[1,], aes(xmin=fc, xmax=fa, ymin=tb, ymax=tc),
                       alpha=0.2, fill="gray", linetype=0) +
             theme(panel.background=element_rect(fill='white', colour='black')) +
             theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) +
-            geom_point(aes(colour=file, size=count)) +
+            geom_point(aes(colour=filenames, size=count)) +
             scale_size_continuous(range=c(2,8)) +
             xlab("False Positives") +
             ylab("True Positives") +
@@ -212,11 +224,11 @@ shinyApp(
         
     })
     
-    output$meanresults = renderTable({apply(all.data[,1:4],2,mean)},rownames=TRUE,caption=paste("test"))
+    output$meanresults = renderTable({apply(all.data[,1:5],2,mean)},rownames=TRUE)
     
-    output$sumresults = renderTable(apply(all.data[,5:8],2,sum),rownames=TRUE)
+    output$sumresults = renderTable(apply(all.data[,6:9],2,sum),rownames=TRUE)
     
-    output$meanresults2 = renderTable(apply(all.data[,9:17],2,mean),rownames=TRUE)
+    output$meanresults2 = renderTable(apply(all.data[,10:16],2,mean),rownames=TRUE)
     
     
     
