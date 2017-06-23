@@ -146,6 +146,14 @@ Input File: AlphaSimSpec.txt
 
 4. working on second app modified with shinydashboard
 
+6/23
+
+1. made some changes to the kids shiny app per; noticed the tooltips are dependent to graph size...need to fix graph size
+
+2. installed testthat to evaluate my winnow shiny app
+
+3. adding a directory insert for the winnow shiny app
+
 
 
 
