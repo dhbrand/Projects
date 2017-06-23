@@ -12,5 +12,7 @@ My Project Repo for the Stapleton Lab
 	a. Shiny Apps
 	
 		i. winnow-app
+		
+		ii. kids-app
 	
 	
