@@ -1,89 +1,16 @@
-
+#install.packages(c("shinythemes", "shinyFiles"))
 library(ggplot2)
 library(Cairo)  
 library(DT)
 library(plyr)
 library(shinythemes)
-
+library(shinyFiles)
+#source("var.R")
+##shinyFilesExample()
 ##User must specify full path for the directory that contains Winnow Output Test Files
-dir="~/Stapleton_Lab/Projects/Visualization/Demonstrate/Winnow Results"
+# dir="~/Stapleton_Lab/Projects/Visualization/Demonstrate/Winnow Results"
 
 
-readFiles <- function(dir) {
-    setwd(dir)
-    files <- Sys.glob("*.txt")
-    listOfFiles <- lapply(files, function(x) read.table(x, header=TRUE))
-    return(listOfFiles)
-}
-myfiles<<-readFiles(dir)
-filenames <<- unlist(tools::file_path_sans_ext(Sys.glob("*.txt")))
-
-
-
-
-tpmax<-function(list){
-    tps<-list()
-    for (i in 1:length(list)){
-        tps[[i]]<-list[[i]]$tp
-    }
-    y<-unlist(lapply(tps, max))
-    return(max(y))
-}
-ta<-tpmax(myfiles)
-#Determines minimum value of all true positives
-tpmin<-function(list){
-    tps<-list()
-    for (i in 1:length(list)){
-        tps[[i]]<-list[[i]]$tp
-    }
-    y<-unlist(lapply(tps, min))
-    return(min(y))
-}
-tb<-tpmin(myfiles)
-#Determines median value of all true positives
-tpmed<-function(list){
-    tps<-list()
-    for (i in 1:length(list)){
-        tps[[i]]<-list[[i]]$tp
-    }
-    y<-unlist(lapply(tps, median))
-    return(median(y))
-}
-tc<-tpmed(myfiles)
-#Determines maximum value of all false positives
-fpmax<-function(list){
-    fps<-list()
-    for (i in 1:length(list)){
-        fps[[i]]<-list[[i]]$fp
-    }
-    y<-unlist(lapply(fps, max))
-    return(max(y))
-}
-fa<-fpmax(myfiles)
-#Determines minimum value of all false positives
-fpmin<-function(list){
-    fps<-list()
-    for (i in 1:length(list)){
-        fps[[i]]<-list[[i]]$fp
-    }
-    y<-unlist(lapply(fps, min))
-    return(min(y))
-}
-fb<-fpmin(myfiles)
-#Determines median value of all false positives
-fpmed<-function(list){
-    fps<-list()
-    for (i in 1:length(list)){
-        fps[[i]]<-list[[i]]$fp
-        y<-unlist(lapply(fps, median))
-        return(median(y))
-    }
-}
-fc<-fpmed(myfiles)
-
-all.data<-do.call("rbind", myfiles)
-
-TPFP <- ddply(all.data, .(tp, fp, filenames), summarize, count=length(filenames))
 
 shinyApp(
   
@@ -102,6 +29,10 @@ shinyApp(
       sidebarPanel(
         fluidRow(
           column(width=12,
+                 shinyDirButton('directory', 'Folder select', 'Please select a folder'),
+                 h3("Directory Selected"),
+                 verbatimTextOutput("dirpath"),
+                 
                  div(class = "option_group",
                      radioButtons("plot_type", "Plot type",
                      c("Scatter", "Linear Rates", "AUC by MAE","True-Positives by False-Positives"), inline = FALSE),
@@ -173,12 +104,104 @@ shinyApp(
   
   
   server = function(input, output) {
-    
-   
+      volumes = c(home = '~/Stapleton_Lab')
+      folderInput1 <- reactive({
+          shinyDirChoose(input, 'directory', roots = volumes, session = session, 
+                         restrictions = system.file(package = 'base'))
+          return(parseDirPath(volumes, input$directory))
+      })
+      
+      output$directorypath = renderPrint({  folderInput1()  })
+      
+      files1 <- reactive({
+          list.files(path = folderInput1(), pattern = "*.txt", full.names = T)
+      })
+      
+      nFiles1 <- reactive({ length(files1() ) })
+      
+     
+      # readFiles <- function(dir) {
+      #     setwd(input$dir)
+      #     files <- Sys.glob("*.txt")
+      #     listOfFiles <- lapply(files, function(x) read.table(x, header=TRUE))
+      #     return(listOfFiles)
+      # }
+      # myfiles <-readFiles(input$dir)
+      filenames <- reactive ({file_path_sans_ext(files1)})
+      
+      myfiles <- reactive({lapply(files1, function(x) read.table(x, header=TRUE))})
+      
+      tpmax<-function(list){
+          tps<-list()
+          for (i in 1:length(list)){
+              tps[[i]]<-list[[i]]$tp
+          }
+          y<-unlist(lapply(tps, max))
+          return(max(y))
+      }
+      ta<-reactive({tpmax(myfiles)})
+      #Determines minimum value of all true positives
+      tpmin<-function(list){
+          tps<-list()
+          for (i in 1:length(list)){
+              tps[[i]]<-list[[i]]$tp
+          }
+          y<-unlist(lapply(tps, min))
+          return(min(y))
+      }
+      tb<-reactive({tpmin(myfiles)})
+      #Determines median value of all true positives
+      tpmed<-function(list){
+          tps<-list()
+          for (i in 1:length(list)){
+              tps[[i]]<-list[[i]]$tp
+          }
+          y<-unlist(lapply(tps, median))
+          return(median(y))
+      }
+      tc<-reactive({tpmed(myfiles)})
+      #Determines maximum value of all false positives
+      fpmax<-function(list){
+          fps<-list()
+          for (i in 1:length(list)){
+              fps[[i]]<-list[[i]]$fp
+          }
+          y<-unlist(lapply(fps, max))
+          return(max(y))
+      }
+      fa<-reactive ({fpmax(myfiles)})
+      #Determines minimum value of all false positives
+      fpmin<-function(list){
+          fps<-list()
+          for (i in 1:length(list)){
+              fps[[i]]<-list[[i]]$fp
+          }
+          y<-unlist(lapply(fps, min))
+          return(min(y))
+      }
+      fb<-reactive({fpmin(myfiles)})
+      #Determines median value of all false positives
+      fpmed<-function(list){
+          fps<-list()
+          for (i in 1:length(list)){
+              fps[[i]]<-list[[i]]$fp
+              y<-unlist(lapply(fps, median))
+              return(median(y))
+          }
+      }
+      fc<-reactive({fpmed(myfiles)})
+      
+      
+
+
+      all.data<<-reactive ({do.call("rbind", myfiles)})
+
+      TPFP <- reactive ({ddply(all.data, .(tp, fp, filenames), summarize, count=length(filenames))})
+
       
     output$plot1 = renderPlot({
       if (input$plot_type == "Scatter") {
-        ggplot(all.data,aes_string(x=input$pvar1,y=input$pvar2))+geom_point(color="firebrick")
+        ggplot(all.data(),aes_string(x=input$pvar1,y=input$pvar2))+geom_point(color="firebrick")
       } else if (input$plot_type == "Linear Rates") {
         ggplot(all.data,aes_string(x=input$lvar1,y=input$lvar2))+geom_line(size = 1, alpha = 1 )+
           labs(title= "Comparison of Rates")
@@ -200,7 +223,7 @@ shinyApp(
              }
         }
         else if (input$plot_type == "True-Positives by False-Positives"){
-        p <- ggplot(TPFP, aes(x=fp, y=tp),environment=environment())
+        p <- ggplot(TPFP(), aes_string(x=fp, y=tp),environment=environment())
    
         p2 <- p +
             geom_rect(data=all.data[1,], aes(xmin=fc, xmax=fa, ymin=tc, ymax=ta),
@@ -224,11 +247,11 @@ shinyApp(
         
     })
     
-    output$meanresults = renderTable({apply(all.data[,1:5],2,mean)},rownames=TRUE)
+    output$meanresults = renderTable({apply(all.data()[,1:5],2,mean)},rownames=TRUE)
     
-    output$sumresults = renderTable(apply(all.data[,6:9],2,sum),rownames=TRUE)
+    output$sumresults = renderTable(apply(all.data()[,6:9],2,sum),rownames=TRUE)
     
-    output$meanresults2 = renderTable(apply(all.data[,10:16],2,mean),rownames=TRUE)
+    output$meanresults2 = renderTable(apply(all.data()[,10:16],2,mean),rownames=TRUE)
     
     
     

@@ -1,16 +1,18 @@
 library(shiny)
 library(ggplot2)
 library(reshape2)
-
+library(shinythemes)
 # Define UI for application that draws a histogram
 ui <- fluidPage(
+    
+    theme = shinytheme("paper"),
   # Application title
   titlePanel("Expectation and Variance"),
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
       #For the radio buttons, color and black/white are offered. color is noted "rb" black/white is"bw"
-      radioButtons(inputId="clr",label="Color Choices", selected = "rb",choiceNames = c("Black and White","Color"),choiceValues = c("bw","rb"))
+      radioButtons(inputId="clr",label="Color Choices", selected = "rb",choiceNames = c("Color","Black and White"),choiceValues = c("rb","bw"))
     )
     ,
     # Show a plot of the generated distribution
@@ -21,7 +23,7 @@ ui <- fluidPage(
         div(
             style = "position:relative",
             plotOutput("plt", 
-                       hover = hoverOpts("plot_hover", delay = 50, delayType = "debounce")),
+                       hover = hoverOpts("plot_hover", delay = 50, delayType = "debounce"),heigh=600,width=600),
             uiOutput("hover_info")
         ),
         width = 7,
@@ -102,7 +104,7 @@ server <- function(input, output) {
   
   output$hover_info <- renderUI({
       hover <- input$plot_hover
-      point <- nearPoints(dfaa, hover, threshold = 50, maxpoints = 5, addDist = TRUE)
+      point <- nearPoints(dfaa, hover, threshold = 100, maxpoints = 10, addDist = TRUE)
       if (nrow(point) == 0) return(NULL)
       
       # calculate point position INSIDE the image as percent of total dimensions
@@ -133,7 +135,7 @@ server <- function(input, output) {
               )))
           )
       }
-      else if (left_px>=90&top_px<=90){
+      else if (left_px>=50&top_px<=150){
           wellPanel(
               style = style,
               p(HTML(paste0("<b> Both the red square and blue</b>", "<br/>",
@@ -141,7 +143,7 @@ server <- function(input, output) {
                             "<b> tall in normal conditions. </b>", "<br/>")))
           )
       }
-      else if(left_px>=300&top_px<250){
+      else if(left_px>=300&top_px<350){
           wellPanel(
               style = style,
               p(HTML(paste0("<b> In a tough environment with stress, </b>", "<br/>",
@@ -150,7 +152,7 @@ server <- function(input, output) {
                             "<b> conditions. </b>", "<br/>")))
           )
       }
-      else if(left_px>=300&top_px>300){
+      else if(left_px>=300&top_px>425){
           wellPanel(
               style = style,
               p(HTML(paste0("<b> In a tough environment with stress, </b>", "<br/>",
