@@ -154,6 +154,18 @@ Input File: AlphaSimSpec.txt
 
 3. adding a directory insert for the winnow shiny app
 
+7/10
+
+1. Talked to Blake and Dr. S about Data Carpentry goals
+	- short term should complete Genomics lessons
+
+2. Completed Young Minds app and published to ShinyServer
+
+3. Started building my first Dockerfile following tutuorial on docs.docker.com
+	- app.py showing syntax error
+
+4. Messaged Sam Buck about help with Winnow app
+
 
 
 

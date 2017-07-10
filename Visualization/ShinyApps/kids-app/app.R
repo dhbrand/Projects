@@ -12,7 +12,7 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       #For the radio buttons, color and black/white are offered. color is noted "rb" black/white is"bw"
-      radioButtons(inputId="clr",label="Color Choices", selected = "rb",choiceNames = c("Color","Black and White"),choiceValues = c("rb","bw"))
+      radioButtons(inputId="clr",label="Color Choices", selected = "bw",choiceNames = c("Black and White","Color"),choiceValues = c("bw","rb"))
     )
     ,
     # Show a plot of the generated distribution
