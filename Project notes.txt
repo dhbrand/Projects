@@ -154,6 +154,11 @@ Input File: AlphaSimSpec.txt
 
 3. adding a directory insert for the winnow shiny app
 
+7/5
+
+1. Worked on multiple ways to update Winnow app with directory input tool
+	- second argument is a list missing operation all occurs
+
 7/10
 
 1. Talked to Blake and Dr. S about Data Carpentry goals

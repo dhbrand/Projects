@@ -1,26 +1,32 @@
+##Install the packages below if you have not already
+##install.packages(c("ggplot2","plyr","shinythemes"))
 
 library(ggplot2)
-library(Cairo)  
-library(DT)
 library(plyr)
 library(shinythemes)
 
 ##User must specify full path for the directory that contains Winnow Output Test Files
+##Change the directory in quotes below to the location where your files are stored
+##This is the only step required to run the app
+##⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇︎⬇
+
 dir="~/Stapleton_Lab/Projects/Visualization/Demonstrate/Winnow Results"
 
+##⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎⬆︎
 
-readFiles <- function(dir) {
-    setwd(dir)
-    files <- Sys.glob("*.txt")
-    listOfFiles <- lapply(files, function(x) read.table(x, header=TRUE))
-    return(listOfFiles)
-}
-myfiles<<-readFiles(dir)
-filenames <<- unlist(tools::file_path_sans_ext(Sys.glob("*.txt")))
+setwd(dir)
+##Creates a list of all files in the folder with a type of "txt"
+files <- Sys.glob("*.txt")
+##Reads all of the observations in to a list of each of the files
+lstF <- lapply(files, function(x) read.table(x, header=TRUE))
+##Merges all the files into one large dataset
+dt <- rbindlist(lstF, fill=TRUE)
+##Adds a column for the filenames
+dt[,filenm:=rep(files, sapply(lstF,nrow))]
+##Creates a new data set with just True and False Positives with filenames and number of recurring for each file
+TPFP <- ddply(dt, .(tp, fp, filenm), summarise, count=length(filenm))
 
-
-
-
+##Determines maximum value of all true positives
 tpmax<-function(list){
     tps<-list()
     for (i in 1:length(list)){
@@ -29,7 +35,7 @@ tpmax<-function(list){
     y<-unlist(lapply(tps, max))
     return(max(y))
 }
-ta<-tpmax(myfiles)
+ta<-tpmax(lstF)
 #Determines minimum value of all true positives
 tpmin<-function(list){
     tps<-list()
@@ -39,7 +45,7 @@ tpmin<-function(list){
     y<-unlist(lapply(tps, min))
     return(min(y))
 }
-tb<-tpmin(myfiles)
+tb<-tpmin(lstF)
 #Determines median value of all true positives
 tpmed<-function(list){
     tps<-list()
@@ -49,7 +55,7 @@ tpmed<-function(list){
     y<-unlist(lapply(tps, median))
     return(median(y))
 }
-tc<-tpmed(myfiles)
+tc<-tpmed(lstF)
 #Determines maximum value of all false positives
 fpmax<-function(list){
     fps<-list()
@@ -59,7 +65,7 @@ fpmax<-function(list){
     y<-unlist(lapply(fps, max))
     return(max(y))
 }
-fa<-fpmax(myfiles)
+fa<-fpmax(lstF)
 #Determines minimum value of all false positives
 fpmin<-function(list){
     fps<-list()
@@ -69,7 +75,7 @@ fpmin<-function(list){
     y<-unlist(lapply(fps, min))
     return(min(y))
 }
-fb<-fpmin(myfiles)
+fb<-fpmin(lstF)
 #Determines median value of all false positives
 fpmed<-function(list){
     fps<-list()
@@ -79,22 +85,21 @@ fpmed<-function(list){
         return(median(y))
     }
 }
-fc<-fpmed(myfiles)
+fc<-fpmed(lstF)
 
-all.data<-do.call("rbind", myfiles)
-
-TPFP <- ddply(all.data, .(tp, fp, filenames), summarize, count=length(filenames))
 
 shinyApp(
   
   ui = fluidPage(
-      
+      ##there are several themes that can be used from the shinytheme package if you want a different look
       theme = shinytheme("superhero"),
 
       titlePanel(
           fluidRow(
-              column(9, strong("Winnow Output")), 
-              column(3, img(height = 150, width = 150, src = "spirit_black.jpg"))
+              column(3, strong("Winnow Output")), 
+              column(2, img(height = 150, width = 150, src = "spirit_black.jpg")),
+              column(2, img(height = 150, width = 150, src = "nsf.jpg")),
+              column(5, img(height = 150, width = 450, src = "cyverse.jpg"))
           )
       ),
       
@@ -178,21 +183,21 @@ shinyApp(
       
     output$plot1 = renderPlot({
       if (input$plot_type == "Scatter") {
-        ggplot(all.data,aes_string(x=input$pvar1,y=input$pvar2))+geom_point(color="firebrick")
+        ggplot(dt,aes_string(x=input$pvar1,y=input$pvar2))+geom_point(color="firebrick")
       } else if (input$plot_type == "Linear Rates") {
-        ggplot(all.data,aes_string(x=input$lvar1,y=input$lvar2))+geom_line(size = 1, alpha = 1 )+
+        ggplot(dt,aes_string(x=input$lvar1,y=input$lvar2))+geom_line(size = 1, alpha = 1 )+
           labs(title= "Comparison of Rates")
       }
         else if (input$plot_type == "AUC by MAE"){
-            plot(myfiles[[1]]$mae, myfiles[[1]]$auc, main="Plot of AUC by MAE", xlab="Mean Absolute Error (MAE)", ylab="Area under R-O Curve (AUC)", 
+            plot(lstF[[1]]$mae, lstF[[1]]$auc, main="Plot of AUC by MAE", xlab="Mean Absolute Error (MAE)", ylab="Area under R-O Curve (AUC)", 
                  pch=21, bg="black", xlim=c(input$mae.min, input$mae.max), ylim=c(input$auc.min,input$auc.max))
             plotcol<-c("black")
            
-             if (length(myfiles) > 1){
+             if (length(lstF) > 1){
                 #Create overlapping data plots to compare potentially by GWAS tool
                 #assuming that the length of the Winnow files is at least 2
-                for (i in 2:length(myfiles)){
-                    points(myfiles[[i]]$mae, myfiles[[i]]$auc, main="Plot of AUC by MAE", xlab="Mean Absolute Error (MAE)", ylab="Area under R-O Curve (AUC)",
+                for (i in 2:length(lstF)){
+                    points(lstF[[i]]$mae, lstF[[i]]$auc, main="Plot of AUC by MAE", xlab="Mean Absolute Error (MAE)", ylab="Area under R-O Curve (AUC)",
                            pch=21, bg=rainbow(i+1)[i], xlim=c(input$mae.min, input$mae.max), ylim=c(input$auc.min, input$auc.max))
                     plotcol[i]<-rainbow(i+1)[i]
                     
@@ -203,17 +208,17 @@ shinyApp(
         p <- ggplot(TPFP, aes(x=fp, y=tp),environment=environment())
    
         p2 <- p +
-            geom_rect(data=all.data[1,], aes(xmin=fc, xmax=fa, ymin=tc, ymax=ta),
+            geom_rect(data=dt[1,], aes(xmin=fc, xmax=fa, ymin=tc, ymax=ta),
                       alpha=0.2, fill="blue", linetype=0) +
-            geom_rect(data=all.data[1,], aes(xmin=fb, xmax=fc, ymin=tc, ymax=ta),
+            geom_rect(data=dt[1,], aes(xmin=fb, xmax=fc, ymin=tc, ymax=ta),
                       alpha=0.2,fill="green", linetype=0) +
-            geom_rect(data=all.data[1,], aes(xmin=fb, xmax=fc, ymin=tb, ymax=tc),
+            geom_rect(data=dt[1,], aes(xmin=fb, xmax=fc, ymin=tb, ymax=tc),
                       alpha=0.2, fill="blue", linetype=0) +
-            geom_rect(data=all.data[1,], aes(xmin=fc, xmax=fa, ymin=tb, ymax=tc),
+            geom_rect(data=dt[1,], aes(xmin=fc, xmax=fa, ymin=tb, ymax=tc),
                       alpha=0.2, fill="gray", linetype=0) +
             theme(panel.background=element_rect(fill='white', colour='black')) +
             theme(panel.grid.major=element_blank(), panel.grid.minor=element_blank()) +
-            geom_point(aes(colour=filenames, size=count)) +
+            geom_point(aes(colour=filenm, size=count)) +
             scale_size_continuous(range=c(2,8)) +
             xlab("False Positives") +
             ylab("True Positives") +
@@ -224,11 +229,11 @@ shinyApp(
         
     })
     
-    output$meanresults = renderTable({apply(all.data[,1:5],2,mean)},rownames=TRUE)
+    output$meanresults = renderTable({apply(dt[,1:5],2,mean)},rownames=TRUE)
     
-    output$sumresults = renderTable(apply(all.data[,6:9],2,sum),rownames=TRUE)
+    output$sumresults = renderTable(apply(dt[,6:9],2,sum),rownames=TRUE)
     
-    output$meanresults2 = renderTable(apply(all.data[,10:16],2,mean),rownames=TRUE)
+    output$meanresults2 = renderTable(apply(dt[,10:16],2,mean),rownames=TRUE)
     
     
     
