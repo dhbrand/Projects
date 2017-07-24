@@ -13,10 +13,9 @@
 3. Login to Agave ToGo
 	a. Click the Apps tab
 	b. Click the settings gear and add new app
-	c. If you are making your first app you can use a previously existing 	publishing app as your template
+	c. If you are making your first app you can use a previously existing app as your template
 	d. The deployment path is where you are storing all the files necessary to 	run the app; You can direct to your Discovery Environment folders
 		(i.e. dhbrand/Apps/AlphaSim1.08)
-	e. The execution is the same as the one we just create. It should be 	available from the dropdown menu\
-	f. 
+	e. The execution is the same as the one we just created. It should be available from the dropdown menu
 
-4. 
+

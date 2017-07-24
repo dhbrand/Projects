@@ -1,9 +1,10 @@
 ##Install the packages below if you have not already
-##install.packages(c("ggplot2","plyr","shinythemes"))
+##install.packages(c("ggplot2","plyr","shinythemes","data.table"))
 
 library(ggplot2)
 library(plyr)
 library(shinythemes)
+library(data.table)
 
 ##User must specify full path for the directory that contains Winnow Output Test Files
 ##Change the directory in quotes below to the location where your files are stored

@@ -171,6 +171,29 @@ Input File: AlphaSimSpec.txt
 
 4. Messaged Sam Buck about help with Winnow app
 
+7/17
+
+1. Pushed Shiny Winnow app to Developing Release branch after fixing bugs with the data import
+
+2. Successfully installed Singularity and ran through a tutorial
+
+3. Wrote up steps used to create instance on TACC and create app on Agave ToGo
+	- messenged Austin Allen on how to properly document with screenshots
+
+7/21
+
+1. Created first Singularity container
+
+2. Was recommended Biocontainers by jfonner and researched various options within
+
+3. Started moving over to Stampede2
+	- Install of CLI tools for Agave
+	- Clone the Validate repo
+
+4. Trying to replicate errors in PipelineAgavePy.py
+	- Reviewing core principles of Python to help debug
+	
+
 
 
 

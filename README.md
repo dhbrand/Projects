@@ -1,9 +1,13 @@
 # Projects
 My Project Repo for the Stapleton Lab
 
-1. Validate 1.0
+1. Apps
 
-	a. AlphaSim 
+	a. Update
+	
+		i. AlphaSim 1.04 => 1.08
+	
+	b. Create
 					
 2. Data Carpentry
 
@@ -11,8 +15,8 @@ My Project Repo for the Stapleton Lab
 
 	a. Shiny Apps
 	
-		i. winnow-app
+		i. Winnow Results
 		
-		ii. kids-app
+		ii. Young Minds
 	
 	
