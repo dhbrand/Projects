@@ -17,5 +17,6 @@
 	d. The deployment path is where you are storing all the files necessary to 	run the app; You can direct to your Discovery Environment folders
 		(i.e. dhbrand/Apps/AlphaSim1.08)
 	e. The execution is the same as the one we just created. It should be available from the dropdown menu
+	
 
 
