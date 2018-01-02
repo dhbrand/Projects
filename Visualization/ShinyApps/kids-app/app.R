@@ -74,12 +74,11 @@ server <- function(input, output) {
         geom_point(data=dfaa,aes(x=ord,y=GroupA,fill="Group A"),shape=21,color="black",stroke=.2*(2+sqrt(3)),alpha=.8,size=2+sqrt(3))+
         geom_point(data=dfaa,aes(x=ord,y=GroupB,fill="Group B"),shape=22,color="black",stroke=.2*(2+sqrt(3)),alpha=.8,size=2+sqrt(3))+
         scale_fill_manual(name="", values=c("Group A"="darkblue", "Group B"="red"))+
-        labs(title="Normal vs. Stress Environments", face= "bold")+guides(fill=FALSE)+
+        labs(title="Normal vs. Stress Environments", y="Height of Plant Growth", face= "bold")+guides(fill=FALSE)+
         scale_x_continuous(expand=c(0,0), limit=lims, minor_breaks=breaks.minor, breaks=breaks.major, labels = labels.minor)+
         theme(axis.title.x=element_blank(),axis.line.x=element_blank(),
               axis.text.x=element_text(size=18, face="bold", color="black"),
               axis.ticks=element_blank(),
-              axis.title.y=element_blank(),
               panel.background = element_rect(fill = "white"),
               plot.title = element_text(size = rel(2),hjust=.5)
         )
@@ -89,13 +88,12 @@ server <- function(input, output) {
       ggplot(xlab="",ylab="") +
         geom_point(data=dfaa,aes(x=ord,y=GroupA,shape="Group A"),fill="white",color="black",stroke=.2*(2+sqrt(3)),alpha=.8,size=2+sqrt(3))+
         geom_point(data=dfaa,aes(x=ord,y=GroupB,shape="Group B"),fill="white",color="black",stroke=.2*(2+sqrt(3)),alpha=.8,size=2+sqrt(3))+
-        labs(title="Normal vs. Stress Environments", face= "bold")+
+        labs(title="Normal vs. Stress Environments", y="Height of Plant Growth", face= "bold")+
         scale_shape_manual(name='',values=c("Group A"=21,"Group B"=22))+
         scale_x_continuous(expand=c(0,0), limit=lims, minor_breaks=breaks.minor, breaks=breaks.major, labels = labels.minor)+
         theme(axis.title.x=element_blank(),axis.line=element_blank(),
               axis.text.x=element_text(size=18, face="bold", color="black"),
               axis.ticks=element_blank(),
-              axis.title.y=element_blank(),
               panel.background = element_rect(fill = "white"),
               plot.title = element_text(size = rel(2),hjust=.5),legend.title=element_blank()
         )
