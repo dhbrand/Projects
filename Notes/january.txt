@@ -1,0 +1,4 @@
+1/4
+
+1. split-apply-combine method to subset weather Data
+2. use dataset[,x:y] to subset weather columns in a loop or function

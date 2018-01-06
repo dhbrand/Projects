@@ -1,6 +1,6 @@
 
 ##import cleaned weather dataset
-dataset <- read_csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
+dataset <- read.csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
 
 ##grabbing all the different experiment IDs
 expnum <- unique(dataset$`Experiment(s)`)
@@ -22,6 +22,6 @@ soilmoist <- dataset$`Soil Moisture [%]`
 weather <- data.frame(c(temp, dew, relativehum, solarrad, rain, windspeed, winddir, windgust, soiltemp, soilmoist))
 
 ##write function to find min and max of each day for weather variables on each experiment
-
+mindaytemp <- min(dataset$Temperature..C.[dataset$Experiment.s.],rm.na=TRUE)
 mindaytemp <- sapply(dataset$temp, FUN = min)
 length(dataset$temp)
