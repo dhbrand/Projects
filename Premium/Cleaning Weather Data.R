@@ -32,12 +32,10 @@ library(DMwR)
 knnOutput <- knnImputation(df[, !names(df) %in% df[10]])  # perform knn imputation.
 anyNA(df[10])
 
-##group by experiment and day
-regrp <- dataset %>% group_by(Experiment.s.)
-group_by(dataset, Experiment.s.) %>% summarize(m = mean(dataset$Temperature..C.))
-res.plyr <- ddply( dataset, .(dataset$Experiment.s.,dataset$eachday), function(x) mean(x$temp) )
-
-
+##group by experiment and day and summarize on temperature
+grp_cols <- names(df[,c(3,7)])
+dots <- lapply(grp_cols, as.symbol)
+df1 <- df %>% group_by(.dots=dots) %>% summarise(m = mean(df$Temperature..C.,rm.na=TRUE))
 
 ##easier to call variables
 attach(dataset)

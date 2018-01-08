@@ -2,3 +2,24 @@
 
 1. split-apply-combine method to subset weather Data
 2. use dataset[,x:y] to subset weather columns in a loop or function
+
+1/8
+
+1. Worked on G2F weather dataset; subset data and accounting for missing obs
+2. worked with Austin G on benchmark tool; relayed possible changes for Premium to Silvia
+3. Looking at TACC tutorials; trying to build best practice for using R on Stampede2
+    a. start with Data Analysis with R on HPC
+        i. use names() then attach()
+        ii. update tutorials for Stampede2; old stampede1 links and pkgs that are not supported in lated R version
+        iii. are we using all of the local cores on our machines
+        iv. need to link the profiling tutorial and info on clustering to lab somehow
+        v. how to launch R in Stampede2?
+4. What are we trying to do with the known-truth simulations for Premium?
+5. understanding the way we use Bayesian Clustering and profiling
+    a. a profile is the similarities discovered between the covariates
+    b. clusters are made and randomly assigned the profiles that were discovered
+    c. many iterations of clusters are created using the discovered profiles
+    d. we use the clusters with regression to predict future covariates
+    e.
+6. need to read more about MCMC
+7. build solid routine for work
