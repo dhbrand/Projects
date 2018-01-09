@@ -226,5 +226,5 @@ Sweep: 29500
 Sweep: 30000
 > proc.time() - ptm
    user  system elapsed
-216.316   2.175 276.247
+110.075   1.171 148.557
 ```
