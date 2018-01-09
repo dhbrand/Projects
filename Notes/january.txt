@@ -23,3 +23,29 @@
     e.
 6. need to read more about MCMC
 7. build solid routine for work
+
+1/9
+
+1. Goals
+    a. Run Premium with test code on Stampede2
+    b. Complete Slurm Tutorial - Cornell
+    c. Learn about RSpark pkg
+
+2. Worked On
+    a. cornell Stampede2 tutorial
+    b. tested multicore perf on Stampede2
+    c. setup RStudio thru TACC Vis Portal for Premium
+    d. profiled how long Premium takes for simulation and on Subset_of_Final_Input data
+        using local machine and Stampede2 and compared results
+    e. reread the Stampede2 User Guide
+    f. building a test script to benchmark Premium
+    g. using SBATCH/Slurm with R
+    h. first chapter of sparkly tutorial
+    i. read first set of slides on HDFS from TACC
+    j. completed Cornell MapReduce tutorial
+
+3. General Notes
+    a. Add Cornell tutorials to Slack
+        i. Stampede2 - https://cvw.cac.cornell.edu/Environment/default
+    b. Was practicing poor citizendship using login nodes to run R
+        i. use the idev command and access a compute node

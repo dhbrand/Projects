@@ -4,7 +4,7 @@ setwd("~/Stapleton_Lab/Projects/Premium/R work/")
 library(PReMiuM)
 set.seed(1234)
 
-clusSummaryBernoulliDiscrete()$clusterSizes
+clusSummaryBernoulliDiscrete()$clusterSizes <- c(300,100,500,400,200)
 clusSummaryBernoulliDiscrete()$clusterData[[1]]
 ##why are there 3 levels for the 5 covariate probabilites
 ##$covariateProbs
@@ -15,7 +15,7 @@ clusSummaryBernoulliDiscrete()$fixedEffectsCoeffs
 clusSummaryBernoulliDiscrete()$missingDataProb
 
 
-inputs <- generateSampleDataFile(clusSummaryBernoulliDiscrete())
+inputs <- generateSampleDataFile(clusSummaryNormalDiscrete())
 head(inputs$inputData)
 
 inputs$covNames
@@ -31,13 +31,13 @@ runInfoObj<-profRegr(yModel=inputs$yModel, xModel=inputs$xModel, nSweeps=10000, 
 proc.time() - ptm
 
 
-clusterCall(cl, eval, myfunc(arg1,arg2,...))
+##clusterCall(cl, eval, myfunc(arg1,arg2,...))
 require(snow)
 
-hostnames <- rep('localhost', 4)
+hostnames <- rep('localhost', 8)
 cluster <- makeSOCKcluster(hostnames)
 
-clusterExport(cluster, list('mod'))
+##mclusterExport(cluster, list('mod'))
 
 ptm <- proc.time()
 result <- clusterCall(cluster, eval, profRegr(yModel=inputs$yModel, xModel=inputs$xModel, nSweeps=10000, nClusInit=15, nBurn=20000, 
@@ -52,3 +52,5 @@ nClustersSweep1
 
 as.numeric(strsplit(readLines("output_nMembers.txt",1)," ")[[1]])
 readLines("output_log.txt")
+
+perfcomp <- data.frame

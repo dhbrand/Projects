@@ -228,3 +228,22 @@ Sweep: 30000
    user  system elapsed
 110.075   1.171 148.557
 ```
+
+################################
+###### Using Normal Queue ######
+################################
+
+> ptm <- proc.time()
+> runInfoObj<-profRegr(yModel=inputs$yModel, xModel=inputs$xModel, nSweeps=10000, nClusInit=15, nBurn=20000,
++                      data=inputs$inputData, output="output", covNames = inputs$covName, fixedEffectsNames = inputsRandom number seed: 123452345)
+Sweep: 1
+Sweep: 500
+Sweep: 1000
+Sweep: 1500
+....
+Sweep: 29500
+Sweep: 30000
+> proc.time() - ptm
+   user  system elapsed
+ 73.378   0.736 988.047
+>
