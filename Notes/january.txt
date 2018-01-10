@@ -29,7 +29,7 @@
 1. Goals
     a. Run Premium with test code on Stampede2
     b. Complete Slurm Tutorial - Cornell
-    c. Learn about RSpark pkg
+    c. Learn about SparkR pkg
 
 2. Worked On
     a. cornell Stampede2 tutorial
@@ -49,3 +49,29 @@
         i. Stampede2 - https://cvw.cac.cornell.edu/Environment/default
     b. Was practicing poor citizendship using login nodes to run R
         i. use the idev command and access a compute node
+
+1/10
+
+1. Goals
+    a. Access G2F data on Wrangler using Spark
+    b. Use cleaned weather data and run thru Premium
+    c. Setup Spark mini-cluster
+    d. Read best practice for data transfer
+    e. iRods tutorial
+    f. CyVerse Youtube videos
+
+2. Worked On
+    a. wrangled data and submitted job for hybrids
+    b. downloaded spark and tried to run SparkR
+            i. had dependecy issues
+            ii. had to revert to older version of java
+            iii. compiled version of SparkR but only running in terminal
+    c. ran through tutorial on sparklyr
+    d. practiced moving data with icommands and agave
+
+
+
+3. General Notes
+    a. Write a report of what got done tomorrow
+    b. look up prezzie on gmo's
+    c. icommands seems easier than agave

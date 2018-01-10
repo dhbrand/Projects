@@ -6,4 +6,4 @@
 #SBATCH -A iPlant-Collabs
 #SBATCH -J test-premium
 
-R CMD BATCH --slave ./test.R output.txt
+R CMD BATCH ./test.R output.txt
