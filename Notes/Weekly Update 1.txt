@@ -1,0 +1,56 @@
+Accomplished
+
+1. Learned how the profile regression works in PReMiuM by reading scholary articles
+    i. went through manual multiple times
+    ii. worked with Austin on his benchmark tool
+    iii. extensively went through Sean's code
+2. Learned all the ways to use R in Stampede2
+    i. idev using different queues
+    ii. SBATCH
+    iii. VNC - RStudio
+3. Created first sbatch script from scratch and ran job using g2f subset weather dataset
+    i. job completed successfully but I did not put last 3 lines of code to grab the graph
+        a. resubmitted job but it timed on on the 4 hour limit I requested
+        b. resubmitted job with full code
+    ii. learned about the Remora tool for job performance
+        a. this can be used to better request accurate compute resources on future jobs
+4. Learned about SparkR and sparklyr
+    i. Found multiple docker containers for SparkR
+        a. most are for older version of pkg with many deprecated functions
+        b. discovered Kitematic gui tool for using docker containers easily
+    ii. tried to get on local system to toy with code but many issues
+        a. hadoop has many problems with latest MacOS
+        b. hive requires better understanding of mySQL
+5. Learned about using profiling tools in R
+    i. tested with basic profR tools
+    ii. tested with profvis and show Austin how to use on his benchmark tool
+6. Reread Stampede2 User Guide
+    i. finally understand how the structure of the system works
+        a. was practicing "poor citizendship" by over using login nodes without realizing it
+    ii. can find the right way to send jobs and access information
+7. Practiced using icommands and agave for data transfer
+    i. need to document and make examples
+8. Learned about MapReduce methods for distributed data
+    i. might work well with SNP data
+9. Learned best practice for .profile and .bashrc from JFonner
+    i. john fonner has been a crucial asset already
+
+Blocks
+
+1. System dependency hell on personal Mac
+    i. realized the need to use virtual envs (docker)
+2. Limited communication with Weijia and Ruizhu
+    i. would like to know if data is already on Wrangler
+3. Poor understanding of some project goals initially
+    i. to be expected with type of material and systems being used
+    ii. positive note - reduced learning curve for coming months
+
+Goals
+
+1. Use Spark on Wrangler Hadoop clsuter with G2F data and run full profile regression Analysis
+2. Write clear examples for data transfer between DataStore and TACC
+3. Need to solve issues with JSON creation for Validate to move forward
+    i. if I can't get MSuggs to fix issue will try and resolve
+4. Update Documentation for Validate
+    i. understand how .rst and ReadtheDocs works
+5. Get with new lab members and discover areas of strength and weakness

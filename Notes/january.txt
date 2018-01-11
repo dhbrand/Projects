@@ -75,3 +75,21 @@
     a. Write a report of what got done tomorrow
     b. look up prezzie on gmo's
     c. icommands seems easier than agave
+
+1/11
+
+1. Goals
+    a. create an example for students to see different data transfer options
+    b. submit hybrid job with remora
+
+2. Worked On
+    a. setup remora to run on hybrid job and track perf stats
+    b. installed Hive and setup for Spark$
+    c. setup Spark mini cluster and test with g2f dataset using SparkR
+    d. many problems getting local SparkR to work properly
+        i. hive not setup right
+        ii. hadoop not compiling native lib
+    e. using Kitematic and Docker containers for SparkR
+
+3. General Notes
+    a. create an example for transerring files between datastore and TACC

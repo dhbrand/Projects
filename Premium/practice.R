@@ -26,7 +26,7 @@ inputs$fixedEffectNames
 
 
 ptm <- proc.time()
-runInfoObj<-profRegr(yModel=inputs$yModel, xModel=inputs$xModel, nSweeps=10000, nClusInit=15, nBurn=20000, 
+runInfoObj<-profRegr(yModel=inputs$yModel, xModel=inputs$xModel, nSweeps=1000, nClusInit=15, nBurn=200, 
                      data=inputs$inputData, output="output", covNames = inputs$covName, fixedEffectsNames = inputs$fixedEffectNames, seed=12345)
 proc.time() - ptm
 
