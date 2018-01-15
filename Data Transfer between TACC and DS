@@ -1,0 +1,23 @@
+
+
+While logged into my $WORK directory on TACC I can use Agave to upload directory to my Cyverse DataStore.
+
+`files-upload -V -F AS_ex.map -S data.iplantcollaborative.org dhbrand/AlphaSim`
+```
+    -V means very Verbose output and is generally not required but included for this example
+    -F is the name of the file or directory to be uploaded
+    -S is the destination; data.iplantcollaborative.org directs to the Cyverse DataStore and from there its just username/directory
+```
+You can also see what files are listed in a directory easily.
+
+`files-list -S data.iplantcollaborative.org dhbrand/AlphaSim`
+```
+    -S is the name of the directory you are looking in on Cyverse
+```
+Transferring from TACC $WORK directory to Cyverse DataStore from my local machine
+
+`files-import -v -U agave://tacc-stampede2-dhbrand/getFiles.sh dhbrand/Validate`
+
+Transferring from Cyverse DataStore to TACC $WORK directory from my local machine
+
+`files-import -v -U dhbrand/DongWang/dongwang.ped -S tacc-stampede2-dhbrand`
