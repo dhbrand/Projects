@@ -4,9 +4,13 @@ To use Agave anytime the first step is always to refresh your token.
 
 `auth-tokens-refresh`
 
+Here's a link to the Agave Docmentation on transferring data.
+http://developer.agaveapi.co/#transfering-data
+
 While logged into my $WORK directory on TACC I can use Agave to upload a file or directory to my Cyverse DataStore.
 
 `files-upload -V -F AS_ex.map -S data.iplantcollaborative.org dhbrand/AlphaSim`
+
 ```
     -V means very Verbose output and is generally not required but included for this example
     -F is the name of the file or directory to be uploaded
@@ -58,4 +62,4 @@ Transferring from Cyverse DataStore to TACC $WORK directory from my local machin
 `files-import -v -U dhbrand/DongWang/dongwang.ped -S tacc-stampede2-dhbrand ExampleData/`
 
 You can look at the Systems you have access to and their IDs on Agave ToGo
-(https://togo.agaveapi.co/auth/#/)
+https://togo.agaveapi.co/auth/#/
