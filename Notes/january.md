@@ -1,0 +1,165 @@
+1/4
+
+1. split-apply-combine method to subset weather Data
+2. use dataset[,x:y] to subset weather columns in a loop or function
+
+1/8
+
+1. Worked on G2F weather dataset; subset data and accounting for missing obs
+2. worked with Austin G on benchmark tool; relayed possible changes for Premium to Silvia
+3. Looking at TACC tutorials; trying to build best practice for using R on Stampede2
+        a. start with Data Analysis with R on HPC
+                i. use names() then attach()
+                ii. update tutorials for Stampede2; old stampede1 links and pkgs that are not supported in lated R version
+                iii. are we using all of the local cores on our machines
+                iv. need to link the profiling tutorial and info on clustering to lab somehow
+                v. how to launch R in Stampede2?
+4. What are we trying to do with the known-truth simulations for Premium?
+5. understanding the way we use Bayesian Clustering and profiling
+        a. a profile is the similarities discovered between the covariates
+        b. clusters are made and randomly assigned the profiles that were discovered
+        c. many iterations of clusters are created using the discovered profiles
+        d. we use the clusters with regression to predict future covariates
+        e.
+6. need to read more about MCMC
+7. build solid routine for work
+
+1/9
+
+1. Goals
+        a. Run Premium with test code on Stampede2
+        b. Complete Slurm Tutorial - Cornell
+        c. Learn about SparkR pkg
+
+2. Worked On
+        a. cornell Stampede2 tutorial
+        b. tested multicore perf on Stampede2
+        c. setup RStudio thru TACC Vis Portal for Premium
+        d. profiled how long Premium takes for simulation and on Subset_of_Final_Input data
+            using local machine and Stampede2 and compared results
+        e. reread the Stampede2 User Guide
+        f. building a test script to benchmark Premium
+        g. using SBATCH/Slurm with R
+        h. first chapter of sparkly tutorial
+        i. read first set of slides on HDFS from TACC
+        j. completed Cornell MapReduce tutorial
+
+3. General Notes
+        a. Add Cornell tutorials to Slack
+                i. Stampede2 - https://cvw.cac.cornell.edu/Environment/default
+        b. Was practicing poor citizendship using login nodes to run R
+                i. use the idev command and access a compute node
+
+1/10
+
+1. Goals
+        a. Access G2F data on Wrangler using Spark
+        b. Use cleaned weather data and run thru Premium
+        c. Setup Spark mini-cluster
+        d. Read best practice for data transfer
+        e. iRods tutorial
+        f. CyVerse Youtube videos
+
+2. Worked On
+        a. wrangled data and submitted job for hybrids
+        b. downloaded spark and tried to run SparkR
+                i. had dependecy issues
+                ii. had to revert to older version of java
+                iii. compiled version of SparkR but only running in terminal
+        c. ran through tutorial on sparklyr
+        d. practiced moving data with icommands and agave
+
+
+
+3. General Notes
+        a. Write a report of what got done tomorrow
+        b. look up prezzie on gmo's
+        c. icommands seems easier than agave
+
+1/11
+
+1. Goals
+        a. create an example for students to see different data transfer options
+        b. submit hybrid job with remora
+
+2. Worked On
+        a. setup remora to run on hybrid job and track perf stats
+        b. installed Hive and setup for Spark$
+        c. setup Spark mini cluster and test with g2f dataset using SparkR
+        d. many problems getting local SparkR to work properly
+                i. hive not setup right
+                ii. hadoop not compiling native lib
+        e. using Kitematic and Docker containers for SparkR
+
+3. General Notes
+        a. create an example for transferring files between datastore and TACC
+
+1/15
+
+1. Goals
+        a. get hybrid job to complete
+                i. max number of cov in plot < 15; subset to only min/max covariates
+        b. transfer data between TACC and DS and screenshot
+        c. walk thru Validate and notate KT and confusion matrix for Caroline
+
+2. Worked On
+        a. trying different types of output in using hybrid/weather data
+                i. trying to use Poisson and understand outcomeT(offset) parameter
+        b. walking through validate 1.0 documentation step by step
+                i. testing steps for AlphaSim
+                ii. used getFilesExample.sh for practice
+        c. resubmitted job for hybrid with y-normal and no remora
+        d. need to add note in Validate readthedocs about copy and paste issues
+        e. getting stuck trying to create summary risk plot for Premium
+                i. same error every time
+
+3. General Notes
+        a. need to look at AlphaSim update to 1.08
+                i. test to make sure app works
+                ii. publish and retest
+
+1/16
+
+1. Goals
+        a. get plot from hybrid job through stampede
+        b.
+
+2. Worked On
+        a. completed safety courses - EH&S
+        b. submitted form for staff id and had ID made
+        c. worked with Colin on setting up GitHub; practice commiting and pushing
+        d. pushed data transfer tutorial
+        e. figured out why premium graph was giving error
+                i. cannot have 0 covariate values
+
+
+3. General Notes
+        a. when setting up atom you have to link it to your GitHub
+        b.
+
+1/17
+
+1. Goals
+        a. make hybrid month subsets more efficient with dplyr
+        b. make a script to batch all jobs at once
+        c. make correct files or directories ory keys for months
+        d. find number of floats to change zeros to in R
+
+2. Worked On
+        a. subset data by month
+        b. tested locally to fix bugs
+        c. tried simply subsetting of months
+                i. posted to stackoverflow
+        d. tested small nSweeps job on june subset
+        e. testing larger nSweeps job on june
+        f. figuring out how to use parametric launcher
+                i. need to copy launcher.slurm to working dir
+                ii. modify like a normal SBATCH script
+                iii. make a jobList file in working dir; should just be a list of jobs to run
+        g. added pems for MSuggs to use my Execution System for Agave;
+                i. now he can run apps I've made that aren't public
+        h. certain jobs failed with same plot issues
+                i. succesful april, may, june, july, nov, oct
+
+3. General Notes
+        a. need to make storage system on mac for Agave

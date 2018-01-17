@@ -4,7 +4,7 @@ setwd("~/Stapleton_Lab/Projects/Premium/R work/")
 library(PReMiuM)
 set.seed(1234)
 
-clusSummaryBernoulliDiscrete()$clusterSizes <- c(300,100,500,400,200)
+clusSummaryBernoulliDiscrete()$clusterSizes
 clusSummaryBernoulliDiscrete()$clusterData[[1]]
 ##why are there 3 levels for the 5 covariate probabilites
 ##$covariateProbs
@@ -30,7 +30,13 @@ runInfoObj<-profRegr(yModel=inputs$yModel, xModel=inputs$xModel, nSweeps=1000, n
                      data=inputs$inputData, output="output", covNames = inputs$covName, fixedEffectsNames = inputs$fixedEffectNames, seed=12345)
 proc.time() - ptm
 
+calcDists <- calcDissimilarityMatrix(runInfoObj)
 
+clusts <- calcOptimalClustering(calcDists,maxNClusters = 7)
+
+riskProfileOb <- calcAvgRiskAndProfile(clusts)
+
+clusterOrderObj<-plotRiskProfile(riskProfileOb,"summary.png")
 ##clusterCall(cl, eval, myfunc(arg1,arg2,...))
 require(snow)
 

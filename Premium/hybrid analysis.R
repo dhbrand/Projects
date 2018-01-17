@@ -6,6 +6,7 @@ library(PReMiuM)
 library(mice)
 
 pldat <-  read.csv("~/Stapleton_Lab/Projects/Premium/g2f_2015_hybrid_data_no_outliers.csv")
+fullweather <- read.csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
 wthdat <- read.csv("~/Stapleton_Lab/Premium/EnviroTyping_USDA/premium/G2F_Weather/monthly_weather_summary.csv/part-00000-8a6a06f9-8194-499f-9c36-42d5ddaeb204.csv")
 
 
@@ -15,18 +16,21 @@ df <- expnstat[!duplicated(expnstat$Station.ID), ]
 colnames(df) <- c("StationID","Exp")
 
 ##merge weather data
-weather <- merge(df,wthdat)
+weather <- merge(df,wthdat,by="StationID")
 
 ##split Exp into individual rows
 weather <- weather %>% mutate(Exp = strsplit(as.character(Exp), " ")) %>% unnest(Exp)
 weather <- weather[,c(1,32,2:31)]
 
+# Remove rows with missing Experiment data
+weather <- weather[ which(!weather$Exp==""),]
+
 ##subset plant data
 pldat <- pldat[,c("Field.Location","Pedigree","Grain.yield..bu.acre.")]
-colnames(pldat) <- c("Exp","Geno","Yield")
+colnames(pldat) <- c("Exp","Pedi","Yield")
 
 ##merge plant and weather data
-dat <- merge(pldat,weather)
+dat <- merge(pldat,weather,by="Exp")
 
 ##check for missing data
 md.pattern(dat)

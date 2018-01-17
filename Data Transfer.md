@@ -2,7 +2,7 @@ Agave is a great and very efficient tool for data manipulation.  Below are some 
 
 To use Agave anytime the first step is always to refresh your token.
 
-`auth-tokens-refresh`
+`auth-tokens-refresh -S`
 
 Here's a link to the Agave Docmentation on transferring data.
 http://developer.agaveapi.co/#transfering-data
