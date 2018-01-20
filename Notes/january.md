@@ -163,3 +163,26 @@
 
 3. General Notes
         a. need to make storage system on mac for Agave
+1/18
+
+1. Goals
+        a. discover error in Premium tripping NaN'a in plotRiskProfile
+        b. run some anaylsis on the inbred data
+
+2. Worked On
+        a. the output_mu.txt is completely na's and output_sigma.txt also has na's generated.
+                i. any job that has a nan's for mu or signma file will not plot summary correctly
+                ii. not sure if this affects the rest of the analysis
+        b. create monthly dataframes for inbred data
+                i. no yield values for inbred data
+        c. worked on importing gbs data
+                i. large 3 GB txt file
+                ii. had to learn some ways to clean the dataset
+                iii. read a regex tutorial that was amazing
+                iv. having troubls with the nature of lists within dataframes
+                v. trying to follow tidy data principles; all rows as observations and all varialbes as columns
+                vi. completed some tidyverse tutorials on datacamp
+
+3. General Notes
+        a. read_csv extremely faster than read.read_csv
+        b. need to figure out better ways to use apply style functions
