@@ -1,5 +1,4 @@
-#setwd("/work/04734/dhbrand/stampede2/Premium/hybrid_g2f_month")
-setwd("~/Stapleton_Lab/Projects/Premium/hybridG2Fmonth/")
+setwd("/work/04734/dhbrand/stampede2/Projects/Premium/hybridAnalysis/hybridYieldHPC")
 
 library(PReMiuM)
 library(dplyr)
@@ -36,13 +35,13 @@ system.time({
                     discreteCovs = c(names(april["Pedi"])),
                     continuousCovs = c(names(april[numericVars])),
                     data = april,
-                    nSweeps = 10,
-                    nBurn = 1)
+                    nSweeps = 1000,
+                    nBurn = 1000)
 })
 
 calcDists <- calcDissimilarityMatrix(mod)
 
-clusts <- calcOptimalClustering(calcDists,maxNClusters = 2)
+clusts <- calcOptimalClustering(calcDists,maxNClusters = 10)
 
 riskProfileOb <- calcAvgRiskAndProfile(clusts)
 
