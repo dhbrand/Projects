@@ -186,3 +186,25 @@
 3. General Notes
         a. read_csv extremely faster than read.read_csv
         b. need to figure out better ways to use apply style functions
+
+1/22
+
+1. Goals
+        a. Redo hybrid yield by month analysis
+        b. create inbred
+
+2. Worked On
+        a. met with Dr. Stapleton to discuss g2f needs
+                i. hybrid data with yield, ear height, and plant height by month
+                ii. inbred data with ear heigh and plant height by month
+        b. filtered covariates with constant variance in hybrid dataset
+        c. tested each new month with nMax = 2 clusters and nSweeps = 10 to error check
+                i. march and dec are <500 obs and do not have any non-constant continuous covariates
+        d. resubmitted stampede job for april-nov scripts at nSweeps = 1000
+        e. cleaned up Project repo for using HPC better
+        f. went through weather data with tidy data principles and subset by day
+        g. created csv for tidy inbread/weather data
+
+3. General Notes
+        a. followup with Agave in R question
+        b. followup with replicate in profile regression
