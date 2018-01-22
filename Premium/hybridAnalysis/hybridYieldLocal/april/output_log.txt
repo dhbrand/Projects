@@ -1,0 +1,94 @@
+Date and time: 2018-01-22 12:5108
+
+Data file path: output_input.txt
+
+Output file path: output
+
+Predict file path: No predictions run.
+
+Seed: 1516643468
+
+Number of sweeps: 10
+Burn in sweeps: 1
+Output filter: 1
+Proposal Type: gibbsForVActive, Acceptance Rate: 1
+Proposal Type: updateForPhiActive, Acceptance Rate: 1
+Proposal Type: gibbsForMuActive, Acceptance Rate: 1
+Proposal Type: gibbsForTauActive, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForThetaActive, Acceptance Rate: 0.564394
+Proposal Type: gibbsForU, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForAlpha, Acceptance Rate: 0.454545
+Proposal Type: gibbsForVInActive, Acceptance Rate: 1
+Proposal Type: gibbsForPhiInActive, Acceptance Rate: 1
+Proposal Type: gibbsForMuInActive, Acceptance Rate: 1
+Proposal Type: gibbsForTauInActive, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForLabels123, Acceptance Rate: 1
+Proposal Type: gibbsForThetaInActive, Acceptance Rate: 1
+Proposal Type: gibbsForSigmaSqY, Acceptance Rate: 1
+Proposal Type: gibbsForZ, Acceptance Rate: 1
+Number of subjects: 972
+Number of prediction subjects: 0
+Prediction type: RaoBlackwell
+Sampler type: SliceDependent
+Number of initial clusters: 58 (Random, Unif[50,60])
+Covariates: 
+Number of discrete covariates: 1
+Number of continuous covariates: 8
+	Pedi (categorical)
+	temp_min
+	Dewpoin_min
+	RelativeHumidity_min
+	temp_max
+	Dewpoin_max
+	Rainfall_max
+	WindSpeed_max
+	WindGust_max
+No fixed effects
+Model for Y: Normal
+Extra Y variance: False
+Include response: True
+Update alpha: True
+Compute allocation entropy: False
+Model for X: Mixed
+Variable selection: None
+
+Hyperparameters:
+shapeAlpha: 2
+rateAlpha: 1
+aPhi[j]: 1 
+mu0: 
+ 3.22862
+-3.63322
+ 17.8618
+ 31.4543
+ 22.2058
+ 16.4871
+ 11.3938
+ 17.5314
+Tau0:
+   1.68663          0          0          0          0          0          0          0
+         0  0.0275935          0          0          0          0          0          0
+         0          0 0.00301896          0          0          0          0          0
+         0          0          0   0.226757          0          0          0          0
+         0          0          0          0   0.245074          0          0          0
+         0          0          0          0          0  0.0031797          0          0
+         0          0          0          0          0          0   0.556917          0
+         0          0          0          0          0          0          0          1
+R0: 
+-8.99795e+13  2.24189e+12  5.70877e+11  1.90793e+12  5.44201e+13  2.98377e+12 -8.29811e+13  -4.7755e+12
+ 2.30735e+12  3.19302e+11  8.27484e+08 -3.65803e+11 -2.01898e+12 -2.65955e+11  3.49168e+12   8.3486e+11
+ 5.99962e+11  1.20828e+06 -4.57277e+09  5.09688e+10 -1.34178e+12  -6.3831e+10  1.71486e+12  4.47785e+11
+ 2.01531e+12 -3.81021e+11   4.8207e+10  3.59003e+12 -3.52776e+12 -2.03899e+11 -3.10253e+12 -2.63864e+11
+ 5.40259e+13  -1.9635e+12 -1.31704e+12  -3.4802e+12 -3.94183e+13 -1.24912e+12  5.97635e+13  9.49192e+12
+ 2.89713e+12  -2.6078e+11  -6.1733e+10 -2.03796e+11 -1.20119e+12  -2.2574e+10  1.69609e+12  2.81351e+11
+-8.28154e+13  3.44709e+12  1.69114e+12 -3.14036e+12  5.99898e+13  1.76665e+12 -7.70196e+13 -7.71361e+12
+-4.51121e+12  8.28896e+11  4.40381e+11 -2.79499e+11  9.32618e+12  2.81496e+11 -7.41282e+12 -6.20455e+12
+kappa0: 8
+nu0: 0.01
+muTheta: 0
+sigmaTheta: 2.5
+dofTheta: 7
+shapeSigmaSqY: 2.5
+scaleSigmaSqY: 2.5
+
+11 sweeps done in 0 seconds

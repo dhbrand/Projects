@@ -1,0 +1,102 @@
+Date and time: 2018-01-22 11:1802
+
+Data file path: output_input.txt
+
+Output file path: output
+
+Predict file path: No predictions run.
+
+Seed: 1516637882
+
+Number of sweeps: 10
+Burn in sweeps: 1
+Output filter: 1
+Proposal Type: gibbsForVActive, Acceptance Rate: 1
+Proposal Type: updateForPhiActive, Acceptance Rate: 1
+Proposal Type: gibbsForMuActive, Acceptance Rate: 1
+Proposal Type: gibbsForTauActive, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForThetaActive, Acceptance Rate: 0.576677
+Proposal Type: gibbsForU, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForAlpha, Acceptance Rate: 0.545455
+Proposal Type: gibbsForVInActive, Acceptance Rate: 1
+Proposal Type: gibbsForPhiInActive, Acceptance Rate: 1
+Proposal Type: gibbsForMuInActive, Acceptance Rate: 1
+Proposal Type: gibbsForTauInActive, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForLabels123, Acceptance Rate: 1
+Proposal Type: gibbsForThetaInActive, Acceptance Rate: 1
+Proposal Type: gibbsForSigmaSqY, Acceptance Rate: 1
+Proposal Type: gibbsForZ, Acceptance Rate: 1
+Number of subjects: 6403
+Number of prediction subjects: 0
+Prediction type: RaoBlackwell
+Sampler type: SliceDependent
+Number of initial clusters: 58 (Random, Unif[50,60])
+Covariates: 
+Number of discrete covariates: 1
+Number of continuous covariates: 10
+	Pedi (categorical)
+	temp_min
+	Dewpoin_min
+	RelativeHumidity_min
+	temp_max
+	Dewpoin_max
+	RelativeHumidity_max
+	SolarRadiation_max
+	Rainfall_max
+	WindSpeed_max
+	WindGust_max
+No fixed effects
+Model for Y: Normal
+Extra Y variance: False
+Include response: True
+Update alpha: True
+Compute allocation entropy: False
+Model for X: Mixed
+Variable selection: None
+
+Hyperparameters:
+shapeAlpha: 2
+rateAlpha: 1
+aPhi[j]: 1 
+mu0: 
+11.3731
+8.64067
+29.7033
+35.4546
+24.9617
+82.6089
+1076.88
+12.0031
+3.69814
+8.28647
+Tau0:
+ 0.00756144           0           0           0           0           0           0           0           0           0
+          0   0.0149815           0           0           0           0           0           0           0           0
+          0           0   0.0019069           0           0           0           0           0           0           0
+          0           0           0  0.00510204           0           0           0           0           0           0
+          0           0           0           0   0.0109646           0           0           0           0           0
+          0           0           0           0           0 0.000177578           0           0           0           0
+          0           0           0           0           0           0 2.37954e-05           0           0           0
+          0           0           0           0           0           0           0   0.0011323           0           0
+          0           0           0           0           0           0           0           0   0.0296447           0
+          0           0           0           0           0           0           0           0           0   0.0123457
+R0: 
+  3819.34   292.017   1534.29   2324.66  -11.2598  -62.2058  -153.393   682.567   653.574  -2129.55
+  292.017   22.5714   117.223    177.55 -0.716387  -4.75488  -11.7295   52.2093   50.2651   -163.02
+  1534.29   117.223   616.402   933.984  -4.63995  -24.9893   -61.621   274.192   262.417  -855.383
+  2324.66    177.55   933.984   1415.31  -7.23444  -37.8604  -93.3662   415.441   397.562  -1295.99
+ -11.2598 -0.716387  -4.63995  -7.23444  0.448195  0.179801  0.454805  -2.00921  -1.71677   6.13979
+ -62.2058  -4.75488  -24.9893  -37.8604  0.179801   1.01338   2.49831  -11.1167  -10.6427   34.6829
+ -153.393  -11.7295   -61.621  -93.3662  0.454805   2.49831   6.16074  -27.4137  -26.2506   85.5284
+  682.567   52.2093   274.192   415.441  -2.00921  -11.1167  -27.4137   121.988   116.832  -380.598
+  653.574   50.2651   262.417   397.562  -1.71677  -10.6427  -26.2506   116.832   112.439  -364.802
+ -2129.55   -163.02  -855.383  -1295.99   6.13979   34.6829   85.5284  -380.598  -364.802   1187.65
+kappa0: 10
+nu0: 0.01
+muTheta: 0
+sigmaTheta: 2.5
+dofTheta: 7
+shapeSigmaSqY: 2.5
+scaleSigmaSqY: 2.5
+
+11 sweeps done in 3 seconds

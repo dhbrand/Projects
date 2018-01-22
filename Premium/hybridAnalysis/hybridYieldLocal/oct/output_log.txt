@@ -1,0 +1,102 @@
+Date and time: 2018-01-22 11:2925
+
+Data file path: output_input.txt
+
+Output file path: output
+
+Predict file path: No predictions run.
+
+Seed: 1516638565
+
+Number of sweeps: 10
+Burn in sweeps: 1
+Output filter: 1
+Proposal Type: gibbsForVActive, Acceptance Rate: 1
+Proposal Type: updateForPhiActive, Acceptance Rate: 1
+Proposal Type: gibbsForMuActive, Acceptance Rate: 1
+Proposal Type: gibbsForTauActive, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForThetaActive, Acceptance Rate: 0.573257
+Proposal Type: gibbsForU, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForAlpha, Acceptance Rate: 0.818182
+Proposal Type: gibbsForVInActive, Acceptance Rate: 1
+Proposal Type: gibbsForPhiInActive, Acceptance Rate: 1
+Proposal Type: gibbsForMuInActive, Acceptance Rate: 1
+Proposal Type: gibbsForTauInActive, Acceptance Rate: 1
+Proposal Type: metropolisHastingsForLabels123, Acceptance Rate: 1
+Proposal Type: gibbsForThetaInActive, Acceptance Rate: 1
+Proposal Type: gibbsForSigmaSqY, Acceptance Rate: 1
+Proposal Type: gibbsForZ, Acceptance Rate: 1
+Number of subjects: 4933
+Number of prediction subjects: 0
+Prediction type: RaoBlackwell
+Sampler type: SliceDependent
+Number of initial clusters: 55 (Random, Unif[50,60])
+Covariates: 
+Number of discrete covariates: 1
+Number of continuous covariates: 10
+	Pedi (categorical)
+	temp_min
+	Dewpoin_min
+	RelativeHumidity_min
+	temp_max
+	Dewpoin_max
+	RelativeHumidity_max
+	SolarRadiation_max
+	Rainfall_max
+	WindSpeed_max
+	WindGust_max
+No fixed effects
+Model for Y: Normal
+Extra Y variance: False
+Include response: True
+Update alpha: True
+Compute allocation entropy: False
+Model for X: Mixed
+Variable selection: None
+
+Hyperparameters:
+shapeAlpha: 2
+rateAlpha: 1
+aPhi[j]: 1 
+mu0: 
+0.594268
+-2.92309
+ 27.2024
+ 25.4077
+ 17.5349
+ 83.6837
+ 795.926
+ 9.32863
+ 4.69979
+ 9.21675
+Tau0:
+ 0.00498739           0           0           0           0           0           0           0           0           0
+          0  0.00612263           0           0           0           0           0           0           0           0
+          0           0  0.00235649           0           0           0           0           0           0           0
+          0           0           0  0.00694444           0           0           0           0           0           0
+          0           0           0           0  0.00787322           0           0           0           0           0
+          0           0           0           0           0 0.000147036           0           0           0           0
+          0           0           0           0           0           0 5.82717e-05           0           0           0
+          0           0           0           0           0           0           0  0.00268352           0           0
+          0           0           0           0           0           0           0           0   0.0103489           0
+          0           0           0           0           0           0           0           0           0  0.00591716
+R0: 
+-1.36275e+11  8.16014e+10 -2.20951e+10  7.91777e+10 -8.68154e+10 -1.45922e+09  8.34549e+08  4.47328e+09  4.13876e+10 -3.76747e+10
+ 8.16771e+10 -5.36998e+10  1.62233e+10 -5.77394e+10  5.92418e+10  7.61858e+08 -3.18248e+08 -2.29926e+09 -1.52114e+10  6.93212e+09
+-2.21422e+10  1.62392e+10 -5.44398e+09  1.92617e+10 -1.85898e+10 -1.66975e+08  2.24269e+07  4.89328e+08  7.56823e+08  3.61213e+09
+ 7.93401e+10 -5.77927e+10  1.92607e+10 -6.81691e+10  6.60155e+10   6.0762e+08 -9.53908e+07 -1.78491e+09 -3.50445e+09 -1.16503e+10
+-8.69292e+10  5.92617e+10 -1.85782e+10  6.59782e+10 -6.62237e+10 -7.61235e+08  2.58639e+08  2.27908e+09  1.19671e+10 -4.91029e+08
+-1.45744e+09  7.59982e+08 -1.66182e+08  6.04846e+08 -7.58882e+08 -1.82583e+07  1.32058e+07  5.68238e+07  6.68356e+08 -7.71077e+08
+ 8.31676e+08 -3.16063e+08  2.16727e+07 -9.27265e+07  2.56111e+08   1.3186e+07 -1.20016e+07 -4.17978e+07 -6.16889e+08  8.24103e+08
+ 4.46725e+09 -2.29317e+09  4.86805e+08 -1.77607e+09   2.2715e+09  5.68177e+07 -4.18552e+07 -1.77063e+08 -2.12124e+09  2.48193e+09
+ 4.12361e+10 -1.50977e+10  7.17957e+08 -3.36708e+09   1.1836e+10  6.67274e+08 -6.16834e+08  -2.1181e+09 -3.17345e+10  4.27329e+10
+-3.74276e+10   6.7632e+09  3.66522e+09 -1.18388e+10 -3.02103e+08 -7.68923e+08  8.23384e+08  2.47549e+09  4.26997e+10 -6.14507e+10
+kappa0: 10
+nu0: 0.01
+muTheta: 0
+sigmaTheta: 2.5
+dofTheta: 7
+shapeSigmaSqY: 2.5
+scaleSigmaSqY: 2.5
+
+11 sweeps done in 2 seconds
