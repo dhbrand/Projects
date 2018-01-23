@@ -26,3 +26,4 @@ wth2 <- wth1 %>%
               windDirMin = min(windDir), windDirMax = max(windDir), windGustMin = min(windGust),
               windGustMax = max(windGust), soilTempMin = min(soilTemp), soilTempMax = max(soilTemp),
               soilMoistMin = min(soilMoist), soilMoistMax = max(soilMoist))
+

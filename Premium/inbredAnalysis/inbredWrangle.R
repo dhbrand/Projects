@@ -7,8 +7,10 @@ ib <- read_csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/d._
 
 # tidy the data
 ib1 <- ib %>% 
-    select(Exp = "Field-Location", Pedi = "Pedigree", Repl = Replicate, plantHt = "Plant Height [cm]", 
-              earHt = "Ear Height [cm]") %>% 
+    
+    select(Exp = "Field-Location", Pedi = "Pedigree", Repl = Replicate, Harvest = "Date Harvested",
+           plantHt = "Plant Height [cm]", earHt = "Ear Height [cm]") %>% 
+    
     arrange(Exp, Pedi, Repl)
 
 

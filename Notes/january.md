@@ -208,3 +208,22 @@
 3. General Notes
         a. followup with Agave in R question
         b. followup with replicate in profile regression
+
+1/23
+
+1. Goals
+        a. learn about hdf5 data and how to interact in R
+
+2. Worked On
+        a. redid the data for hybrids and sent to Silvia
+        b. practicing using rhdf5 bioconductor pkg on gbs data
+        c. messed with rplant pkg
+                i. want a way to read files (csv, txt, etc) directly to data dataframe
+                ii. there should be a way to modify rplant pkg code
+                iii. requires better understanding of cURL
+        d. found an reported an error in readr pkg
+        e. optmizing the way to filter constant continuous covs
+
+
+3. General Notes
+        a. TACC in maintenance today

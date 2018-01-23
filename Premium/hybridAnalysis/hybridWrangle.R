@@ -1,45 +1,30 @@
-setwd("~/Stapleton_Lab/Projects/Premium/R work/")
+library(tidyverse)
 
-library(dplyr)
-library(tidyr)
-library(PReMiuM)
-library(mice)
+setwd("~/Stapleton_Lab/Projects/Premium/hybridAnalysis/")
 
-pldat <-  read.csv("~/Stapleton_Lab/Projects/Premium/g2f_2015_hybrid_data_no_outliers.csv")
-fullweather <- read.csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
-wthdat <- read.csv("~/Stapleton_Lab/Premium/EnviroTyping_USDA/premium/G2F_Weather/monthly_weather_summary.csv/part-00000-8a6a06f9-8194-499f-9c36-42d5ddaeb204.csv")
+# read the raw data
+hyb <-  read_csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/a._2015_hybrid_phenotypic_data/g2f_2015_hybrid_data_no_outliers.csv")
 
+# tidy the data
+hyb1 <- hyb %>% 
+    
+    select(Exp = "Field-Location", Pedi = "Pedigree", Repl = Replicate, Harvest = "Date Harvested",
+           plantHt = "Plant height [cm]", earHt = "Ear height [cm]", testWt = "Test weight [lbs]",
+           plotWt = "Plot Weight [lbs]", Yield = "Grain yield [bu/acre]") %>% 
+    
+    arrange(Exp, Pedi, Repl)
 
 ##need experiment numbers for wthdat
-expnstat <- read.csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")[,2:3]
-df <- expnstat[!duplicated(expnstat$Station.ID), ]
-colnames(df) <- c("StationID","Exp")
+hybrid <- right_join(hyb1, wth2, by = "Exp") %>% 
+    
+    drop_na()
 
-##merge weather data
-weather <- merge(df,wthdat,by="StationID")
-
-##split Exp into individual rows
-weather <- weather %>% mutate(Exp = strsplit(as.character(Exp), " ")) %>% unnest(Exp)
-weather <- weather[,c(1,32,2:31)]
-
-# Remove rows with missing Experiment data
-weather <- weather[ which(!weather$Exp==""),]
-
-##subset plant data
-pldat <- pldat[,c("Field.Location","Pedigree","Grain.yield..bu.acre.")]
-colnames(pldat) <- c("Exp","Pedi","Yield")
-
-##merge plant and weather data
-dat <- merge(pldat,weather,by="Exp")
-
-##check for missing data
-md.pattern(dat)
-
-dat <- dat[complete.cases(dat), ]
-##setup input for profreg
-dat[, c(7:34)] <- sapply(dat[, c(7:34)], as.numeric)
-
+hybrid %>% 
+    select_if(function(x) any(is.na(x))) %>% 
+    summarise_all(funs(sum(is.na(.))))
 ##make csv for batch submission script
-write.csv(dat,file="hybrid.csv")
+
+write_csv(hybrid, "./hybrid.csv")
 
 
+apply(hybrid, 2, function(x) any(is.na(x)))
