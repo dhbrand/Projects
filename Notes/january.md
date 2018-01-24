@@ -227,3 +227,22 @@
 
 3. General Notes
         a. TACC in maintenance today
+
+1/24
+
+1. Goals
+        a. submit jobs for hybrid and inbred datasets
+        b. test apps in Pipeline
+        c. build a script creator function for monthly dataset
+
+2. Worked On
+        a. built a function to return covariates with variance for Premium
+        b. tested fastlmm, ridge, bayes, & puma
+                i. ridge is not working but msuggs is troubleshoot
+                ii. fastlmm gives err output; need to open ticket
+                iii. puma gives err output; need to fix wrapper and republish
+        c. working with rdooley on using Agave inside R
+                i. rlang-sdk should allow file transfer to dataframe inside R
+
+3. General Notes
+        a. tring to stand most of the day....sitting 20 min/hr

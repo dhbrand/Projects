@@ -1,0 +1,6 @@
+Rscript ./hybridTest.R  5
+Rscript ./hybridTest.R  6
+Rscript ./hybridTest.R  7
+Rscript ./hybridTest.R  8
+Rscript ./hybridTest.R  9
+Rscript ./hybridTest.R  10

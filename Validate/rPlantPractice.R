@@ -1,12 +1,16 @@
 require(rPlant)
 library(curl)
 
+library(readr)
+auth <- pipe("auth-tokens-refresh")
+con <- pipe("files-get -P -S iplant.collaborative.org dhbrand/DongWang/dongwang_fastlmmResults.csv")
+test <- open(con = auth)
 # A way to hide login details locally
 # cat("cyv.pwd=yourpassword\n", file=file.path(normalizePath("~/"), ".Renviron"), append=TRUE)
 # cat("cyv.name=dhbrand", file=file.path(normalizePath("~/"), ".Renviron"), append=TRUE)
 
 # Authenticates to API
-Validate(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"))
+Validate(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"),print.curl = TRUE)
 
 
 
