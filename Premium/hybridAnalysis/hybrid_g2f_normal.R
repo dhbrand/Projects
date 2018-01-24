@@ -1,6 +1,6 @@
 library(PReMiuM)
 library(tidyverse)
-library(readr)
+
 
 setwd("~/Stapleton_Lab/Projects/Premium/hybridAnalysis/")
 
@@ -13,10 +13,6 @@ df %>%
 
 
 # grab month for analysis
-march <- df %>% 
-    filter(Month==3)
-april <- df %>% 
-    filter(Month==4)
 may <- df %>% 
     filter(Month==5)
 june <- df %>% 
@@ -29,36 +25,25 @@ sept <- df %>%
     filter(Month==9)
 oct <- df %>% 
     filter(Month==10)
-nov <- df %>% 
-    filter(Month==11)
-# check for zero variance in continuous covariates
-zero <- which(lapply(may[10:31],var)==0,useNames = TRUE)
-slice(df, 1:n())
 
-june %>% 
+# check for zero variance in continuous covariates
+numericVars <- grep("Min|Max",names(june))
+zero <- which(lapply(june[numericVars],var)==0,useNames = TRUE)
+
+noVar <- june %>% 
     
     select(c(grep("Min",names(may)) , grep("Max",names(may)))) %>% 
     
-    summarise_all(var) %>% 
-    
-    filter_if(all, all_vars(. = 0))
+    summarise_all(var) 
 
-filter(noVar, solarMin == 0)
-unique(may$solarMin)
-    
-filter_all(noVar, any_vars(.==0))
-filter_if(noVar, ~ all(floor(.) == .), all_vars(. == 0))
 
 
 # remove constant continous variables
-drop <- names(zero)
-may <- may[ , !(names(may) %in% drop)]
-oct <- oct[ , !(names(oct) %in% drop)]
-# replace 0's with smallest value supported by current machine
-# dat[dat==0] <- .Machine$double.eps
+june <- june[ , !(names(june) %in% names(zero))]
+
 
 # limited to 15 covariates in plotRiskProfile; subsetting to only min and max weather data
-numericVars <- c(grep("Min",names(may)) , grep("Max",names(may)))
+numericVars <- grep("Min|Max",names(june))
 numericVars <- sample(numericVars,14)
 
 # created dataframes for each of the months to be run seperately
@@ -68,11 +53,11 @@ numericVars <- sample(numericVars,14)
 
 system.time({
     
-    mod <- profRegr(covNames, outcome = 'Yield', output = "./miscOutput",
+    mod <- profRegr(covNames, outcome = 'Yield', output = "./miscOutput/",
                     yModel = 'Normal', xModel = "Mixed",
-                    discreteCovs = c(names(may["Pedi"])),
-                    continuousCovs = c(names(may[numericVars])),
-                    data = may,
+                    discreteCovs = c(names(june["Pedi"])),
+                    continuousCovs = c(names(june[numericVars])),
+                    data = june,
                     nSweeps = 10,
                     nBurn = 1)
 })
