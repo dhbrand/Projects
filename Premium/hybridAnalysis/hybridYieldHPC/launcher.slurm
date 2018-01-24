@@ -14,8 +14,8 @@
 #         <------ Setup Parameters ------>
 #
 #SBATCH -J launchTest
-#SBATCH -N 10
-#SBATCH -n 10
+#SBATCH -N 8
+#SBATCH -n 8
 #SBATCH -p normal
 #SBATCH -o batchOutput/launchTest.%j
 #SBATCH -t 48:00:00
@@ -24,6 +24,6 @@
 
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
 export LAUNCHER_RMI=SLURM
-export LAUNCHER_JOB_FILE="$WORK/Projects/Premium/hybridAnalysis/hybridYieldHPC/launcherTest"
+export LAUNCHER_JOB_FILE="$WORK/Projects/Premium/hybridAnalysis/hybridYieldHPC/launcherTest2"
 
 $LAUNCHER_DIR/paramrun
