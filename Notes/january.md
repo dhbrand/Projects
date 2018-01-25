@@ -223,10 +223,6 @@
                 iii. requires better understanding of cURL
         d. found an reported an error in readr pkg
 
-
-
-
-
 3. General Notes
         a. TACC in maintenance today
 
@@ -255,3 +251,34 @@
 3. General Notes
         a. tring to stand most of the day....sitting 20 min/hr
         b. get directories to print correctly
+
+1/25
+
+1. Goals
+        a. use shell scripts to submit all jobs for inbred and hybrids
+
+2. Worked On
+        a. having trouble getting scripts to run on HPC
+                i. looks like #SBATCH -o or -e cannot have a directory in it ony file names
+                ii. did not have tidyverse package installed
+                iii. tried using idev to install tidyverse but capped out on 30 min window
+                iv. made an R script and shell script to install tidyverse
+        b. making an app to git pull projects repo on stampede2 using Agave
+        c. making an app to run launcher jobs using jobs-submit
+                i. need to make a json
+                ii. having trouble resolving app assets
+        d. tidyverse will not install on normal queue
+                i. trying just dplyr thru idev
+        e. dplyr installed thru login node
+                i. need to find out if this is bad citizendship
+        f. finally figured out why directories wouldnt create from commandArgs
+                i. needed to resolve as.integer
+        g. tested the pipeline
+                i. appears that winnow json creates but agave does not authorize job
+                i. gemma json is not creating correctly
+
+3. General Notes
+        a. need to be more clear about data shared
+                i. original hybrid.csv was not polished
+                ii. need to read about app assets
+                
