@@ -1,6 +1,9 @@
-Rscript ../hybridTest.R  5
-Rscript ../hybridTest.R  6
-Rscript ../hybridTest.R  7
-Rscript ../hybridTest.R  8
-Rscript ../hybridTest.R  9
-Rscript ../hybridTest.R  10
+# this file is a list of all the R scripts that I want to run
+# I directed the LAUNCHER_JOB_FILE to this for using the launcher module
+
+Rscript ./launcherFunc.R  5
+Rscript ./launcherFunc.R  6
+Rscript ./launcherFunc.R  7
+Rscript ./launcherFunc.R  8
+Rscript ./launcherFunc.R  9
+Rscript ./launcherFunc.R  10

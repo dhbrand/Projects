@@ -13,11 +13,11 @@
 #
 #         <------ Setup Parameters ------>
 #
-#SBATCH -J launchTest
+#SBATCH -J hybrid
 #SBATCH -N 8
 #SBATCH -n 8
 #SBATCH -p normal
-#SBATCH -o batchOutput/launchTest.%j
+#SBATCH -o $WORK/Projects/Premium/hybridAnalysis/hybridYieldHPC/batchOutput/job.%j
 #SBATCH -t 48:00:00
 #SBATCH -A Envriotype
 #------------------------------------------------------

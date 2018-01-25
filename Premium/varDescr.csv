@@ -1,0 +1,53 @@
+﻿Exp ,"G2F field-location name. One experiment planted per location except Aurora, NY and Columbia, MO, which had location except Aurora, NY and Columbia, MO, which had 2 experiments.  Experiments in Ames, IA (IAH1) randomized as three sub-experiments (designated IAH1a, IAH1b, and IAH1c). Experiment(s) associated with the weather station"
+,
+Pedi,Pedigree or name of the hybrid.  Commercial hybrid name in the case of local checks (if provided by investigators).
+,
+Repl,Replicate block (2 blocks per experiment).
+,
+Harvest,Date the plot was harvested.
+,
+plantHt,Measured as the distance between the base of a plant and the ligule of the flag leaf.
+,
+earHt,Measured as the distance from the ground to the primary ear bearing node.
+,
+testWt,Shelled grain weight per bushel. [lbs/bu]
+,
+plotWt,Shelled grain weight per plot. [lbs] 
+,
+Yield,Grain yield in bushels per acre at 15.5% grain moisture assuming 56lbs per bushel and using plot area without alley.
+,
+Year ,Year measurement was taken in local time
+,
+Month,Month of year measurement was taken in local time
+,
+Day,Day of month measurement was taken in local time
+,
+tempMin,Temperature in degrees Celsius
+tempMax,
+,
+dewMin,Dew point temperature in degrees Celsius
+dewMax,
+,
+humidMin,Relative humidity as a percentage
+humidMax,
+,
+solarMin,Incoming solar radiation in Watts per square meter
+solarMax,
+,
+rainMin,Rainfall in millimeters
+rainMax,
+,
+windSpdMin, Wind speed in meters per second
+windSpdMax,
+,
+windDirMin,Wind direction in degrees
+windDirMax,
+,
+windGustMin,Largest wind speed over 30-minute period in meters per second
+windGustMax,
+,
+soilTempMin,Soil temperature in degrees Celsius
+soilTempMax,
+,
+soilMoistMin,Soil moisture as a percentage
+soilMoistMax,

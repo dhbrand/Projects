@@ -3,8 +3,9 @@
 library(swagger)
 
 
-FilesApi$new(apiClient = apiClient)
-
+FilesApi$new(apiClient = ApiClient)
 
 
 download_file_item("iplant.collaborative.org", "dhbrand/ExampleData/kt.ote")
+
+ApiClient$new()
