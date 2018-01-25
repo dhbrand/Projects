@@ -1,0 +1,13 @@
+{
+"jobName": "launcherEx",
+"softwareName": "launcherApp-0.1.0",
+"requestedTime": "02:00:00",
+"archive": true,
+    "inputs":{
+        "filename": "agave://data.iplantcollaborative.org/dhbrand/my_apps/launcherApp/test/launcher.slurm"
+
+    },
+    "parameters":{
+        "folder": "$WORK/Projects/launcherApp/test"
+    }
+}

@@ -1,7 +1,9 @@
 #!/bin/bash
 
-filename=${Filename}
+folder=${folder}
 
-cd $WORK/Projects/launcherApp
+filename=${filename}
+
+cd $folder
 
 sbatch $filename

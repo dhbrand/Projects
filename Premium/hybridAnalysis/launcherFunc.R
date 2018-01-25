@@ -1,10 +1,12 @@
 library(PReMiuM)
-library(tidyverse)
+library(dplyr)
+library(readr)
 
-setwd("/work/04734/dhbrand/stampede2/Projects/Premium/hybridAnalysis/hybridYieldHPC")
+# setwd("/work/04734/dhbrand/stampede2/Projects/Premium/hybridAnalysis/hybridYieldHPC")
+setwd("~/Stapleton_Lab/Projects/Premium/hybridAnalysis/")
 
 # read in data from analysis script
-df <- read_csv("../hybrid.csv")
+df <- read_csv("./hybrid.csv")
 
 # grabs the args from the command
 args <- commandArgs()
@@ -37,13 +39,13 @@ g <- function(y){
                             discreteCovs = "Pedi",
                             continuousCovs = numericVars,
                             data = temp,
-                            nSweeps = 1000,
-                            nBurn = 1000)
+                            nSweeps = 5,
+                            nBurn = 1)
 
 
             calcDists <- calcDissimilarityMatrix(mod)
 
-            clusts <- calcOptimalClustering(calcDists,maxNClusters = 10)
+            clusts <- calcOptimalClustering(calcDists,maxNClusters = 2)
 
             riskProfileOb <- calcAvgRiskAndProfile(clusts)
 
