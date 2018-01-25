@@ -17,7 +17,6 @@
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -p normal
-#SBATCH -o $WORK/Projects/Premium/hybridAnalysis/hybridYieldHPC/batchOutput/job.%j
 #SBATCH -t 2:00:00
 #SBATCH -A Envriotype
 #------------------------------------------------------
