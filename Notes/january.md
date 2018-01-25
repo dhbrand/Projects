@@ -222,7 +222,9 @@
                 ii. there should be a way to modify rplant pkg code
                 iii. requires better understanding of cURL
         d. found an reported an error in readr pkg
-        e. optmizing the way to filter constant continuous covs
+
+
+
 
 
 3. General Notes
@@ -243,6 +245,13 @@
                 iii. puma gives err output; need to fix wrapper and republish
         c. working with rdooley on using Agave inside R
                 i. rlang-sdk should allow file transfer to dataframe inside R
+        d. optmizing the way to filter constant continuous covs
+        e. tested passing command arguments to R scripts
+        f. turned profreg by month into single function
+                i. easily edit the laucher file for changes to hybrid jobs
+                ii.  will be able to subin inbreds changing 1 line
+
 
 3. General Notes
         a. tring to stand most of the day....sitting 20 min/hr
+        b. get directories to print correctly
