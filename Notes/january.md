@@ -256,7 +256,6 @@
 
 1.  Goals
     a. use shell scripts to submit all jobs for inbred and hybrids
-
 2.  Worked On
     a.  having trouble getting scripts to run on HPC
         i. looks like #SBATCH -o or -e cannot have a directory in it only file names
@@ -275,9 +274,8 @@
         i. needed to resolve as.integer
     g.  tested the pipeline
         i. appears that winnow json creates but agave does not authorize job
-        i. gemma json is not creating correctly
-
-3.      General Notes
-        a.  need to be more clear about data shared
-            i. original hybrid.csv was not polished
-            ii. need to read about app assets
+        ii. gemma json is not creating correctly
+3.  General Notes
+    a.  need to be more clear about data shared
+        i. original hybrid.csv was not polished
+        ii. need to read about app assets
