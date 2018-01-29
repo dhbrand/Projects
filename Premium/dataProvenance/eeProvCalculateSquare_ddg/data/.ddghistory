@@ -1,0 +1,512 @@
+lm(y~x)
+abline(lm(y~x), col="blue")
+##4.14
+yj=c(104.3,158.7,193.7,201.3,206.2,227.8,249.1,307.8,311.5,329.6,358.5,364.3,370.4,380.5,394.6,426.2,434.1,552.6,594.0,691.5)
+y=log10(yj)
+y<-sort(y); n<-length(y);
+p=1-ppoints(y)
+x=log10(-log(p))
+plot(x, y)
+lm(y~x)
+abline(lm(y~x), col="blue")
+beta=10^2.5840
+beta=10^2.5840;beta
+alpha=1/0.3715;alpha
+s300=dweibull(10*300,shape=alpha,scale=beta);s300
+s300=dweibull(log10(300),shape=alpha,scale=beta);s300
+log10(300)
+s300=dweibull(10**300,shape=alpha,scale=beta);s300
+s300=dweibull(10^300,shape=alpha,scale=beta);s300
+s300=dweibull(300,shape=alpha,scale=beta);s300
+.03*.05
+.95*.97
+.95+.97
+.9215+.0015
+1.92^2-4*.923
+1.92^2-4*.92
+.95*.97
++.0015
+sqrt(.0067)
+1.92-.08
+1.84/2
+sqrt(.271*(1-.271)/69)
+0.7477/0.7753
+#6.7
+N = (36,37,38,38,78,111,112,114,162,189,198,237,489)
+D = (1 1,1,0,1,1,1,0,1,1,1,1,0)
+n = length(N);n
+#6.7
+N = (36,37,38,38,78,111,112,114,162,189,198,237,489)
+#6.7
+N = c(36,37,38,38,78,111,112,114,162,189,198,237,489)
+D = c(1 1,1,0,1,1,1,0,1,1,1,1,0)
+n = length(N);n
+## Third method to read in the dataset from online ##
+data=read.csv("http://people.uncw.edu/chenc/STT520_420/dataset/Eg5_6.csv", header = TRUE, sep = ",", quote="\"", dec=".", fill = TRUE);
+## Assign varaibles to the dataset
+(D=data[,1]); ## deaths
+(W=data[,2]); ## censored/withdraws/loss of follow-ups
+(N=data[,3]);  ## risk
+print(cbind(N,D,W));
+## since W10=NA, we reassign its value as 0.
+W[10]=0;
+## Effective number at risk in j-th interval; use of () here is to print output directly.
+(N.eff=N-0.5*W);
+## Actuary estimate of P_j ##
+(P=1-D/N.eff);
+(Q=1-P);
+n=length(N);
+S=rep(n, 0)
+for (j in 1:n)
+{
+S[j]=prod(P[1:j]);
+}
+print(cbind(N, N.eff, D, W, Q, P, S));
+N = c(13:1);N
+N.eff=N-0.5*W;N.eff
+#6.7
+N = c(4,1,3,4,1)
+D = c(3,1,2,4,0)
+W = c(1,0,1,0,1)
+n = sum(N)
+N.eff=N-0.5*W;N.eff
+P=1-D/N.eff
+P=1-D/N.eff;P
+Q=1-P;Q
+S=rep(n, 0)
+for (j in 1:n)
+{
+S[j]=prod(P[1:j]);
+}
+print(cbind(N, N.eff, D, W, Q, P, S));
+S=rep(n, 0)
+for (j in 1:5)
+{
+S[j]=prod(P[1:j]);
+}
+print(cbind(N, N.eff, D, W, Q, P, S));
+log(12)
+#6.19
+a = c(1.151,1.171,1.248,1.331,1.381,1.508,1.534,1.577,1.584,1.955,2.012,2.051,2.076,2.116,2.119,2.199,2.250,2.261,2.349,2.738)
+b = c(1.499,1.667,1.695,1.710,1.965,2.109,2.135,2.197,2.227,2.254,2.369,2.547,2.548,2.794,2.910,3.015,3.017)
+qqplot(a,b)
+qqplot(a,b,distribution="log-normal")
+qqplot(a,"log-normal")
+qqplot(a,b,distribution="lnorm")
+abline(0,1)
+title="Censored QQ-plot for Failure mode A and B following log-normal distribution"
+qqplot(a,b,distribution="lnorm",title="Censored QQ-plot for Failure mode A and B following log-normal distribution",xlab="Censored data from Failure mode A",ylab="Censored data from Failure mode B")
+qqplot(a,b,distribution="lnorm",main="Censored QQ-plot for Failure mode A and B following log-normal distribution",xlab="Censored data from Failure mode A",ylab="Censored data from Failure mode B")
+a = c(59,72,76,113,117,124,145,149,153,182,320)
+a/3
+sum(a)/3
+y = c(2,4,14,24,27,33,51)
+sum(y)/3
+b = sum(y)/3
+se = b/sqrt(3)
+#Ex 7.2
+y = c(8,14,23,32,46,57,69,88,109)
+b = sum(y)/3
+se = b/sqrt(3)
+#Ex 7.1
+z = c(2,4,14,24,27,33,51)
+b = mean(z);b
+se = b/sqrt(length(z));se
+CI = c(b-2*sqrt(se),b+2*sqrt(se));CI
+x <- seq(-5,5,length=100)
+y <- x
+fun <- function(x,y)
+{
+return(x**2+y**2-2*x*y)
+}
+z <- outer(x,y,fun)
+persp(x,y,z,theta=30,phi=30,expand=0.5,col="lightgreen",ltheta=100,xlab="x",ticktype="detailed",ylab="y",zlab="z")
+install.packages("PReMiuM")
+install.packages("~/Stapleton_Lab/PReMiuM-R-package/PReMiuM_3.1.7.tar.gz", repos = NULL, type = "source")
+install.packages("installr")
+#install.packages("xlsx")
+library(xlsx)
+library(rJava)
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+library(rJava)
+#install.packages("xlsx")
+library(xlsx)
+library(rJava)
+library(xlsx)
+library(rJava)
+##write function to find min and max of each day for weather variables on each experiment
+mindaytemp <- min(dataset[expnum,temp])
+##import cleaned weather dataset
+dataset <- read_csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
+##grabbing all the different experiment IDs
+expnum <- unique(dataset$`Experiment(s)`)
+##import cleaned weather dataset
+dataset <- read_csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
+library(utils)
+##import cleaned weather dataset
+dataset <- read_csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
+##import cleaned weather dataset
+dataset <- read.csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
+##grabbing all the different experiment IDs
+expnum <- unique(dataset$`Experiment(s)`)
+##cleaning variable names
+temp <- dataset$`Temperature [C]`
+dew <- dataset$`Dew Point [C]`
+##write function to find min and max of each day for weather variables on each experiment
+mindaytemp <- min(dataset[expnum,temp])
+##write function to find min and max of each day for weather variables on each experiment
+mindaytemp <- min(dataset$Temperature..C.[expnum])
+##write function to find min and max of each day for weather variables on each experiment
+mindaytemp <- min(dataset$Temperature..C.[expnum],rm.na=TRUE)
+##write function to find min and max of each day for weather variables on each experiment
+mindaytemp <- min(dataset$Temperature..C.[dataset$Experiment.s.],rm.na=TRUE)
+library(dplyr)
+##import cleaned weather dataset
+dataset <- read.csv("~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv")
+View(dataset)
+##group by experiment and day
+regrp <- dataset %>% group_by(dataset%Experiment.s.,dataset$Day.of.Year)
+##group by experiment and day
+regrp <- dataset %>% group_by_at(dataset%Experiment.s.,dataset$Day.of.Year)
+##grabbing all the different experiment IDs
+dataset$expnum <- unique(dataset$`Experiment(s)`)
+##cleaning variable names
+dataset$expnum <- dataset$`Experiment(s)`
+dataset$eachday <- dataset$Day.of.Year
+##group by experiment and day
+regrp <- dataset %>% group_by_at(expnum,eachday)
+##grabbing all the different experiment IDs
+dataset$expnum <- unique(dataset$`Experiment(s)`)
+##cleaning variable names
+dataset$expnum <- dataset$`Experiment(s)`
+##group by experiment and day
+regrp <- dataset %>% group_by_at(expnum,eachday)
+##group by experiment and day
+regrp <- dataset %>% group_by(Experiment.s.)
+View(regrp)
+group_by(dataset, Experiment.s.) %>% summarize(m = mean(dataset$Temperature..C.))
+library(plyr)
+dataset$temp <- dataset$`Temperature [C]`
+res.plyr <- ddply( dataset, .(dataset$Experiment.s.), function(x) mean(x$temp) )
+View(res.plyr)
+res.plyr <- ddply( dataset, .(dataset$Experiment.s.,dataset$eachday), function(x) mean(x$temp) )
+use warnings()
+warnings()
+View(dataset)
+res.plyr <- ddply( dataset, .(dataset$Experiment.s.,dataset$eachday), function(x) mean(x$as.numeric(temp) )
+res.plyr <- ddply( dataset, .(dataset$Experiment.s.,dataset$eachday), function(x) mean(x$as.numeric(temp))
+dataset$temp <- as.numeric(dataset$`Temperature [C]`)
+res.plyr <- ddply( dataset, .(dataset$Experiment.s.,dataset$eachday), function(x) mean(x$temp) )
+dataset$temp <- as.numeric(dataset$`Temperature [C]`)
+typeof(dataset$Temperature..C.)
+dataset$temp <- as.numeric(as.character(dataset$`Temperature [C]`))
+attach(dataset)
+dataset$temp <- dataset$`Temperature [C]`
+##easier to call variables
+attach(dataset)
+mean(temp)
+dataset$temp <- dataset$`Temperature [C]`
+##easier to call variables
+attach(dataset)
+mean(temp)
+dataset$tempr <- dataset$`Temperature [C]`
+mean(dataset$Temperature..C.)
+mean(dataset$Temperature..C.,rm.na=TRUE)
+##http://opiateforthemass.es/articles/six-lines-to-install-and-start-sparkr-on-mac-os-x-yosemite/
+library(SparkR)
+install.packages(SparkR)
+install.packages("SparkR")
+install.packages("SparkR")
+install.packages("SparkR")
+library(sparklyr)
+install.packages("sparklyr")
+install.packages("sparklyr")
+library(sparklyr)
+spark_install(version = "2.1.0")
+devtools::install_github("rstudio/sparklyr")
+install.packages("devtools")
+devtools::install_github("rstudio/sparklyr")
+library(sparklyr)
+sc <- spark_connect(master = "local")
+options(sparklyr.java9 = TRUE)
+sc <- spark_connect(master = "local")
+#install.packages("sparklyr")
+#library(sparklyr)
+#spark_install(version = "2.1.0")
+#install.packages("devtools")
+#devtools::install_github("rstudio/sparklyr")
+library(sparklyr)
+sc <- spark_connect(master = "local")
+Sys.getenv("JAVA_HOME")
+#install.packages("sparklyr")
+#library(sparklyr)
+#spark_install(version = "2.1.0")
+#install.packages("devtools")
+#devtools::install_github("rstudio/sparklyr")
+library(sparklyr)
+#options(sparklyr.java9 = TRUE)
+sc <- spark_connect(master = "local")
+library(rJava)
+Sys.setenv(JAVA_HOME='/usr/libexec/java_home -v 1.8.0_151')
+#options(sparklyr.java9 = TRUE)
+sc <- spark_connect(master = "local")
+Sys.setenv(JAVA_HOME)
+#options(sparklyr.java9 = TRUE)
+sc <- spark_connect(master = "local")
+#install.packages("sparklyr")
+#library(sparklyr)
+#spark_install(version = "2.1.0")
+#install.packages("devtools")
+#devtools::install_github("rstudio/sparklyr")
+library(sparklyr)
+sc <- spark_connect(master = "local")
+Sys.getenv(JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home')
+sc <- spark_connect(master = "local")
+#install.packages("sparklyr")
+#library(sparklyr)
+#spark_install(version = "2.1.0")
+#install.packages("devtools")
+#devtools::install_github("rstudio/sparklyr")
+library(sparklyr)
+sc <- spark_connect(master = "local")
+install.packages(c("nycflights13","Lahman"))
+library(dplyr)
+iris_tbl <- copy_to(sc,iris)
+flights_tbl <- copy_to(sc,nycflights13::flights, "flights")
+batting_tbl <- copy_to(sc, Lahman::Batting, "batting")
+src_tbls(sc)
+flights_tbl %>$ filter(dep_delay == 2)
+flights_tbl %>% filter(dep_delay == 2)
+delay <- flights_tbl %>%
+group_by(tailnum) %>%
+summarise(count = n(), dist = mean(distance), delay = mean(arr_delay)) %>%
+filter(count > 20, dist < 2000, !is.na(delay)) %>%
+collect
+library(ggplot2)
+ggplot(delay, aes(dist, delay)) +
+geom_point(aes(size = count), alpha = 1/2) +
+geom_smooth() +
+scale_size_area(max_size = 2)
+library(DBI)
+iris_preview <- dbGetQuery(sc, "SELECT * FROM iris LIMIT 10")
+iris_preview
+library(rJava)
+.jinit()
+.jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
+remove.packages("rJava")
+.libPaths()
+Sys.setenv(JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre")
+library(rJava)
+.jinit()
+.jcall("java/lang/System", "S", "getProperty", "java.runtime.version")
+if (nchar(Sys.getenv("SPARK_HOME")) < 1) {
+Sys.setenv(SPARK_HOME = "/home/spark")
+}
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
+sparkR.session(master = "local[*]", sparkConfig = list(spark.driver.memory = "2g"))
+if (nchar(Sys.getenv("SPARK_HOME")) < 1) {
+Sys.setenv(SPARK_HOME = "/usr/local/Cellar/apache-spark/2.2.1")
+}
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "libexec")))
+Sys.setenv(SPARK_HOME = "/usr/local/Cellar/apache-spark/2.2.1/libexec")
+if (nchar(Sys.getenv("SPARK_HOME")) < 1) {
+Sys.setenv(SPARK_HOME = "/usr/local/Cellar/apache-spark/2.2.1/libexec")
+}
+library(SparkR, lib.loc = c(file.path(Sys.getenv("SPARK_HOME"), "R", "lib")))
+sparkR.session(master = "local[*]", sparkConfig = list(spark.driver.memory = "2g"))
+sparkR.session()
+(Sys.getenv("SPARK_HOME")
+Sys.getenv("SPARK_HOME")
+library(rhdf5)
+h5f <- H5Fopen("~/Stapleton_Lab/Downloads/b._2014_gbs_data/g2f_2014_zeagbsv27.imp.h5")
+h5f
+h5f$Genotypes
+h5f
+h5f&'Genotypes'
+geno <- h5f$Genotypes
+geno1 <- h5f&'Genotypes'
+h5f$"/Genotypes/CML442-B"
+h5readAttributes(h5f)
+h5readAttributes(file = "~/Stapleton_Lab/Downloads/b._2014_gbs_data/g2f_2014_zeagbsv27.imp.h5")
+h5f
+h5f$Positions
+h5f$Taxa
+h5f
+h5f%_DATA_TYPES_
+h5f$_DATA_TYPES_
+h5f$__DATA_TYPES__
+library(rPlant)
+?rPlant
+ListApps()
+ListDir(dir.name = "/iplant/home/shared/commons_repo/curated/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data")
+rplant.env$api
+rplant.env
+rPlant::Renew()
+require(rPlant)
+Validate(user.name,user.pwd)
+user.name <- "dhbrand"
+user.pwd <- "Engaged1001"
+Validate(user.name,user.pwd)
+ListDir(dir.name="", suppress.Warnings=TRUE)
+ListDir(dir.name="/iplant/home/shared/commons_repo/curated/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/g2f_2015_weather_clean.csv", suppress.Warnings=TRUE)
+ListDir(dir.name="/iplant/home/shared/commons_repo/curated/Carolyn_Lawrence_Dill_G2F_Mar_2017/c._2015_weather_data/", suppress.Warnings=TRUE)
+ListDir(dir.name="/iplant/home/shared/commons_repo/", suppress.Warnings=TRUE)
+ListDir(dir.name="shared/commons_repo/", suppress.Warnings=TRUE)
+ListDir(dir.name="/shared/commons_repo/", suppress.Warnings=TRUE)
+ListApps(description=TRUE)
+GetJobHistory()
+ListDir(dir.name="commons_repo/", shared.username = "Community Data")
+ListDir(dir.name="", shared.username = "Community Data")
+ListDir(dir.name="", shared.username = "mjs3607")
+ListDir(dir.name="", shared.username = "shared")
+ListDir(dir.name="commons_repo/curated/Carolyn_Lawrence_Dill_G2F_Mar_2017/d._2015_inbred_phenotypic_data", shared.username = "shared")
+source("~/Stapleton_Lab/login.R")
+cat("user.pwd=Engaged1001\n",
+file=file.path(normalizePath("~/"), ".Renviron"),
+append=TRUE)
+cat("cyv.pwd=Engaged1001\n",
+file=file.path(normalizePath("~/"), ".Renviron"),
+append=TRUE)
+require(rPlant)
+Sys.getenv("cyv.pwd")
+Validate(user.name,cyv.pwd)
+require(rPlant)
+source("~/Stapleton_Lab/login.R")
+Validate(user.name,user.pwd)
+Sys.getenv("cyv.pwd")
+sink(Sys.getenv("cyv.pwd"))
+require(rPlant)
+cat("cyv.name=dhbrand\n",
+file=file.path(normalizePath("~/"), ".Renviron"),
+append=TRUE)
+sink(Sys.getenv(c("cyv.pwd","cyv.name")))
+sink(Sys.getenv("cyv.pwd"))
+Validate(dhbrand,cyv.pwd)
+sink(Sys.getenv("cyv.name"))
+cat("cyv.name=dhbrand\n",
+file=file.path(normalizePath("~/"), ".Renviron"),
+append=FALSE)
+sink(Sys.getenv("cyv.name"))
+cat("cyv.name=dhbrand",
+file=file.path(normalizePath("~/"), ".Renviron"),
+append=TRUE)
+sink(Sys.getenv("cyv.name"))
+Validate(user.name = dhbrand,cyv.pwd)
+Validate(user.name = "dhbrand", cyv.pwd)
+user.name = "dhbrand"
+Validate(user = dhbrand, cyv.pwd)
+Validate(user = "dhbrand", cyv.pwd)
+cyv.pwd
+sink(Sys.getenv("cyv.pwd"))
+sink(Sys.getenv("cyv.pwd"))
+cyv.pwd
+Sys.getenv("cyv.pwd")
+Validate(user = "dhbrand", cyv.pwd)
+cyv.pwd
+require(rPlant)
+Sys.getenv("cyv.pwd")
+cat("cyv.pwd=Engaged1001\n",
+file=file.path(normalizePath("~/"), ".Renviron"),
+append=TRUE)
+Sys.getenv("cyv.pwd")
+Sys.getenv("cyv.pwd")
+Sys.getenv("cyv.pwd")
+Sys.getenv("cyv.name")
+Validate(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"))
+require(rPlant)
+Validate(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"))
+#
+Validate(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"))
+require(rPlant)
+Renew()
+Create_Keys <- function(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"), print.curl=FALSE)
+Create_Keys(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"), print.curl=FALSE)
+Create_Keys <- function(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"), print.curl=FALSE) {
+# Calls the Agave API, if the user already has a key and secret for rPlant,
+#   then it fetches them, o/w it creates the keys, and subscribes to the
+#   correct API's.  This key and secret are required for Validation, all
+#   of this is in the background.
+#
+# Args:
+#   user: Valid iPlant username
+#   pwd: Valid iPlant password, this combo's with the iPlant username
+#
+# Returns:
+#   If invalid credentials an error is shown, o/w it returns the rPlant
+#     key and secret associated with the username and password.
+web <- "https://agave.iplantc.org/clients/v2"
+curl.call <- getCurlHandle(userpwd        = paste(user, pwd, sep=":"),
+httpauth       = 1L,
+ssl.verifypeer = FALSE)
+client <- MHmakeRandomString()
+res <- tryCatch(expr  = fromJSON(postForm(web,
+clientName  = client,
+tier        = "Unlimited",
+description = "",
+callbackUrl = "",
+style       = "POST",
+curl        = curl.call)),
+error = function(err) {
+return(paste(err))
+}
+)
+if (print.curl){
+curl.string <- paste0("curl -sku ", user, " -X POST -d clientName=rPlant -d tier=Unlimited -d description='' -d callbackUrl='' ", web)
+print(curl.string)
+}
+Error(res)
+return(list(res$result$consumerKey, res$result$consumerSecret))
+}
+Renew()
+rplant.env <- new.env()
+Renew()
+# List files in a public directory
+ListDir(dir.name="commons_repo/curated/Carolyn_Lawrence_Dill_G2F_Mar_2017/d._2015_inbred_phenotypic_data", shared.username = "shared")
+View(rplant.env)
+# Authenticates to API
+Validate(Sys.getenv("cyv.name"), Sys.getenv("cyv.pwd"))
+# List files in a public directory
+ListDir(dir.name="commons_repo/curated/Carolyn_Lawrence_Dill_G2F_Mar_2017/d._2015_inbred_phenotypic_data", shared.username = "shared")
+ReadFile <- function(file, file.path, print.curl) {
+web <- paste(rplant.env$webio1, file.path, "/", file, sep="")
+myfile <- getURL( url = web, curl = rplant.env$curl.call )
+df <- read.csv( textConnection( myfile ), header = TRUE )
+}
+ReadFile(file = "g2f_2015_inbred_raw_data.csv", file.path = "commons_repo/curated/Carolyn_Lawrence_Dill_G2F_Mar_2017/d._2015_inbred_phenotypic_data" )
+ReadFile <- function(file, file.path, print.curl) {
+Time()
+Renew()
+web <- paste(rplant.env$webio1, file.path, "/", file, sep="")
+myfile <- getURL( url = web, curl = rplant.env$curl.call )
+df <- read.csv( textConnection( myfile ), header = TRUE )
+}
+ReadFile(file = "g2f_2015_inbred_raw_data.csv",
+file.path = "commons_repo/curated/Carolyn_Lawrence_Dill_G2F_Mar_2017/d._2015_inbred_phenotypic_data" )
+rplant.env$curl.call
+Renew()
+rplant.env$curl.call
+library(curl)
+# List apps available
+ListApps(description=TRUE)
+rplant.env$user
+rplant.env$curl.call
+rplant.env$webio
+curl_download('https://agave.iplantc.org/files/v2/media/dhbrand/Premium/hybrid_g2f_month/hybrid.csv', 'hybrid.csv')
+req <- curl_fetch_memory('https://agave.iplantc.org/files/v2/media/dhbrand/Premium/hybrid_g2f_month/hybrid.csv')
+print(req$status_code)
+req <- curl_fetch_memory('https://agave.iplantc.org/files/v2/media/dhbrand/Premium/hybrid_g2f_month/hybrid.csv', handle = rplant.env$curl.call)
+library(swagger)
+FilesApi$new()
+download_file_item("iplant.collaborative.org", "dhbrand/ExampleData/kt.ote")
+FilesApi$new(apiClient)
+FilesApi$new(apiClient)
+FilesApi$new(apiClient = apiClient)
+devtools::install_github("End-to-end-provenance/RDataTracker")
+library(RDataTracker)
+ddg.run(“eeProvCalculateSquare.R”, display=TRUE)
+ddg.run("eeProvCalculateSquare.R", display=TRUE)
+##-ddg-- Mon Jan 29 17:40:29 2018 ------##
+setwd("~/Stapleton_Lab/Projects/Premium/dataProvenance")
+ddg.run("eeProvCalculateSquare.R", display=TRUE)
+##-ddg-- Mon Jan 29 17:41:22 2018 ------##

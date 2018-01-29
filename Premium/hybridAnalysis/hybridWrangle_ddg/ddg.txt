@@ -1,0 +1,23 @@
+Architecture="x86_64"
+OperatingSystem="unix"
+Language="R"
+LanguageVersion="R version 3.4.3 (2017-11-30)"
+RDataTrackerVersion="2.26.0"
+Script="/Users/d3r3zz3d/Stapleton_Lab/Projects/Premium/hybridAnalysis/hybridWrangle.R"
+SourcedScripts=""
+ProcessFileTimestamp="2018-01-25T09.21.25EST"
+WorkingDirectory="/Users/d3r3zz3d/Stapleton_Lab/Projects/Premium/hybridAnalysis"
+DDGDirectory="./hybridWrangle_ddg"
+DateTime="2018-01-29T17.47.40EST"
+InstalledPackages="base 3.4.3, datasets 3.4.3, dplyr 0.7.4, forcats 0.2.0, ggplot2 2.2.1, graphics 3.4.3, grDevices 3.4.3, methods 3.4.3, purrr 0.2.4, RDataTracker 2.26.0, readr 1.2.0, stats 3.4.3, stringr 1.2.0, tibble 1.4.2, tidyr 0.7.2, tidyverse 1.2.1, utils 3.4.3"
+4
+Start p1 "1-hybridWrangle.R" Value="hybridWrangle.R" Time="0.389000000000001" Script="NA" Pos="NA";
+Operation p2 "2-library(tidyverse)" Value="library(tidyverse)" Time="1.594" Script="0" Pos="2,1,2,18";
+CF p1 p2
+Operation p3 "3-setwd(\"~/Stapleton_Lab/Projects/Premium/hybridAnalysis/\")" Value="setwd(\"~/Stapleton_Lab/Projects/Premium/hybridAnalysis/\")" Time="1.599" Script="0" Pos="4,1,4,57";
+CF p2 p3
+Operation p4 "4-hyb <- read_csv(\"~/Stapleton_Lab/Downloads/Carolyn_Lawrence_" Value="hyb <- read_csv(\"~/Stapleton_Lab/Downloads/Carolyn_Lawrence_" Time="1.602" Script="0" Pos="7,1,7,148";
+CF p3 p4
+Exception d1 "1-error.msg" Value="\"Error: '~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/a._2015_hybrid_phenotypic_data/g2f_2015_hybrid_data_no_outliers.csv' does not exist. \"";
+DF p4 d1
+

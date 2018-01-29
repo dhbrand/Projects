@@ -1,0 +1,121 @@
+{
+
+"prefix" : {
+"prov" : "http://www.w3.org/ns/prov#",
+"rdt" : "http://rdatatracker.org/"
+},
+"activity":{
+
+"p1" : {
+"rdt:name" : "hybridWrangle.R",
+"rdt:type" : "Start",
+"rdt:elapsedTime" : "0.389000000000001",
+"rdt:scriptNum" : "NA",
+"rdt:startLine" : "NA",
+"rdt:startCol" : "NA",
+"rdt:endLine" : "NA",
+"rdt:endCol" : "NA"
+} ,
+
+"p2" : {
+"rdt:name" : "library(tidyverse)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "1.594",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "2",
+"rdt:startCol" : "1",
+"rdt:endLine" : "2",
+"rdt:endCol" : "18"
+} ,
+
+"p3" : {
+"rdt:name" : "setwd(\"~/Stapleton_Lab/Projects/Premium/hybridAnalysis/\")",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "1.599",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "4",
+"rdt:startCol" : "1",
+"rdt:endLine" : "4",
+"rdt:endCol" : "57"
+} ,
+
+"p4" : {
+"rdt:name" : "hyb <- read_csv(\"~/Stapleton_Lab/Downloads/Carolyn_Lawrence_",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "1.602",
+"rdt:scriptNum" : "0",
+"rdt:startLine" : "7",
+"rdt:startCol" : "1",
+"rdt:endLine" : "7",
+"rdt:endCol" : "148"
+} ,
+
+"environment" : {
+"rdt:name" : "environment",
+"rdt:architecture" : "x86_64",
+"rdt:operatingSystem" : "unix",
+"rdt:language" : "R",
+"rdt:rVersion" : "R version 3.4.3 (2017-11-30)",
+"rdt:script" : "/Users/d3r3zz3d/Stapleton_Lab/Projects/Premium/hybridAnalysis/hybridWrangle.R",
+"rdt:sourcedScripts" : ""
+,
+"rdt:scriptTimeStamp" : "2018-01-25T09.21.25EST",
+"rdt:workingDirectory" : "/Users/d3r3zz3d/Stapleton_Lab/Projects/Premium/hybridAnalysis",
+"rdt:ddgDirectory" : "./hybridWrangle_ddg",
+"rdt:ddgTimeStamp" : "2018-01-29T17.47.40EST",
+"rdt:rdatatrackerVersion" : "2.26.0",
+"rdt:installedPackages" : [
+	{"package" : "base", "version" : "3.4.3"},
+	{"package" : "datasets", "version" : "3.4.3"},
+	{"package" : "dplyr", "version" : "0.7.4"},
+	{"package" : "forcats", "version" : "0.2.0"},
+	{"package" : "ggplot2", "version" : "2.2.1"},
+	{"package" : "graphics", "version" : "3.4.3"},
+	{"package" : "grDevices", "version" : "3.4.3"},
+	{"package" : "methods", "version" : "3.4.3"},
+	{"package" : "purrr", "version" : "0.2.4"},
+	{"package" : "RDataTracker", "version" : "2.26.0"},
+	{"package" : "readr", "version" : "1.2.0"},
+	{"package" : "stats", "version" : "3.4.3"},
+	{"package" : "stringr", "version" : "1.2.0"},
+	{"package" : "tibble", "version" : "1.4.2"},
+	{"package" : "tidyr", "version" : "0.7.2"},
+	{"package" : "tidyverse", "version" : "1.2.1"},
+	{"package" : "utils", "version" : "3.4.3"}]
+}},
+"entity":{
+
+"d1" : {
+"rdt:name" : "error.msg",
+"rdt:value" : "\"Error: '~/Stapleton_Lab/Downloads/Carolyn_Lawrence_Dill_G2F_Mar_2017/a._2015_hybrid_phenotypic_data/g2f_2015_hybrid_data_no_outliers.csv' does not exist. \"",
+"rdt:type" : "Exception",
+"rdt:scope" : "ddg.library",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}},
+"wasInformedBy":{
+
+"e1" : {
+"prov:informant" : "p1",
+"prov:informed" : "p2"
+} ,
+
+"e2" : {
+"prov:informant" : "p2",
+"prov:informed" : "p3"
+} ,
+
+"e3" : {
+"prov:informant" : "p3",
+"prov:informed" : "p4"
+}},
+"wasGeneratedBy":{
+
+"e4" : {
+"prov:entity" : "d1",
+"prov:activity" : "p4"
+}},
+"used":{
+}
+}
