@@ -249,33 +249,33 @@
 
 
 3. General Notes
-        a. tring to stand most of the day....sitting 20 min/hr
-        b. get directories to print correctly
+        1. tring to stand most of the day....sitting 20 min/hr
+        2. get directories to print correctly
 
 1/25
 
 1.  Goals
-    a. use shell scripts to submit all jobs for inbred and hybrids
+    1. use shell scripts to submit all jobs for inbred and hybrids
 2.  Worked On
-    a.  having trouble getting scripts to run on HPC
-        i. looks like #SBATCH -o or -e cannot have a directory in it only file names
-        ii. did not have tidyverse package installed
-        iii. tried using idev to install tidyverse but capped out on 30 min window
-        iv. made an R script and shell script to install tidyverse
-    b.  making an app to git pull projects repo on stampede2 using Agave
-    c.  making an app to run launcher jobs using jobs-submit
-        i. need to make a json
-        ii. having trouble resolving app assets
-    d.  tidyverse will not install on normal queue
-        i. trying just dplyr thru idev
-    e.  dplyr installed thru login node
-        i. need to find out if this is bad citizenship
-    f.  finally figured out why directories wouldnt create from commandArgs
-        i. needed to resolve as.integer
-    g.  tested the pipeline
-        i. appears that winnow json creates but agave does not authorize job
-        ii. gemma json is not creating correctly
+    1.  having trouble getting scripts to run on HPC
+        * looks like #SBATCH -o or -e cannot have a directory in it only file names
+        * did not have tidyverse package installed
+        * tried using idev to install tidyverse but capped out on 30 min window
+        * made an R script and shell script to install tidyverse
+    2.  making an app to git pull projects repo on stampede2 using Agave
+    3.  making an app to run launcher jobs using jobs-submit
+        * need to make a json
+        * having trouble resolving app assets
+    4.  tidyverse will not install on normal queue
+        * trying just dplyr thru idev
+    5.  dplyr installed thru login node
+        * need to find out if this is bad citizenship
+    6.  finally figured out why directories wouldnt create from commandArgs
+        * needed to resolve as.integer
+    7.  tested the pipeline
+        * appears that winnow json creates but agave does not authorize job
+        * gemma json is not creating correctly
 3.  General Notes
-    a.  need to be more clear about data shared
-        i. original hybrid.csv was not polished
-        ii. need to read about app assets
+    1.  need to be more clear about data shared
+        * original hybrid.csv was not polished
+        * need to read about app assets
