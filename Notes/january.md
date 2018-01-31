@@ -294,3 +294,5 @@
     *   Talked with Ramona Wells about data linage
         *   Found a tutorial for RDataTracker provenance utility.  Should work for Premium.
 3.  Need to work on task management in the morning.
+
+# Moved to new task management system using HourStack/Asana/Todoist/GoogleCalender stack
