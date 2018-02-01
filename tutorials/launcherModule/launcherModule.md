@@ -62,6 +62,8 @@ Type `chmod +x launcherFile.sh` to give your user permission to execute.
 
 Then type `./launcherFile.sh`
 
+This might take a few minutes to install the required R packages generating a lot of output in the terminal.
+
 You will have 3 new directorys created:
 * *randcsv/* - This is where all the random csv files are stored.
 * *output/* - For the results from the analysis.
@@ -90,4 +92,5 @@ Again you can you **launcher** to run jobs with python or Agave apps among many 
 
 #### References
 https://github.com/TACC/launcher#referencing-launcher
+
 https://portal.tacc.utexas.edu/user-guides/stampede2#using-modules-to-manage-your-environment
