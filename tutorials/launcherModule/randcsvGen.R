@@ -1,4 +1,9 @@
+install.packages(c("dplyr","readr"))
+
 library(readr)
+library(dplyr)
+
+setwd("./randcsv")
 
 cars <- as.tibble(mtcars)
 
