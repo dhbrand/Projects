@@ -33,4 +33,4 @@
 ### Blocks
 * errors with rAgave; to be expected on **early Alpha** release
 * delayed communication with EnviroTyping team; waiting on feedback about the GitHub repo
-* Overthinking some shell script operations; went down a rabit hole; SoftwareCarpentry rescued me
+* Overthinking some shell script operations; went down a rabbit hole; SoftwareCarpentry rescued me
