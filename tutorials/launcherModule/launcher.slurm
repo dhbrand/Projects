@@ -16,13 +16,13 @@
 #SBATCH -J launcher
 #SBATCH -N 10
 #SBATCH -n 10
-#SBATCH -p norm
+#SBATCH -p normal
 #SBATCH -t 1:00:00
-#SBATCH -A allocation_name
+#SBATCH -A Envriotype
 #------------------------------------------------------
 
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
 export LAUNCHER_RMI=SLURM
-export LAUNCHER_JOB_FILE="$WORK/<path_to_directory>"
+export LAUNCHER_JOB_FILE="$WORK/Projects/tutorials/launcherModule/launcherFile"
 
 $LAUNCHER_DIR/paramrun
