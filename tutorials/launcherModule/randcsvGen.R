@@ -1,4 +1,4 @@
-# install.packages(c("dplyr","readr"), repos="https://cran.revolutionanalytics.com/")
+install.packages(c("dplyr","readr"), repos="https://cran.revolutionanalytics.com/")
 
 library(readr)
 library(dplyr)
