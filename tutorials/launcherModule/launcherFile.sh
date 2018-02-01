@@ -16,5 +16,5 @@ done < <(ls)
 for i in "${array[@]}"
 do
     # substitues csv filename for $i and sends output and error from R to respective files
-    echo "Rscript --vanilla --verbose headDF.R > output.Rout 2> error.Rout $i"
+    echo "Rscript --vanilla --verbose headDF.R > $i.Rout 2> $i.Rerr randcsv/$i"
 done > ../launcherFile

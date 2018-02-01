@@ -1,101 +1,100 @@
-Rscript headDF.R df1.csv
-Rscript headDF.R df10.csv
-Rscript headDF.R df100.csv
-Rscript headDF.R df11.csv
-Rscript headDF.R df12.csv
-Rscript headDF.R df13.csv
-Rscript headDF.R df14.csv
-Rscript headDF.R df15.csv
-Rscript headDF.R df16.csv
-Rscript headDF.R df17.csv
-Rscript headDF.R df18.csv
-Rscript headDF.R df19.csv
-Rscript headDF.R df2.csv
-Rscript headDF.R df20.csv
-Rscript headDF.R df21.csv
-Rscript headDF.R df22.csv
-Rscript headDF.R df23.csv
-Rscript headDF.R df24.csv
-Rscript headDF.R df25.csv
-Rscript headDF.R df26.csv
-Rscript headDF.R df27.csv
-Rscript headDF.R df28.csv
-Rscript headDF.R df29.csv
-Rscript headDF.R df3.csv
-Rscript headDF.R df30.csv
-Rscript headDF.R df31.csv
-Rscript headDF.R df32.csv
-Rscript headDF.R df33.csv
-Rscript headDF.R df34.csv
-Rscript headDF.R df35.csv
-Rscript headDF.R df36.csv
-Rscript headDF.R df37.csv
-Rscript headDF.R df38.csv
-Rscript headDF.R df39.csv
-Rscript headDF.R df4.csv
-Rscript headDF.R df40.csv
-Rscript headDF.R df41.csv
-Rscript headDF.R df42.csv
-Rscript headDF.R df43.csv
-Rscript headDF.R df44.csv
-Rscript headDF.R df45.csv
-Rscript headDF.R df46.csv
-Rscript headDF.R df47.csv
-Rscript headDF.R df48.csv
-Rscript headDF.R df49.csv
-Rscript headDF.R df5.csv
-Rscript headDF.R df50.csv
-Rscript headDF.R df51.csv
-Rscript headDF.R df52.csv
-Rscript headDF.R df53.csv
-Rscript headDF.R df54.csv
-Rscript headDF.R df55.csv
-Rscript headDF.R df56.csv
-Rscript headDF.R df57.csv
-Rscript headDF.R df58.csv
-Rscript headDF.R df59.csv
-Rscript headDF.R df6.csv
-Rscript headDF.R df60.csv
-Rscript headDF.R df61.csv
-Rscript headDF.R df62.csv
-Rscript headDF.R df63.csv
-Rscript headDF.R df64.csv
-Rscript headDF.R df65.csv
-Rscript headDF.R df66.csv
-Rscript headDF.R df67.csv
-Rscript headDF.R df68.csv
-Rscript headDF.R df69.csv
-Rscript headDF.R df7.csv
-Rscript headDF.R df70.csv
-Rscript headDF.R df71.csv
-Rscript headDF.R df72.csv
-Rscript headDF.R df73.csv
-Rscript headDF.R df74.csv
-Rscript headDF.R df75.csv
-Rscript headDF.R df76.csv
-Rscript headDF.R df77.csv
-Rscript headDF.R df78.csv
-Rscript headDF.R df79.csv
-Rscript headDF.R df8.csv
-Rscript headDF.R df80.csv
-Rscript headDF.R df81.csv
-Rscript headDF.R df82.csv
-Rscript headDF.R df83.csv
-Rscript headDF.R df84.csv
-Rscript headDF.R df85.csv
-Rscript headDF.R df86.csv
-Rscript headDF.R df87.csv
-Rscript headDF.R df88.csv
-Rscript headDF.R df89.csv
-Rscript headDF.R df9.csv
-Rscript headDF.R df90.csv
-Rscript headDF.R df91.csv
-Rscript headDF.R df92.csv
-Rscript headDF.R df93.csv
-Rscript headDF.R df94.csv
-Rscript headDF.R df95.csv
-Rscript headDF.R df96.csv
-Rscript headDF.R df97.csv
-Rscript headDF.R df98.csv
-Rscript headDF.R df99.csv
-Rscript headDF.R launcherFile
+Rscript --vanilla --verbose headDF.R > df100.csv.Rout 2> df100.csv.Rerr randcsv/df100.csv
+Rscript --vanilla --verbose headDF.R > df10.csv.Rout 2> df10.csv.Rerr randcsv/df10.csv
+Rscript --vanilla --verbose headDF.R > df11.csv.Rout 2> df11.csv.Rerr randcsv/df11.csv
+Rscript --vanilla --verbose headDF.R > df12.csv.Rout 2> df12.csv.Rerr randcsv/df12.csv
+Rscript --vanilla --verbose headDF.R > df13.csv.Rout 2> df13.csv.Rerr randcsv/df13.csv
+Rscript --vanilla --verbose headDF.R > df14.csv.Rout 2> df14.csv.Rerr randcsv/df14.csv
+Rscript --vanilla --verbose headDF.R > df15.csv.Rout 2> df15.csv.Rerr randcsv/df15.csv
+Rscript --vanilla --verbose headDF.R > df16.csv.Rout 2> df16.csv.Rerr randcsv/df16.csv
+Rscript --vanilla --verbose headDF.R > df17.csv.Rout 2> df17.csv.Rerr randcsv/df17.csv
+Rscript --vanilla --verbose headDF.R > df18.csv.Rout 2> df18.csv.Rerr randcsv/df18.csv
+Rscript --vanilla --verbose headDF.R > df19.csv.Rout 2> df19.csv.Rerr randcsv/df19.csv
+Rscript --vanilla --verbose headDF.R > df1.csv.Rout 2> df1.csv.Rerr randcsv/df1.csv
+Rscript --vanilla --verbose headDF.R > df20.csv.Rout 2> df20.csv.Rerr randcsv/df20.csv
+Rscript --vanilla --verbose headDF.R > df21.csv.Rout 2> df21.csv.Rerr randcsv/df21.csv
+Rscript --vanilla --verbose headDF.R > df22.csv.Rout 2> df22.csv.Rerr randcsv/df22.csv
+Rscript --vanilla --verbose headDF.R > df23.csv.Rout 2> df23.csv.Rerr randcsv/df23.csv
+Rscript --vanilla --verbose headDF.R > df24.csv.Rout 2> df24.csv.Rerr randcsv/df24.csv
+Rscript --vanilla --verbose headDF.R > df25.csv.Rout 2> df25.csv.Rerr randcsv/df25.csv
+Rscript --vanilla --verbose headDF.R > df26.csv.Rout 2> df26.csv.Rerr randcsv/df26.csv
+Rscript --vanilla --verbose headDF.R > df27.csv.Rout 2> df27.csv.Rerr randcsv/df27.csv
+Rscript --vanilla --verbose headDF.R > df28.csv.Rout 2> df28.csv.Rerr randcsv/df28.csv
+Rscript --vanilla --verbose headDF.R > df29.csv.Rout 2> df29.csv.Rerr randcsv/df29.csv
+Rscript --vanilla --verbose headDF.R > df2.csv.Rout 2> df2.csv.Rerr randcsv/df2.csv
+Rscript --vanilla --verbose headDF.R > df30.csv.Rout 2> df30.csv.Rerr randcsv/df30.csv
+Rscript --vanilla --verbose headDF.R > df31.csv.Rout 2> df31.csv.Rerr randcsv/df31.csv
+Rscript --vanilla --verbose headDF.R > df32.csv.Rout 2> df32.csv.Rerr randcsv/df32.csv
+Rscript --vanilla --verbose headDF.R > df33.csv.Rout 2> df33.csv.Rerr randcsv/df33.csv
+Rscript --vanilla --verbose headDF.R > df34.csv.Rout 2> df34.csv.Rerr randcsv/df34.csv
+Rscript --vanilla --verbose headDF.R > df35.csv.Rout 2> df35.csv.Rerr randcsv/df35.csv
+Rscript --vanilla --verbose headDF.R > df36.csv.Rout 2> df36.csv.Rerr randcsv/df36.csv
+Rscript --vanilla --verbose headDF.R > df37.csv.Rout 2> df37.csv.Rerr randcsv/df37.csv
+Rscript --vanilla --verbose headDF.R > df38.csv.Rout 2> df38.csv.Rerr randcsv/df38.csv
+Rscript --vanilla --verbose headDF.R > df39.csv.Rout 2> df39.csv.Rerr randcsv/df39.csv
+Rscript --vanilla --verbose headDF.R > df3.csv.Rout 2> df3.csv.Rerr randcsv/df3.csv
+Rscript --vanilla --verbose headDF.R > df40.csv.Rout 2> df40.csv.Rerr randcsv/df40.csv
+Rscript --vanilla --verbose headDF.R > df41.csv.Rout 2> df41.csv.Rerr randcsv/df41.csv
+Rscript --vanilla --verbose headDF.R > df42.csv.Rout 2> df42.csv.Rerr randcsv/df42.csv
+Rscript --vanilla --verbose headDF.R > df43.csv.Rout 2> df43.csv.Rerr randcsv/df43.csv
+Rscript --vanilla --verbose headDF.R > df44.csv.Rout 2> df44.csv.Rerr randcsv/df44.csv
+Rscript --vanilla --verbose headDF.R > df45.csv.Rout 2> df45.csv.Rerr randcsv/df45.csv
+Rscript --vanilla --verbose headDF.R > df46.csv.Rout 2> df46.csv.Rerr randcsv/df46.csv
+Rscript --vanilla --verbose headDF.R > df47.csv.Rout 2> df47.csv.Rerr randcsv/df47.csv
+Rscript --vanilla --verbose headDF.R > df48.csv.Rout 2> df48.csv.Rerr randcsv/df48.csv
+Rscript --vanilla --verbose headDF.R > df49.csv.Rout 2> df49.csv.Rerr randcsv/df49.csv
+Rscript --vanilla --verbose headDF.R > df4.csv.Rout 2> df4.csv.Rerr randcsv/df4.csv
+Rscript --vanilla --verbose headDF.R > df50.csv.Rout 2> df50.csv.Rerr randcsv/df50.csv
+Rscript --vanilla --verbose headDF.R > df51.csv.Rout 2> df51.csv.Rerr randcsv/df51.csv
+Rscript --vanilla --verbose headDF.R > df52.csv.Rout 2> df52.csv.Rerr randcsv/df52.csv
+Rscript --vanilla --verbose headDF.R > df53.csv.Rout 2> df53.csv.Rerr randcsv/df53.csv
+Rscript --vanilla --verbose headDF.R > df54.csv.Rout 2> df54.csv.Rerr randcsv/df54.csv
+Rscript --vanilla --verbose headDF.R > df55.csv.Rout 2> df55.csv.Rerr randcsv/df55.csv
+Rscript --vanilla --verbose headDF.R > df56.csv.Rout 2> df56.csv.Rerr randcsv/df56.csv
+Rscript --vanilla --verbose headDF.R > df57.csv.Rout 2> df57.csv.Rerr randcsv/df57.csv
+Rscript --vanilla --verbose headDF.R > df58.csv.Rout 2> df58.csv.Rerr randcsv/df58.csv
+Rscript --vanilla --verbose headDF.R > df59.csv.Rout 2> df59.csv.Rerr randcsv/df59.csv
+Rscript --vanilla --verbose headDF.R > df5.csv.Rout 2> df5.csv.Rerr randcsv/df5.csv
+Rscript --vanilla --verbose headDF.R > df60.csv.Rout 2> df60.csv.Rerr randcsv/df60.csv
+Rscript --vanilla --verbose headDF.R > df61.csv.Rout 2> df61.csv.Rerr randcsv/df61.csv
+Rscript --vanilla --verbose headDF.R > df62.csv.Rout 2> df62.csv.Rerr randcsv/df62.csv
+Rscript --vanilla --verbose headDF.R > df63.csv.Rout 2> df63.csv.Rerr randcsv/df63.csv
+Rscript --vanilla --verbose headDF.R > df64.csv.Rout 2> df64.csv.Rerr randcsv/df64.csv
+Rscript --vanilla --verbose headDF.R > df65.csv.Rout 2> df65.csv.Rerr randcsv/df65.csv
+Rscript --vanilla --verbose headDF.R > df66.csv.Rout 2> df66.csv.Rerr randcsv/df66.csv
+Rscript --vanilla --verbose headDF.R > df67.csv.Rout 2> df67.csv.Rerr randcsv/df67.csv
+Rscript --vanilla --verbose headDF.R > df68.csv.Rout 2> df68.csv.Rerr randcsv/df68.csv
+Rscript --vanilla --verbose headDF.R > df69.csv.Rout 2> df69.csv.Rerr randcsv/df69.csv
+Rscript --vanilla --verbose headDF.R > df6.csv.Rout 2> df6.csv.Rerr randcsv/df6.csv
+Rscript --vanilla --verbose headDF.R > df70.csv.Rout 2> df70.csv.Rerr randcsv/df70.csv
+Rscript --vanilla --verbose headDF.R > df71.csv.Rout 2> df71.csv.Rerr randcsv/df71.csv
+Rscript --vanilla --verbose headDF.R > df72.csv.Rout 2> df72.csv.Rerr randcsv/df72.csv
+Rscript --vanilla --verbose headDF.R > df73.csv.Rout 2> df73.csv.Rerr randcsv/df73.csv
+Rscript --vanilla --verbose headDF.R > df74.csv.Rout 2> df74.csv.Rerr randcsv/df74.csv
+Rscript --vanilla --verbose headDF.R > df75.csv.Rout 2> df75.csv.Rerr randcsv/df75.csv
+Rscript --vanilla --verbose headDF.R > df76.csv.Rout 2> df76.csv.Rerr randcsv/df76.csv
+Rscript --vanilla --verbose headDF.R > df77.csv.Rout 2> df77.csv.Rerr randcsv/df77.csv
+Rscript --vanilla --verbose headDF.R > df78.csv.Rout 2> df78.csv.Rerr randcsv/df78.csv
+Rscript --vanilla --verbose headDF.R > df79.csv.Rout 2> df79.csv.Rerr randcsv/df79.csv
+Rscript --vanilla --verbose headDF.R > df7.csv.Rout 2> df7.csv.Rerr randcsv/df7.csv
+Rscript --vanilla --verbose headDF.R > df80.csv.Rout 2> df80.csv.Rerr randcsv/df80.csv
+Rscript --vanilla --verbose headDF.R > df81.csv.Rout 2> df81.csv.Rerr randcsv/df81.csv
+Rscript --vanilla --verbose headDF.R > df82.csv.Rout 2> df82.csv.Rerr randcsv/df82.csv
+Rscript --vanilla --verbose headDF.R > df83.csv.Rout 2> df83.csv.Rerr randcsv/df83.csv
+Rscript --vanilla --verbose headDF.R > df84.csv.Rout 2> df84.csv.Rerr randcsv/df84.csv
+Rscript --vanilla --verbose headDF.R > df85.csv.Rout 2> df85.csv.Rerr randcsv/df85.csv
+Rscript --vanilla --verbose headDF.R > df86.csv.Rout 2> df86.csv.Rerr randcsv/df86.csv
+Rscript --vanilla --verbose headDF.R > df87.csv.Rout 2> df87.csv.Rerr randcsv/df87.csv
+Rscript --vanilla --verbose headDF.R > df88.csv.Rout 2> df88.csv.Rerr randcsv/df88.csv
+Rscript --vanilla --verbose headDF.R > df89.csv.Rout 2> df89.csv.Rerr randcsv/df89.csv
+Rscript --vanilla --verbose headDF.R > df8.csv.Rout 2> df8.csv.Rerr randcsv/df8.csv
+Rscript --vanilla --verbose headDF.R > df90.csv.Rout 2> df90.csv.Rerr randcsv/df90.csv
+Rscript --vanilla --verbose headDF.R > df91.csv.Rout 2> df91.csv.Rerr randcsv/df91.csv
+Rscript --vanilla --verbose headDF.R > df92.csv.Rout 2> df92.csv.Rerr randcsv/df92.csv
+Rscript --vanilla --verbose headDF.R > df93.csv.Rout 2> df93.csv.Rerr randcsv/df93.csv
+Rscript --vanilla --verbose headDF.R > df94.csv.Rout 2> df94.csv.Rerr randcsv/df94.csv
+Rscript --vanilla --verbose headDF.R > df95.csv.Rout 2> df95.csv.Rerr randcsv/df95.csv
+Rscript --vanilla --verbose headDF.R > df96.csv.Rout 2> df96.csv.Rerr randcsv/df96.csv
+Rscript --vanilla --verbose headDF.R > df97.csv.Rout 2> df97.csv.Rerr randcsv/df97.csv
+Rscript --vanilla --verbose headDF.R > df98.csv.Rout 2> df98.csv.Rerr randcsv/df98.csv
+Rscript --vanilla --verbose headDF.R > df99.csv.Rout 2> df99.csv.Rerr randcsv/df99.csv
+Rscript --vanilla --verbose headDF.R > df9.csv.Rout 2> df9.csv.Rerr randcsv/df9.csv
