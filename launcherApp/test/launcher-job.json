@@ -5,7 +5,6 @@
 "archive": true,
     "inputs":{
         "filename": "agave://data.iplantcollaborative.org/dhbrand/my_apps/launcherApp/test/launcher.slurm"
-
     },
     "parameters":{
         "folder": "$WORK/Projects/launcherApp/test"

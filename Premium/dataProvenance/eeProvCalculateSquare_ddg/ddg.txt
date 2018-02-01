@@ -1,0 +1,57 @@
+Architecture="x86_64"
+OperatingSystem="unix"
+Language="R"
+LanguageVersion="R version 3.4.3 (2017-11-30)"
+RDataTrackerVersion="2.26.0"
+Script="/Users/d3r3zz3d/Stapleton_Lab/Projects/Premium/dataProvenance/eeProvCalculateSquare.R"
+SourcedScripts=""
+ProcessFileTimestamp="2018-01-29T17.39.51EST"
+WorkingDirectory="/Users/d3r3zz3d/Stapleton_Lab/Projects/Premium/dataProvenance"
+DDGDirectory="./eeProvCalculateSquare_ddg"
+DateTime="2018-01-29T17.41.22EST"
+InstalledPackages="base 3.4.3, datasets 3.4.3, graphics 3.4.3, grDevices 3.4.3, methods 3.4.3, RDataTracker 2.26.0, stats 3.4.3, utils 3.4.3"
+12
+Start p1 "1-eeProvCalculateSquare.R" Value="eeProvCalculateSquare.R" Time="8.6" Script="NA" Pos="NA";
+Operation p2 "2-f <- function(x) {    y <- x^2    return(y)}" Value="f <- function(x) {    y <- x^2    return(y)}" Time="8.616" Script="0" Pos="5,1,8,1";
+CF p1 p2
+Data d1 "1-f" Value="#ddg.function";
+DF p2 d1
+Operation p3 "3-a <- seq(1:10)" Value="a <- seq(1:10)" Time="8.668" Script="0" Pos="10,1,10,14";
+CF p2 p3
+Snapshot d2 "2-a" Value="data/2-a.csv" Time="2018-01-29T17.41.23EST";
+DF p3 d2
+Start p4 "4-b <- f(a)" Value="b <- f(a)" Time="8.792" Script="0" Pos="12,1,12,9";
+CF p3 p4
+DF d1 p4
+DF d2 p4
+Start p5 "5-f(a)" Value="f(a)" Time="8.834" Script="NA" Pos="NA";
+CF p4 p5
+Binding p6 "6-x  <-  a" Time="8.834" Script="NA" Pos="NA";
+CF p5 p6
+DF d2 p6
+Snapshot d3 "3-x" Value="data/3-x.csv" Time="2018-01-29T17.41.23EST";
+DF p6 d3
+Operation p7 "7-f" Value="f" Time="8.879" Script="NA" Pos="NA";
+DF d1 p7
+DF d3 p7
+CF p6 p7
+Operation p8 "8-y <- x^2" Value="y <- x^2" Time="8.979" Script="0" Pos="6,5,6,12";
+CF p7 p8
+DF d3 p8
+Snapshot d4 "4-y" Value="data/4-y.csv" Time="2018-01-29T17.41.23EST";
+DF p8 d4
+Snapshot d5 "5-f(a) return" Value="data/5-f(a) return.csv" Time="2018-01-29T17.41.23EST";
+Operation p9 "9-return(y)" Value="return(y)" Time="8.994" Script="0" Pos="7,5,7,13";
+CF p8 p9
+DF p9 d5
+DF d4 p9
+Finish p10 "10-f(a)" Value="f(a)" Time="9.001" Script="NA" Pos="NA";
+CF p9 p10
+Finish p11 "11-b <- f(a)" Value="b <- f(a)" Time="9.002" Script="0" Pos="12,1,12,9";
+CF p10 p11
+DF d5 p11
+Snapshot d6 "6-b" Value="data/6-b.csv" Time="2018-01-29T17.41.23EST";
+DF p11 d6
+Finish p12 "12-eeProvCalculateSquare.R" Value="eeProvCalculateSquare.R" Time="9.007" Script="NA" Pos="NA";
+CF p11 p12
+

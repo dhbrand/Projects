@@ -196,7 +196,7 @@
 2. Worked On
         a. met with Dr. Stapleton to discuss g2f needs
                 i. hybrid data with yield, ear height, and plant height by month
-                ii. inbred data with ear heigh and plant height by month
+                ii. inbred data with ear height and plant height by month
         b. filtered covariates with constant variance in hybrid dataset
         c. tested each new month with nMax = 2 clusters and nSweeps = 10 to error check
                 i. march and dec are <500 obs and do not have any non-constant continuous covariates
@@ -222,10 +222,6 @@
                 ii. there should be a way to modify rplant pkg code
                 iii. requires better understanding of cURL
         d. found an reported an error in readr pkg
-
-
-
-
 
 3. General Notes
         a. TACC in maintenance today
@@ -253,5 +249,51 @@
 
 
 3. General Notes
-        a. tring to stand most of the day....sitting 20 min/hr
-        b. get directories to print correctly
+        1. tring to stand most of the day....sitting 20 min/hr
+        2. get directories to print correctly
+
+1/25
+
+1.  Goals
+    1. use shell scripts to submit all jobs for inbred and hybrids
+2.  Worked On
+    1.  having trouble getting scripts to run on HPC
+        * looks like #SBATCH -o or -e cannot have a directory in it only file names
+        * did not have tidyverse package installed
+        * tried using idev to install tidyverse but capped out on 30 min window
+        * made an R script and shell script to install tidyverse
+    2.  making an app to git pull projects repo on stampede2 using Agave
+    3.  making an app to run launcher jobs using jobs-submit
+        * need to make a json
+        * having trouble resolving app assets
+    4.  tidyverse will not install on normal queue
+        * trying just dplyr thru idev
+    5.  dplyr installed thru login node
+        * need to find out if this is bad citizenship
+    6.  finally figured out why directories wouldnt create from commandArgs
+        * needed to resolve as.integer
+    7.  tested the pipeline
+        * appears that winnow json creates but agave does not authorize job
+        * gemma json is not creating correctly
+3.  General Notes
+    1.  need to be more clear about data shared
+        * original hybrid.csv was not polished
+        * need to read about app assets
+
+1/29
+
+1.  Goals
+    *   Setup ReadtheDocs for Envirotyping
+    *   Setup Envirotyping repo structure
+    *   Message Silvia and Susana about ways to work on regular updates and learn the stats behind the Premium package
+2.  Worked On
+    *   Setup Asana; created Mac App with fluid
+    *   Found article on setting up project structure https://jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/
+    *   Created R
+    eadtheDocs account and started setting up site for EnviroTyping
+    *   Setup Github for Envirotying and asked for input on Project Structure
+    *   Talked with Ramona Wells about data linage
+        *   Found a tutorial for RDataTracker provenance utility.  Should work for Premium.
+3.  Need to work on task management in the morning.
+
+# Moved to new task management system using HourStack/Asana/Todoist/GoogleCalender stack
