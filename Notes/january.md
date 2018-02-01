@@ -289,7 +289,8 @@
 2.  Worked On
     *   Setup Asana; created Mac App with fluid
     *   Found article on setting up project structure https://jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/
-    *   Created ReadtheDocs account and started setting up site for EnviroTyping
+    *   Created R
+    eadtheDocs account and started setting up site for EnviroTyping
     *   Setup Github for Envirotying and asked for input on Project Structure
     *   Talked with Ramona Wells about data linage
         *   Found a tutorial for RDataTracker provenance utility.  Should work for Premium.
