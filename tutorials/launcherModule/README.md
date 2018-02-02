@@ -50,8 +50,8 @@ Set `LAUNCHER_JOB_FILE` to point to your job file. We are going to use Vim, a bu
 Type `vim launcher.slurm`
 
 Type `i` and the prompt at the bottom will say `Insert`.
-Use your arrow keys and change `<path_to_directory>` to the directory you are currently in which is the `$WORK` directory if you did not place the files somewhere else.
-
+Use your arrow keys and change `<path_to_directory>` to the directory you are currently in, which is the `$WORK` directory if you did not place the files somewhere else. Change `<allocation>` to your group's allocation for the system.
+m
 Then hit `Esc` and type `:wq` which tells Vim to save and quit.
 
 ## Generate Some Data
