@@ -30,13 +30,13 @@ runInfoObj<-profRegr(yModel=inputs$yModel, xModel=inputs$xModel, nSweeps=1000, n
                      data=inputs$inputData, output="output", covNames = inputs$covName, fixedEffectsNames = inputs$fixedEffectNames, seed=12345)
 proc.time() - ptm
 
-calcDists <- calcDissimilarityMatrix(runInfoObj)
+calcDists2 <- calcDissimilarityMatrix(runInfoObj)
 
-clusts <- calcOptimalClustering(calcDists,maxNClusters = 7)
+clusts2 <- calcOptimalClustering(calcDists2,maxNClusters = 10)
 
-riskProfileOb <- calcAvgRiskAndProfile(clusts)
+riskProfileOb2 <- calcAvgRiskAndProfile(clusts2)
 
-clusterOrderObj<-plotRiskProfile(riskProfileOb,"summary.png")
+clusterOrderObj<-plotRiskProfile(riskProfileOb2,"summary0.png")
 ##clusterCall(cl, eval, myfunc(arg1,arg2,...))
 require(snow)
 

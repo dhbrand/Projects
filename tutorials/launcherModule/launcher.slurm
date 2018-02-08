@@ -18,7 +18,7 @@
 #SBATCH -n 10
 #SBATCH -p normal
 #SBATCH -t 1:00:00
-#SBATCH -A Envriotype
+#SBATCH -A <allocation>
 #------------------------------------------------------
 
 export LAUNCHER_PLUGIN_DIR=$LAUNCHER_DIR/plugins
