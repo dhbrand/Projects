@@ -11,4 +11,4 @@ Type=1
 output="gemma-test1"
 gk=1
 
-./gemma-wrap.sh
+. ./gemma-wrap.sh

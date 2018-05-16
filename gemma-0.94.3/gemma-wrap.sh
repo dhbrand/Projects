@@ -61,44 +61,44 @@ echo "PLINKfileset: $PLINKfileset"
 
 if [[ "$Type" -eq 1 ]] ; then
 	if [[ "$PLINK" -eq 1 ]] ; then
-		gemma -bfile "$PLINKfileset" -gk "$gk" -o "$output"
+		./gemma -bfile "$PLINKfileset" -gk "$gk" -o "$output"
 	elif [[ "$BIMBAM" -eq 1 ]] ; then
-		gemma -g "$MeanGenotype" -p "$Phenotype" -gk "$gk" -o "$output"
+		./gemma -g "$MeanGenotype" -p "$Phenotype" -gk "$gk" -o "$output"
 	fi
 elif [[ "$Type" -eq 2 ]] ; then
 	if [[ "$PLINK" -eq 1 ]] ; then
-		gemma -bfile "$PLINKfileset" -k "$RelatednessMatrix" -eigen -o "$output"
+		./gemma -bfile "$PLINKfileset" -k "$RelatednessMatrix" -eigen -o "$output"
 	elif [[ "$BIMBAM" -eq 1 ]] ; then
-		gemma -g "$MeanGenotype" -p "$Phenotype" -k "$RelatednessMatrix" -eigen -o "$output"
+		./gemma -g "$MeanGenotype" -p "$Phenotype" -k "$RelatednessMatrix" -eigen -o "$output"
 	fi
 elif [[ "$Type" -eq 3 ]] ; then
 	if [[ "$PLINK" -eq 1 ]] ; then
-		gemma -bfile "$PLINKfileset" -k "$RelatednessMatrix" -lmm "$lmm" -o "$output"
+		./gemma -bfile "$PLINKfileset" -k "$RelatednessMatrix" -lmm "$lmm" -o "$output"
 	elif [[ "$BIMBAM" -eq 1 ]] ; then
 		if [[ -n "$Annotation" ]] ; then
-			gemma -g "$MeanGenotype" -p "$Phenotype" -a "$Annotation" -k "$RelatednessMatrix" -lmm "$lmm" -o "$output"
+			./gemma -g "$MeanGenotype" -p "$Phenotype" -a "$Annotation" -k "$RelatednessMatrix" -lmm "$lmm" -o "$output"
 		else
-			gemma -g "$MeanGenotype" -p "$Phenotype" -k "$RelatednessMatrix" -lmm "$lmm" -o "$output"
+			./gemma -g "$MeanGenotype" -p "$Phenotype" -k "$RelatednessMatrix" -lmm "$lmm" -o "$output"
 		fi
 	fi
 elif [[ "$Type" -eq 4 ]] ; then
 	if [[ "$PLINK" -eq 1 ]] ; then
-		gemma -bfile "$PLINKfileset" -k "$RelatednessMatrix" -num "$PhenotypeNumbers" -lmm "$lmm" -o "$output"
+		./gemma -bfile "$PLINKfileset" -k "$RelatednessMatrix" -num "$PhenotypeNumbers" -lmm "$lmm" -o "$output"
 	elif [[ "$BIMBAM" -eq 1 ]] ; then
 		if [[ -n "$Annotation" ]] ; then
-			gemma -g "$MeanGenotype" -p "$Phenotype" -a "$Annotation" -k "$RelatednessMatrix" -num "$PhenotypeNumbers" -lmm "$lmm" -o "$output"
+			./gemma -g "$MeanGenotype" -p "$Phenotype" -a "$Annotation" -k "$RelatednessMatrix" -num "$PhenotypeNumbers" -lmm "$lmm" -o "$output"
 		else
-			gemma -g "$MeanGenotype" -p "$Phenotype" -k "$RelatednessMatrix" -num "$PhenotypeNumbers" -lmm "$lmm" -o "$output"
+			./gemma -g "$MeanGenotype" -p "$Phenotype" -k "$RelatednessMatrix" -num "$PhenotypeNumbers" -lmm "$lmm" -o "$output"
 		fi
 	fi
 elif [[ "$Type" -eq 5 ]] ; then
 	if [[ "$PLINK" -eq 1 ]] ; then
-		gemma -bfile "$PLINKfileset" -bslmm "$bslmm" -o "$output"
+		./gemma -bfile "$PLINKfileset" -bslmm "$bslmm" -o "$output"
 	elif [[ "$BIMBAM" -eq 1 ]] ; then
 		if [[ -n "$Annotation" ]] ; then
-			gemma -g "$MeanGenotype" -p "$Phenotype" -a "$Annotation" -bslmm "$bslmm" -o "$output"
+			./gemma -g "$MeanGenotype" -p "$Phenotype" -a "$Annotation" -bslmm "$bslmm" -o "$output"
 		else
-			gemma -g "$MeanGenotype" -p "$Phenotype" -bslmm "$bslmm" -o "$output"
+			./gemma -g "$MeanGenotype" -p "$Phenotype" -bslmm "$bslmm" -o "$output"
 		fi
 	fi
 fi
