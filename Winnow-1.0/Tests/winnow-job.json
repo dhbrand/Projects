@@ -1,11 +1,11 @@
 {
 "jobName": "WinnowExample",
-"softwareName": "Winnow-1.0.1",
+"softwareName": "Winnow-1.0.2",
 "requestedTime": "02:00:00",
 "archive": true,
     "inputs":{
-        "Class": "agave://data.iplantcollaborative.org/dhbrand/ExampleData/Winnow/data/Plinkkt.ote",
-        "Folder": "agave://data.iplantcollaborative.org/dhbrand/ExampleData/Winnow/data/OutputPlink"
+        "Class": "agave://data.iplantcollaborative.org/dhbrand/my_apps/Winnow-1.0/Tests/kt.ote",
+        "Folder": "agave://data.iplantcollaborative.org/dhbrand/my_apps/Winnow-1.0/Tests/OutputPLINK"
 
     },
     "parameters":{

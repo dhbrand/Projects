@@ -1,6 +1,6 @@
 {
   "name": "Winnow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "helpURI": "https://github.com/CyVerse-Validate/Quickstart-Guide/blob/master/docs/Winnow.md",
   "label": "Winnow",
   "defaultQueue": "normal",
@@ -13,7 +13,7 @@
   "executionSystem": "tacc-stampede2-dhbrand",
   "executionType": "HPC",
   "parallelism": "SERIAL",
-  "deploymentPath": "dhbrand/Winnow-1.0",
+  "deploymentPath": "dhbrand/my_apps/Winnow-1.0",
   "deploymentSystem": "data.iplantcollaborative.org",
   "templatePath": "wrapper.sh",
   "testPath": "test.sh",
@@ -31,7 +31,7 @@
   "modules": [
     "purge",
 	"load TACC",
-	"load python/2.7.3-epd-7.3.2"
+	"load python/2.7.13"
   ],
   "inputs": [
     {
@@ -49,7 +49,7 @@
         ]
       },
       "value": {
-	"default": "agave://data.iplantcollaborative.org/dhbrand/Winnow-1.0/kt.ote",
+	"default": "agave://data.iplantcollaborative.org/dhbrand/my_apps/Winnow-1.0/kt.ote",
         "required": true,
         "visible": true,
         "order": 0
@@ -68,7 +68,7 @@
 	"maxCardinality": -1
       },
       "value": {
-	"default": "agave://data.iplantcollaborative.org/dhbrand/Winnow-1.0/OutputPLINK",
+	"default": "agave://data.iplantcollaborative.org/dhbrand/my_apps/Winnow-1.0/OutputPLINK",
         "required": true,
         "visible": true,
         "order": 0
@@ -311,4 +311,81 @@
                 "None": "P-values from GWAS output will remain as is"
             },
             {
-  
+              "bonferroni": "One-step Bonferroni adjustment"
+            },
+            {
+              "sidak": "One step Sidak adjustment"
+            },
+            {
+              "holm-sidak": "Step down method with Sidak adjustments"
+            },
+            {
+              "holm": "Step down method with Bonferroni adjustments"
+            },
+            {
+              "simes-hochberg": "Step up method (for independent statistics)"
+            },
+            {
+              "hommel": "Closed method based on Simes tests (non-negatively associated statistics only)"
+            },
+            {
+              "fdr_bh": "Benjamini-Hochberg method for false discovery rate control (non-negatively associated or independent statistics only)"
+            },
+            {
+              "fdr_by": "Benjamini-Yekutieli method for false discovery rate control"
+            },
+            {
+              "fdr_tsbh": "Two-stage FDR control (non-negatively associated or independent statistics only)"
+            },
+            {
+              "fdr_tsby": "Two-stage FDR control"
+            }
+        ],
+        "type": "enumeration",
+        "visible": true,
+        "order": 0,
+        "required": false
+      }
+    },
+	{
+      "id": "covar",
+      "details": {
+        "label": "Covariate column (if any)",
+        "description": "Denotes the name of the covariate column from the GWAS output, if the data includes covariates",
+        "repeatArgument": false,
+        "showArgument": false
+      },
+      "semantics": {
+        "ontology": [
+          "xs:string"
+        ]
+      },
+      "value": {
+        "type": "string",
+        "visible": true,
+        "order": 0,
+        "required": false
+      }
+    },
+	{
+      "id": "save-p",
+      "details": {
+        "label": "Save original p-values",
+        "description": "Option for saving the original p-values in a separate file",
+        "repeatArgument": false,
+        "showArgument": false
+      },
+      "semantics": {
+        "ontology": [
+          "xs:bool"
+        ]
+      },
+      "value": {
+		"default": 0,
+        "type": "number",
+        "visible": true,
+        "required": false
+      }
+    }
+  ]
+}

@@ -282,11 +282,11 @@
 
 1/29
 
-1.  Goals
+*  Goals
     *   Setup ReadtheDocs for Envirotyping
     *   Setup Envirotyping repo structure
     *   Message Silvia and Susana about ways to work on regular updates and learn the stats behind the Premium package
-2.  Worked On
+*  Worked On
     *   Setup Asana; created Mac App with fluid
     *   Found article on setting up project structure https://jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/
     *   Created R
@@ -294,6 +294,6 @@
     *   Setup Github for Envirotying and asked for input on Project Structure
     *   Talked with Ramona Wells about data linage
         *   Found a tutorial for RDataTracker provenance utility.  Should work for Premium.
-3.  Need to work on task management in the morning.
+*  Need to work on task management in the morning.
 
 # Moved to new task management system using HourStack/Asana/Todoist/GoogleCalender stack
