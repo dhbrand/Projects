@@ -1,6 +1,6 @@
 {
   "name": "RidgePredict",
-  "version": "1.2",
+  "version": "1.2.0",
   "label": "RidgePredict",
   "defaultQueue": "normal",
   "defaultNodeCount": 1,
@@ -21,6 +21,11 @@
 	"http://edamontology.org/topic_0625",
 	"http://edamontology.org/topic_3517",
 	"http://sswapmeet.sswap.info/iplant/apps/Application"
+  ],
+  "modules": [
+    "purge",
+  "load TACC",
+  "load python/2.7.13"
   ],
   "inputs": [
     {
