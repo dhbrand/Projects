@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+#set -x
 chmod +x gemma
 inputBED=${inputBED}
 inputBIM=${inputBIM}
@@ -25,7 +25,7 @@ output=${output}
 PLINKfileset=${inputBED%.*}
 #Variable Validation for PLINK and BIMBAM formats:
 
-if [[ "$PLINK" -eq 1 ][] ; then
+if [[ "$PLINK" -eq 1 ]] ; then
 	if [[ ! -e "$inputBED" ]]; then
 		echo "ERROR: InputBED file was not found" >&2
 		exit 1
