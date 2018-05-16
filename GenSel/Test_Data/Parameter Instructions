@@ -1,0 +1,7 @@
+Test data for this app appears directly in the DiscoveryEnvironment 
+in the Data window under Community Data -> iplantcollaborative -> example_data -> gensel.
+
+Use run.inp from the directory above as parameter file.
+Use DMI.gs as phenotype file.
+Use gpegeno.newbin as marker file.
+Use DMIg.192 as file specifying markers to be included.

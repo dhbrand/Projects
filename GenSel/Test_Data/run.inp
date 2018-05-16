@@ -1,0 +1,20 @@
+// gensel input file written 2012 Jun 28 12:11:31
+
+// phenotypeFileName /home/bruce/bigsdata/phenotypic_files/DMI.gs
+phenotypeFileName DMI.gs
+// markerFileName /home/bruce/bigsdata/genotypic_files/gpegeno.newbin
+markerFileName gpegeno.newbin
+// includeFileName /home/bruce/bigsdata/markerLists/DMIg.192
+includeFileName DMIg.192
+analysisType Bayes
+bayesType BayesC
+chainLength 410
+burnin 100
+probFixed 0.95
+varGenotypic .0005
+varResidual .001
+mcmcSamples no
+plotPosteriors no
+addMapInfoToMarkers no
+modelSequence no
+isCategorical no

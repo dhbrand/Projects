@@ -1,0 +1,95 @@
+  {
+ "name": "GenSel",
+  "version": "2.14",
+  "helpURI": "http://www.biomedcentral.com/content/supplementary/1471-2105-12-186-s1.pdf",
+  "label": "GenSel",
+  "defaultQueue": "normal",
+  "defaultNodeCount": 1,
+  "defaultMemoryPerNode": 4,
+  "defaultProcessorsPerNode": 1,
+  "deploymentPath": "jamesg/applications/GenSel_4.55",
+  "testPath": "test.sh ",
+  "templatePath": "GenSel_wrap.sh",
+  "defaultRequestedTime": "24:00:00",
+  "shortDescription": "A Program written in C++ that comprises a portfolio of alternative analyses relevant to Genomic Selection",
+  "longDescription": "GenSel is a computer program principally written by Rohan Fernando in C++ that comprises a portfolio of alternative analyses relevant to Genomic Selection. It requires three input files; two of which comprise Genotypic and Phenotypic data; and a command file that specifies relevant analytical options.",
+  "executionType": "HPC",
+  "executionSystem": "stampede-05122016-1041-jamesg",
+  "parallelism": "SERIAL",
+  "appId": "GenSel-2.14",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "tags": [ "GenSel", "Genetic Selection", "GS"],
+  "inputs": [
+    {
+      "id": "phenotypeFileName",
+      "details": {
+        "label": "phenotypeFileName",
+        "description": "This file should contain the the Phenotype data.",
+        "showAttribute": false
+      },
+      "semantics": {
+                 "minCardinality": 1
+      },
+      "value": {
+        "default": "data.iplantcollaborative.org/shared/iplantcollaborative/example_data/gensel/DMI.gs",
+        "required": true,
+        "visible": true,
+        "order": 0
+      }
+    },
+    {
+      "id": "markerFileName",
+      "details": {
+        "label": "markerFileName",
+        "description": "This file should contain the marker file.",
+        "showAttribute": false
+      },
+      "semantics": {
+        "minCardinality": 1
+      },
+      "value": {
+        "default": "data.iplantcollaborative.org/shared/iplantcollaborative/example_data/gensel/gpegeno.newbin",
+         "required": true,
+        "visible": true,
+        "order": 0
+      }
+    },
+    {
+      "id": "includeFileName",
+      "details": {
+        "label": "includeFileName",
+        "description": "? ? ? ? ? ? ? ? ? ? ? ?",
+        "showAttribute": false
+      },
+      "semantics": {
+        "minCardinality": 1
+      },
+      "value": {
+        "default": "data.iplantcollaborative.org/shared/iplantcollaborative/example_data/gensel/DMIg.192",
+        "required": true,
+        "visible": true,
+        "order": 0
+      }
+    }],
+    "parameters": [
+    {
+      "id": "Parameter_File",
+      "details": {
+        "label": "Parameter File",
+        "description": "This file should contain the the parameter list.",
+        "showAttribute": false
+      },
+      "semantics": {
+        "minCardinality": 1
+      },
+      "value": {
+        "type": "string",
+        "default": "data.iplantcollaborative.org/shared/iplantcollaborative/example_data/gensel/run.inp",
+        "required": true,
+        "visible": true,
+        "order": 0
+      }
+    }
+    ],
+    "checkpointable": false
+}
