@@ -13,5 +13,5 @@ outputPed="$WRAPPERDIR/exampleOut.ped"
 
 chmod +x ./wrapper.sh
 
-./wrapper.sh
+. ./wrapper.sh
 
