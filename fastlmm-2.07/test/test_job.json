@@ -1,0 +1,14 @@
+{
+"jobName": "FLMMDongWangFull",
+"softwareName": "FaST-LMM-2.07.3",
+"requestedTime": "02:00:00",
+"archive": true,
+"inputs":{
+            "inputPED": "agave://data.iplantcollaborative.org/dhbrand/DongWang/dongwang.ped",
+            "inputMAP": "agave://data.iplantcollaborative.org/dhbrand/DongWang/dongwang.map",
+            "inputPHENO": "agave://data.iplantcollaborative.org/dhbrand/DongWang/dongwangpheno.txt"
+         },
+"parameters":{
+    "output": "full_results"
+                }
+}
