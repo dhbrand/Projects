@@ -1,0 +1,235 @@
+{
+  "name": "Puma",
+  "version": "1.1",
+  "helpURI": "http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003101",
+  "label": "Puma",
+  "defaultQueue": "normal",
+  "defaultNodeCount": 1,
+  "defaultMemoryPerNode": 4,
+  "defaultProcessorsPerNode": 1,
+  "defaultRequestedTime": "24:00:00",
+  "shortDescription": "Puma (Penalized Unified Multiple-locus Association) is a penalized maximum likelihood regression method.",
+  "longDescription": "Puma comprises a family of statistical methods designed to identify weak associations in genome-wide association studies that are not detectable by conventional statistical methods. Puma uses a regularized multiple regression in a penalized maximum likelihood framework using a generalized linear model in order to simultaneously consider tens to hundreds of thousands of genetic markers in a single statistical model.",
+  "executionSystem": "tacc-stampede2-dbhrand",
+  "executionType": "HPC",
+  "parallelism": "SERIAL",
+  "deploymentPath": "dhbrand/my_apps/Puma",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "templatePath": "puma_wrapper.sh",
+  "testPath": "puma_test.sh",
+  "ontology": [
+	"http://edamontology.org/operation_2945",
+	"http://edamontology.org/topic_3517"
+	],
+  "inputs": [
+    {
+      "id": "tped",
+      "details": {
+        "label": "Genotype TPED",
+        "description": "Puma takes genotypes in the widely used TPED format of Plink and genotypes must be coded as 1 or 2. Convert a Plink genotype file to this format using options: --transpose --recode12",
+        "attribute": "--tped",
+        "showAttribute": true
+      },
+      "semantics": {
+        "minCardinality": 1
+      },
+      "value": {
+        "default": "../data/X_test.tped",
+        "required": true,
+        "visible": true,
+        "order": 0
+      }
+    },
+    {
+      "id": "tfam",
+      "details": {
+        "label": "Phenotype TFAM",
+        "description": "Phenotype data and sex data are read from TFAM files generated with Plink options",
+        "attribute": "--tfam",
+        "showAttribute": true
+      },
+      "semantics": {
+        "minCardinality": 1
+      },
+      "value": {
+        "default": "../data/X_test.tfam",
+        "required": true,
+        "visible": true,
+        "order": 0
+      }
+    },
+    {
+      "id": "covariates",
+      "details": {
+        "label": "Covariate TXT",
+        "description": "Covariates are stored in a text file where each row is an individual and each space-delimited column is a covariate. A mean term is included by default.",
+        "attribute": "--covariates",
+        "showAttribute": true
+      },
+      "semantics": {
+        "minCardinality": 0
+      },
+      "value": {
+        "visible": true,
+        "order": 0,
+        "required": false
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "id": "sex",
+      "details": {
+        "label": "Sex Covariate",
+        "description": "If --tfam is used, this includes sex as a covariate.",
+        "attribute": "--sex",
+        "showAttribute": false
+      },
+      "value": {
+        "type": "flag",
+        "order": 0,
+        "required": false,
+        "visible": true
+      }
+    },
+    {
+      "id": "regression",
+      "details": {
+        "label": "Regression Model",
+        "description": "Specify regression model as either LINEAR or LOGISTIC.",
+        "attribute": "--regression",
+        "showAttribute": false
+      },
+      "value": {
+        "type": "string",
+        "required": true,
+        "order": 0,
+        "visible": true
+      }
+    },
+    {
+      "id": "sma",
+      "details": {
+        "label": "Single Marker Analysis",
+        "description": "If set, performs only standard single marker analysis.",
+        "attribute": "--sma",
+        "showAttribute": false
+      },
+      "value": {
+        "type": "flag",
+        "order": 0,
+        "required": false,
+        "visible": true
+      }
+    },
+    {
+      "id": "penalty",
+      "details": {
+        "label": "Penalty Methods to Run",
+        "description": "Space delimited list of methods to run, select from: LASSO ALASSO LOG NEG MCP VBAY.",
+        "attribute": "--penalty",
+        "showAttribute": false
+      },
+      "value": {
+        "type": "string",
+        "required": true,
+        "order": 0,
+        "visible": true
+      }
+    },
+    {
+      "id": "name",
+      "details": {
+        "label": "Name for Results",
+        "description": "Name to be appended to results files.",
+        "attribute": "--name",
+        "showAttribute": false
+      },
+      "value": {
+        "type": "string",
+        "required": true,
+        "order": 0,
+        "visible": true
+      }
+    },
+    {
+      "id": "screen_p_value",
+      "details": {
+        "label": "Screen P Value",
+        "description": "Marginal p-values below which markers are passed to method.",
+        "attribute": "--screen_p_value",
+        "showAttribute": false
+      },
+      "value": {
+        "default": 0.01,
+        "type": "number",
+        "required": false,
+        "order": 0,
+        "visible": true
+      }
+    },
+    {
+      "id": "pML_restarts",
+      "details": {
+        "label": "pML Restarts",
+        "description": "Number of posterior modes explored.",
+        "attribute": "--pML_restarts",
+        "showAttribute": false
+      },
+      "value": {
+        "default": 100,
+        "type": "number",
+        "required": false,
+        "order": 0,
+        "visible": true
+      }
+    },
+    {
+      "id": "results",
+      "details": {
+        "label": "Results Folder",
+        "description": "Specify folder where results are saved. Defaults to local folder.",
+        "attribute": "--results",
+        "showAttribute": false
+      },
+      "value": {
+        "type": "string",
+        "required": false,
+        "order": 0,
+        "visible": true
+      }
+    },
+    {
+      "id": "nthreads",
+      "details": {
+        "label": "Number of threads",
+        "description": "Number of threads used to run in parallel. Defaults to machine default.",
+        "attribute": "--nthreads",
+        "showAttribute": false
+      },
+      "value": {
+        "type": "number",
+        "required": false,
+        "order": 0,
+        "visible": true
+      }
+    },
+    {
+      "id": "restrictedPathSearch",
+      "details": {
+        "label": "Restricted path search",
+        "description": "1 dimensional path search for non-convex penalties.",
+        "attribute": "--restrictedPathSearch",
+        "showAttribute": false
+      },
+      "value": {
+        "type": "flag",
+        "required": false,
+        "order": 0,
+        "visible": true
+      }
+    }
+  ],
+
+  "checkpointable": false
+}

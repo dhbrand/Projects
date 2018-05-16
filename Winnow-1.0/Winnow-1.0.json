@@ -1,6 +1,6 @@
 {
   "name": "Winnow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "helpURI": "https://github.com/CyVerse-Validate/Quickstart-Guide/blob/master/docs/Winnow.md",
   "label": "Winnow",
   "defaultQueue": "normal",

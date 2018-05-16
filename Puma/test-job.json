@@ -1,0 +1,20 @@
+{
+    "jobName": "puma-test-1",
+    "softwareName": "Puma-1.0u1",
+    "processorsPerNode": 16,
+    "requestedTime": "01:00:00",
+    "memoryPerNode": 32,
+    "nodeCount": 1,
+    "batchQueue": "serial",
+    "archive": true,
+    "archivePath": "",
+    "inputs": {
+        "tped": "agave://data.iplantcollaborative.org/PATHTODATA/DATA.tped",
+        "tfam": "agave://data.iplantcollaborative.org/PATHTODATA/DATA.tfam"
+    },
+    "parameters":{
+        "regression": "LINEAR",
+        "penalty":"LASSO",
+        "name":"try1"
+    }
+}
