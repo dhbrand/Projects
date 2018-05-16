@@ -60,9 +60,9 @@ echo "PLINKfileset: $PLINKfileset"
 #Check the type of analysis to be done
 
 if [ "$Type" -eq 1 ] ; then
-	if [ "$PLINK" -eq 1 ] ; then
+	if [[ "$PLINK" -eq 1 ]] ; then
 		gemma -bfile "$PLINKfileset" -gk "$gk" -o "$output"
-	elif [ "$BIMBAM" -eq 1 ] ; then
+	elif [[ "$BIMBAM" -eq 1 ]] ; then
 		gemma -g "$MeanGenotype" -p "$Phenotype" -gk "$gk" -o "$output"
 	fi
 elif [ "$Type" -eq 2 ] ; then
