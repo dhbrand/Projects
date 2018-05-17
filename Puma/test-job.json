@@ -1,16 +1,16 @@
 {
-    "jobName": "puma-test-1",
-    "softwareName": "Puma-1.0u1",
+    "jobName": "puma-test",
+    "softwareName": "Puma-1.1",
     "processorsPerNode": 16,
     "requestedTime": "01:00:00",
     "memoryPerNode": 32,
     "nodeCount": 1,
-    "batchQueue": "serial",
-    "archive": true,
+    "batchQueue": "normal",
+    "archive": false,
     "archivePath": "",
     "inputs": {
-        "tped": "agave://data.iplantcollaborative.org/PATHTODATA/DATA.tped",
-        "tfam": "agave://data.iplantcollaborative.org/PATHTODATA/DATA.tfam"
+        "tped": "agave://data.iplantcollaborative.org/dhbrand/my_apps/Puma/data/X_test.tped",
+        "tfam": "agave://data.iplantcollaborative.org/dhbrand/my_apps/Puma/data/X_test.tfam"
     },
     "parameters":{
         "regression": "LINEAR",
