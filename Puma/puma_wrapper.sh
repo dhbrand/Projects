@@ -1,7 +1,7 @@
 #!/bin/bash
 
-chmod +x ./puma/puma
-chmod +x ./puma/extract_puma_results.R
+chmod +x ./puma
+chmod +x ./extract_puma_results.R
 
 geno=${tped}
 pheno=${tfam}
@@ -93,4 +93,4 @@ fi
 echo "Arguments: "
 echo "./puma/puma ${ARGS}"
 echo "Starting Puma"
-./puma/puma ${ARGS}
+./puma ${ARGS}
