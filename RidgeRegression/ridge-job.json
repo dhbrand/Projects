@@ -1,0 +1,12 @@
+{
+"jobName": "RidgeExample",
+"softwareName": "RidgePredict-1.2.0",
+"requestedTime": "00:30:00",
+"archive": true,
+    "inputs":{
+        "inputPed": "agave://data.iplantcollaborative.org/dhbrand/my_apps/RidgeRegression/example.ped"
+    },
+    "parameters":{
+        "outputPed": "outputEx"
+    }
+}
