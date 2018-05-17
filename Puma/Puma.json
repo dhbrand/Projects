@@ -9,7 +9,7 @@
   "defaultProcessorsPerNode": 1,
   "defaultRequestedTime": "24:00:00",
   "shortDescription": "Puma (Penalized Unified Multiple-locus Association) is a penalized maximum likelihood regression method.",
-  "longDescription": "Puma comprises a family of statistical methods designed to identify weak associations in genome-wide association studies that are not detectable by conventional statistical methods. Puma uses a regularized multiple regression in a penalized maximum likelihood framework using a generalized linear model in order to simultaneously consider tens to hundreds of thousands of genetic markers in a single statistical model.",
+  "longDescription": "Puma comprises a family of statistical methods designed to identify weak associations in genome-wide association studies that are not detectable by conventional statistical methods. Puma uses a regularized multiple regression in a penalized maximum likelihood framework using a generalized linear model in order to simultaneously consider tens to hundreds of thousands of genetic marketers in a single statistical model.",
   "executionSystem": "tacc-stampede2-dhbrand",
   "executionType": "HPC",
   "parallelism": "SERIAL",
