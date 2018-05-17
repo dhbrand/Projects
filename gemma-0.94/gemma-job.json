@@ -1,0 +1,17 @@
+{
+"jobName": "gemmaExample",
+"softwareName": "GEMMA-0.94.4",
+"requestedTime": "05:00:00",
+"archive": false,
+    "inputs":{
+        "inputBED": "agave://data.iplantcollaborative.org/dhbrand/my_apps/gemma-0.94/test/mouse_hs1940.bed",
+        "inputBIM": "agave://data.iplantcollaborative.org/dhbrand/my_apps/gemma-0.94/test/mouse_hs1940.bim",
+        "inputFAM": "agave://data.iplantcollaborative.org/dhbrand/my_apps/gemma-0.94/test/mouse_hs1940.fam"
+    },
+    "parameters":{
+        "PLINK": 1,
+        "Type": 1,
+        "output": "gemma_test",
+        "gk": 1
+    }
+}
