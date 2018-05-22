@@ -7,7 +7,7 @@ make clean all FC=ifort
 
 chmod +x ./i_baypass
 
-npop=${npop1}
+npop=${npop}
 gfile=${gfile}
 efile=${efile}
 scalecov=${scalecov}

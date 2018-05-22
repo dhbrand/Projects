@@ -6,4 +6,4 @@ gfile="../examples/lsa.geno"
 npop=1
 
 
-./wrapper_baypass.sh $npop $gfile
+. ./wrapper_baypass.sh
