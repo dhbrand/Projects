@@ -7,221 +7,248 @@ make clean all FC=ifort
 
 chmod +x ./i_baypass
 
+npop=${npop1}
+gfile=${gfile}
+efile=${efile}
+scalecov=${scalecov}
+poolsizefile=${poolsizefile}
+outprefix=${outprefix}
+
+omegafile=${omegafile}
+rho=${rho}
+setpibetapar=${setpibetapar}
+betapipriormin=${betapipriormin}
+betapipriormax=${betapipriormax}
+minbeta=${minbeta}
+maxbeta=${maxbeta}
+
+nbetagrid=${nbetagrid}
+
+covmcmc=${covmcmc}
+auxmodel=${auxmodel}
+isingbeta=${isingbeta}
+auxPbetaprior=${auxPbetaprior}
+
+nthreads=${nthreads}
+nval=${nval}
+thin=${thin}
+burnin=${burnin}
+npilot=${npilot}
+pilotlength=${pilotlength}
+accinf=${accinf}
+accsup=${accsup}
+adjrate=${adjrate}
+d0pi=${d0pi}
+upalphaalt=${upalphaalt}
+d0pij=${d0pij}
+d0yij=${d0yij}
+seed=${seed}
+
+ARGS=""
 
 ##General Options
-if [ -z "${npop}" ]; then
+if [ -z "$npop" ]; then
 	echo "number of populations not set"
 else
-	echo "number of populations set to ${npop}"
-	ARGS="${ARGS} -npop ${npop}"
+	echo "number of populations set to $npop"
+	ARGS="$ARGS -npop $npop"
 fi
-if [ -z "${gfile}" ]; then
+if [ -z "$gfile" ]; then
 	echo "genotyping data file not set"
 else
-	echo "genotyping data file set to ${gfile}"
-	ARGS="${ARGS} -gfile ${gfile}"
+	echo "genotyping data file set to $gfile"
+	ARGS="$ARGS -gfile $gfile"
 fi
-if [ -z "${efile}" ]; then
+if [ -z "$efile" ]; then
 	echo "covariate mode not activated"
 else
-	echo "covariate file set to ${efile}"
-	ARGS="${ARGS} -efile ${efile}"
+	echo "covariate file set to $efile"
+	ARGS="$ARGS -efile $efile"
 fi
-if [ -z "${scalecov}" ]; then
+if [ -z "$scalecov" ]; then
 	echo "scale covariates not set"
 else
-	echo "scale covariates set to ${scalecov}"
-	ARGS="${ARGS} -scalecov ${scalecov}"
+	echo "scale covariates set to $scalecov"
+	ARGS="$ARGS -scalecov $scalecov"
 fi
-if [ -z ${poolsizefile} ]; then
+if [ -z $poolsizefile ]; then
 	echo "poolseq mode not activated"
 else
-	echo "Pool Size file is set to ${poosizefile}"
-	ARGS="${ARGS} -poolsizefile ${poolsizefile}"
+	echo "Pool Size file is set to $poosizefile"
+	ARGS="$ARGS -poolsizefile $poolsizefile"
 fi
-if [ -z ${outprefix} ]; then
+if [ -z $outprefix ]; then
 	echo "prefix for output file not set"
 else
-	echo "prefix for output file is set to ${outprefix}"
-	ARGS="${ARGS} -outprefix ${outprefix}"
+	echo "prefix for output file is set to $outprefix"
+	ARGS="$ARGS -outprefix $outprefix"
 fi
 ##Modeling Options
-if [ -z ${omegafile} ]; then
+if [ -z $omegafile ]; then
 	echo "omega matrix file file not set"
 else
-	echo "omega matrix file is set to ${omegafile}"
-	ARGS="${ARGS} -omegafile ${omegafile}"
+	echo "omega matrix file is set to $omegafile"
+	ARGS="$ARGS -omegafile $omegafile"
 fi
-if [ -z ${rho} ]; then
+if [ -z $rho ]; then
 	echo "rho parameter not set"
 else
-	echo "Rho parameter is set to ${rho}"
-	ARGS="${ARGS} -rho ${rho}"
+	echo "Rho parameter is set to $rho"
+	ARGS="$ARGS -rho $rho"
 fi
-if [ -z ${setpibetapar} ]; then
+if [ -z $setpibetapar ]; then
 	echo "Pi beta prior parameter estimation inactivated"
 else
 	echo "Estimation of Pi beta prior active"
-	ARGS="${ARGS} -setpibetaprior ${setpibetaprior}"
+	ARGS="$ARGS -setpibetaprior $setpibetaprior"
 fi
-if [ -z "${betapipriormin}" ]; then
-	echo "Pi beta prior minimum parameter not set"
+if [ -z "$betapiprior" ]; then
+	echo "Pi beta prior parameters not set"
 else
-	echo "Pi beta prior minimum parameter set to ${betapipriormin}"
-	ARGS="${ARGS} -betapipriormin ${betapipriormin}"
+	echo "Pi beta prior parameters set to $betapiprior"
+	ARGS="$ARGS -betapiprior $betapiprior"
 fi
-if [ -z "${betapipriormax}" ]; then
-	echo "Pi beta prior maximum parameter not set"
-else
-	echo "Pi beta prior maximum parameter set to ${betapipriormax}"
-	ARGS="${ARGS} -betapipriormax ${betapipriormax}"
-fi
-if [ -z "${minbeta}" ]; then
+if [ -z "$minbeta" ]; then
 	echo "Lower beta coefficients not set"
 else
-	echo "Lower beta coefficients set to ${minbeta}"
-	ARGS="${ARGS} -minbeta ${minbeta}"
+	echo "Lower beta coefficients set to $minbeta"
+	ARGS="$ARGS -minbeta $minbeta"
 fi
-if [ -z "${maxbeta}" ]; then
+if [ -z "$maxbeta" ]; then
 	echo "Upper beta coefficients not set"
 else
-	echo "Upper beta coefficients set to ${maxbeta}"
-	ARGS="${ARGS} -maxbeta ${maxbeta}"
+	echo "Upper beta coefficients set to $maxbeta"
+	ARGS="$ARGS -maxbeta $maxbeta"
 fi
 ##IS Covariate mode
-if [ -z "${nbetagrid}" ]; then
+if [ -z "$nbetagrid" ]; then
 	echo "IS covariate mode grid points not set"
 else
-	echo "IS covariate mode grid points set to ${nbetagrid}"
-	ARGS="${ARGS} -nbetagrid ${nbetagrid}"
+	echo "IS covariate mode grid points set to $nbetagrid"
+	ARGS="$ARGS -nbetagrid $nbetagrid"
 fi
 ##MCMC Covariate mode
-if [ -z "${covmcmc}" ]; then
+if [ -z "$covmcmc" ]; then
 	echo "MCMC covariate mode not activated"
 else
 	echo "MCMC covariate mode activated"
-	ARGS="${ARGS} -covmcmc ${covmcmc}"
+	ARGS="$ARGS -covmcmc $covmcmc"
 fi
-if [ -z "${auxmodel}" ]; then
+if [ -z "$auxmodel" ]; then
 	echo "Auxiliary variable mode not activated"
 else
 	echo "Auxiliary model mode activated"
-	ARGS="${ARGS} -auxmodel ${auxmodel}"
+	ARGS="$ARGS -auxmodel $auxmodel"
 fi
-if [ -z "${isingbeta}" ]; then
+if [ -z "$isingbeta" ]; then
 	echo "Beta of the Ising model not set"
 else
-	echo "Beta of the Ising model set to ${isingbeta}"
-	ARGS="${ARGS} -isingbeta ${isingbeta}"
+	echo "Beta of the Ising model set to $isingbeta"
+	ARGS="$ARGS -isingbeta $isingbeta"
 fi
-if [ -z "${auxPbetapriormin}" ]; then
-	echo "auxiliary P beta prior minimum parameter not set"
+if [ -z "${auxPbetaprior}" ]; then
+	echo "auxiliary P beta prior parameters not set"
 else
-	echo "auxiliary P beta prior minimum parameter set to ${auxPbetapriormin}"
-	ARGS="${ARGS} -auxPbetapriormin ${auxPbetapriormin}"
+	echo "auxiliary P beta prior parameters set to $auxPbetaprior"
+	ARGS="$ARGS -auxPbetaprior $auxPbetaprior"
 fi
-if [ -z "${auxPbetapriormax}" ]; then
-	echo "auxiliary P beta prior maximum parameter not set"
-else
-	echo "auxiliary P beta prior maximum parameter set to ${auxPbetapriormax}"
-	ARGS="${ARGS} -auxPbetapriormax ${auxPbetapriormax}"
-fi
+
 ##MCMC Options
-if [ -z "${nthreads}" ]; then
+if [ -z "$nthreads" ]; then
 	echo "Number of threads for MCMC not set"
 else
-	echo "Number of threads for MCMC set to ${nthreads}"
-	ARGS="${ARGS} -nthreads ${nthreads}"
+	echo "Number of threads for MCMC set to $nthreads"
+	ARGS="$ARGS -nthreads $nthreads"
 fi
-if [ -z "${nval}" ]; then
+if [ -z "$nval" ]; then
 	echo "Number of post-burnin and thinned samples to generate for MCMC not set"
 else
-	echo "Number of post-burnin and thinned samples to generate for MCMC set to ${nval}"
-	ARGS="${ARGS} -nval ${nval}"
+	echo "Number of post-burnin and thinned samples to generate for MCMC set to $nval}"
+	ARGS="$ARGS -nval $nval"
 fi
-if [ -z "${thin}" ]; then
+if [ -z "$thin" ]; then
 	echo "Size of thining for MCMC not set"
 else
-	echo "Size of thining for MCMC set to ${thin}"
-	ARGS="${ARGS} -thin ${thin}"
+	echo "Size of thining for MCMC set to $thin"
+	ARGS="$ARGS -thin $thin"
 fi
-if [ -z "${burnin}" ]; then
+if [ -z "$burnin" ]; then
 	echo "Burn-in length for MCMC not set"
 else
-	echo "Burn-in length for MCMC set to ${burnin}"
-	ARGS="${ARGS} -burnin ${burnin}"
+	echo "Burn-in length for MCMC set to $burnin"
+	ARGS="$ARGS -burnin $burnin"
 fi
-if [ -z "${npilot}" ]; then
+if [ -z "$npilot" ]; then
 	echo "Number of pilot runs for MCMC not set"
 else
-	echo "Number of pilot runs for MCMC set to ${npilot}"
-	ARGS="${ARGS} -npilot ${npilot}"
+	echo "Number of pilot runs for MCMC set to $npilot"
+	ARGS="$ARGS -npilot $npilot"
 fi
-if [ -z "${pilotlength}" ]; then
+if [ -z "$pilotlength" ]; then
 	echo "Number of pilot runs for MCMC not set"
 else
-	echo "Number of pilot runs for MCMC set to ${pilotlength}"
-	ARGS="${ARGS} -pilotlength ${pilotlength}"
+	echo "Number of pilot runs for MCMC set to $pilotlength"
+	ARGS="$ARGS -pilotlength $pilotlength"
 fi
-if [ -z "${accinf}" ]; then
+if [ -z "$accinf" ]; then
 	echo "Lower target acceptance rate bound for MCMC not set"
 else
-	echo "Lower target acceptance rate bound for MCMC set to ${accinf}"
-	ARGS="${ARGS} -accinf ${accinf}"
+	echo "Lower target acceptance rate bound for MCMC set to $accinf"
+	ARGS="$ARGS -accinf $accinf"
 fi
-if [ -z "${accsup}" ]; then
+if [ -z "$accsup" ]; then
 	echo "Upper target acceptance rate bound for MCMC not set"
 else
-	echo "Upper target acceptance rate bound for MCMC set to ${accsup}"
-	ARGS="${ARGS} -accsup ${accsup}"
+	echo "Upper target acceptance rate bound for MCMC set to $accsup"
+	ARGS="$ARGS -accsup $accsup"
 fi
-if [ -z "${adjrate}" ]; then
+if [ -z "$adjrate" ]; then
 	echo "Adjustment factor for MCMC not set"
 else
-	echo "Adjustment factor for MCMC set to ${adjrate}"
-	ARGS="${ARGS} -adjrate ${adjrate}"
+	echo "Adjustment factor for MCMC set to $adjrate"
+	ARGS="$ARGS -adjrate $adjrate"
 fi
-if [ -z "${adjrate}" ]; then
+if [ -z "$adjrate" ]; then
 	echo "Adjustment factor for MCMC not set"
 else
-	echo "Adjustment factor for MCMC set to ${adjrate}"
-	ARGS="${ARGS} -adjrate ${adjrate}"
+	echo "Adjustment factor for MCMC set to $adjrate"
+	ARGS="$ARGS -adjrate $adjrate"
 fi
-if [ -z "${d0pi}" ]; then
+if [ -z "$d0pi" ]; then
 	echo "Initial delta for the pi all. freq. proposal for MCMC not set"
 else
-	echo "Initial delta for the pi all. freq. proposal for MCMC set to ${d0pi}"
-	ARGS="${ARGS} -d0pi ${d0pi}"
+	echo "Initial delta for the pi all. freq. proposal for MCMC set to $d0pi"
+	ARGS="$ARGS -d0pi $d0pi"
 fi
-if [ -z "${upalphaalt}" ]; then
+if [ -z "$upalphaalt" ]; then
 	echo "Alternative update of the pij for MCMC not set"
 else
 	echo "Alternative update of the pij for MCMC set"
-	ARGS="${ARGS} -upalphaalt ${upalphaalt}"
+	ARGS="$ARGS -upalphaalt $upalphaalt"
 fi
-if [ -z "${d0pij}" ]; then
+if [ -z "$d0pij" ]; then
 	echo "Initial delta for the pij all. freq. proposal for MCMC not set"
 else
-	echo "Initial delta for the pij all. freq. proposal for MCMC set to ${d0pij}"
-	ARGS="${ARGS} -d0pij ${d0pij}"
+	echo "Initial delta for the pij all. freq. proposal for MCMC set to $d0pij"
+	ARGS="$ARGS -d0pij $d0pij"
 fi
-if [ -z "${d0yij}" ]; then
+if [ -z "$d0yij" ]; then
 	echo "Initial delta for the yij all. freq. proposal for MCMC not set"
 else
-	echo "Initial delta for the yij all. freq. proposal for MCMC set to ${d0yij}"
-	ARGS="${ARGS} -d0yij ${d0yij}"
+	echo "Initial delta for the yij all. freq. proposal for MCMC set to $d0yij"
+	ARGS="$ARGS -d0yij $d0yij"
 fi
-if [ -z "${seed}" ]; then
+if [ -z "$seed" ]; then
 	echo "Random Number Generator for MCMC not set"
 else
-	echo "Random Number Generator for MCMC set to ${seed}"
-	ARGS="${ARGS} -seed ${seed}"
+	echo "Random Number Generator for MCMC set to $seed"
+	ARGS="$ARGS -seed $seed"
 fi
 
 
 
 
 echo "Argument Line:"
-echo "i_baypass ${ARGS}"
+echo "i_baypass $ARGS"
 echo "Starting BayPass"
-./i_baypass ${ARGS}
+./i_baypass $ARGS

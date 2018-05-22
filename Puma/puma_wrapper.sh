@@ -91,6 +91,6 @@ if [ ! -z $restricted ]; then
 fi
 
 echo "Arguments: "
-echo "./puma/puma ${ARGS}"
+echo "./puma ${ARGS}"
 echo "Starting Puma"
 ./puma ${ARGS}
